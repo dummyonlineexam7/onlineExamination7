@@ -1,0 +1,3 @@
+create database onlinedb;
+use onlinedb;
+create table subject (sid int primary key,sname varchar(100));
