@@ -1,0 +1,11 @@
+For Store Subject:
+http://localhost:9090/subject/storesubject
+
+For Retrive All Subjects:
+http://localhost:9090/subject/getsubject
+
+For Delete Subject:
+http://localhost:9090/subject/deletesubject/100
+
+For Update Subject By Id:
+http://localhost:9090/subject/updatesubject
