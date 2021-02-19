@@ -23,3 +23,17 @@ http://localhost:9090/student/delete
 
 For Updating Student Record By Id:
 http://localhost:9090/student/update
+
+-------------------------------------------------------------------------
+
+For Retrive All Student Records:
+http://localhost:9090/question/getQuestion
+
+For Inserting Student Record:
+http://localhost:9090/question/addQuestion
+
+For Deleting Student Record By Id:
+http://localhost:9090/question/deleteQuestion
+
+For Updating Student Record By Id:
+http://localhost:9090/question/updateQuestion
