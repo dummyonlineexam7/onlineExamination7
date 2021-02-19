@@ -1,3 +1,9 @@
 create database onlinedb;
 use onlinedb;
 create table subject (sid int primary key,sname varchar(100));
+
+
+------------------------------------------------------------------------------------
+student table:
+use onlinedb;
+create table student(sid int primary key,sname varchar(20),subject varchar(30),score float);

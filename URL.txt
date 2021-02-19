@@ -9,3 +9,17 @@ http://localhost:9090/subject/deletesubject/100
 
 For Update Subject By Id:
 http://localhost:9090/subject/updatesubject
+
+---------------------------------------------------------------------
+
+For Retrive All Student Records:
+http://localhost:9090/student/display
+
+For Inserting Student Record:
+http://localhost:9090/student/insert
+
+For Deleting Student Record By Id:
+http://localhost:9090/student/delete
+
+For Updating Student Record By Id:
+http://localhost:9090/student/update
