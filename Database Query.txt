@@ -45,8 +45,9 @@ use onlinedb;
 
 ------------------------------------------------------------------------------------------------------------
 
-testDetails table;
- create table testDetails(testId int primary key, score int,sid int,stuid int,qid int,
+testdetails table;
+
+create table testdetails(testid int primary key, score int,sid int,stuid int,qid int,
 foreign key(sid) references subject(sid),
 foreign key(stuid) references student(stuid),
 foreign key (qid) references question(qid));
