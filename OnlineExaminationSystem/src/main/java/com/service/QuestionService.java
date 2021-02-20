@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bean.Question;
+import com.bean.Student;
 import com.repository.QuestionRepository;
+import com.repository.Subjectrepository;
 
 @Service
 public class QuestionService {
@@ -14,19 +16,30 @@ public class QuestionService {
 	@Autowired
 	QuestionRepository qc;
 	
+	@Autowired
+	Subjectrepository sr;
+	
 	public List<Question> getAllQuestion(){
 		return qc.findAll();
 	}
 	
 	public String storeQuestion(Question qq) {
-		boolean s= qc.existsById(qq.getQid());
-		if(s==true) {
-		return "Details cannot be stored";
+	boolean s= qc.existsById(qq.getQid());
+	   if(qq.getQid()<=0) {
+		   return "Enter Details";
+	   }
+	   else if(s==true) {
+			return "Question Already exists with this ID";
 		}
-		else {
-			Question q=qc.save(qq);
-				return "Details stored";
-			
+		else {	
+			boolean n = sr.existsById(qq.getSid());
+			    if(n) {
+				  Question q=qc.save(qq);
+		           return "Question Details are stored";
+		             }
+		     else {
+			   return "Question cannot be store as there is no subject with this Sid";
+			}
 		}
 	}
 	
@@ -36,10 +49,10 @@ public class QuestionService {
 			Question q= qc.getOne(qq.getQid());
 			q.setQuestion(qq.getQuestion());
 			qc.saveAndFlush(q);
-		return "Question is updated";
+		return "Question is updated!!!";
 		}
 		else {
-			return "Cannot be updated";
+			return "Cannot be updated,Question ID is invalid !!!";
 		}
 		
 	}
@@ -51,7 +64,7 @@ public class QuestionService {
 			return "Question is deleted";	
 			}
 		else {
-			return "Question doesn't exists";
+			return "Question ID doesn't exists";
 		}
 	}
 }
