@@ -42,3 +42,11 @@ use onlinedb;
 
    insert into question value(5,"The simplest form of 1.5 : 2.5 is ……………",
         " A. 6:10"," B. 15:25","C. 0.75:1.25"," D. 3:5"," D. 3 : 5",1);
+
+------------------------------------------------------------------------------------------------------------
+
+testDetails table;
+ create table testDetails(testId int primary key, score int,sid int,stuid int,qid int,
+foreign key(sid) references subject(sid),
+foreign key(stuid) references student(stuid),
+foreign key (qid) references question(qid));

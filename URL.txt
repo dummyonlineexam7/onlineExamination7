@@ -37,3 +37,17 @@ http://localhost:9090/question/deleteQuestion
 
 For Updating Question Record By Id:
 http://localhost:9090/question/updateQuestion
+
+--------------------------------------------------------------------------------
+
+For Store Testdetails:
+http://localhost:9090/test/storetest
+
+For Retrive All Testdetails:
+http://localhost:9090/test/gettest
+
+For Delete Testdetails:
+http://localhost:9090/test/deletetest/2
+
+For Update Testdetails By testid:
+http://localhost:9090/test/updatetest
