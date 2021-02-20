@@ -29,3 +29,17 @@ foreign key(sid) references subject(sid));
   insert into question value(3,"what is force",2);
   insert into question value(4,"what is pull",2);
   insert into question value(5,"what is push",2);
+-------------------------------------------------------------------------------------------
+
+testDetails table;
+ create table testDetails(testId int primary key, score int,sid int,stuid int,qid int,
+foreign key(sid) references subject(sid),
+foreign key(stuid) references student(stuid),
+foreign key (qid) references question(qid));
+
+
+
+
+
+
+
