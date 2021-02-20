@@ -37,8 +37,8 @@ StudentService studentservice;
 		return studentservice.updateStudent(s);
 	}
 	
-	@DeleteMapping(value="delete/{sid}")
-	public String deleteStudentDetails(@PathVariable ("sid") int sid){
-		return studentservice.deleteStudent(sid);
+	@DeleteMapping(value="delete/{stuid}")
+	public String deleteStudentDetails(@PathVariable ("stuid") int stuid){
+		return studentservice.deleteStudent(stuid);
 	}
 }
