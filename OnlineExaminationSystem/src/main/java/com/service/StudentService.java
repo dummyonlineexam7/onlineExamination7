@@ -21,7 +21,7 @@ public List<Student> getStudents()
 
 public String insertStudent(Student s)
 {
-	boolean res=studentrepository.existsById(s.getSid());
+	boolean res=studentrepository.existsById(s.getStuid());
 	if(res==true)
 	{
 		return "Already Record Is Present";
@@ -63,11 +63,11 @@ public String deleteStudent(int id)
 
 public String updateStudent(Student s)
 {
-	boolean res=studentrepository.existsById(s.getSid());
+	boolean res=studentrepository.existsById(s.getStuid());
 	if(res==true)
 	{
-		Student ss=studentrepository.getOne(s.getSid());
-		ss.setScore(s.getScore());
+		Student ss=studentrepository.getOne(s.getStuid());
+		ss.setSname(s.getSname());
 		studentrepository.saveAndFlush(ss);
 		return "Record Updated Successfully";
 	}
