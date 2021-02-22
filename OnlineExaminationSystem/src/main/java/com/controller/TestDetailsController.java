@@ -20,7 +20,7 @@ import com.service.TestDetailsService;
 @RequestMapping(value="test")
 public class TestDetailsController {
 
-	TestDetails td=new TestDetails();
+	
 	@Autowired
 	TestDetailsService tds;
 	
