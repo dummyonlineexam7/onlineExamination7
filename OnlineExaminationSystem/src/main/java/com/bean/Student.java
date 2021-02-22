@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Student {
 	@Id
 private int stuid;
-private String sname;
+private String name;
 public int getStuid() {
 	return stuid;
 }
@@ -17,10 +17,10 @@ public void setStuid(int stuid) {
 	this.stuid = stuid;
 }
 public String getSname() {
-	return sname;
+	return name;
 }
-public void setSname(String sname) {
-	this.sname = sname;
+public void setSname(String name) {
+	this.name = name;
 }
 
 public Student() {
@@ -29,7 +29,7 @@ public Student() {
 }
 @Override
 public String toString() {
-	return "Student [stuid=" + stuid + ", sname=" + sname + "]";
+	return "Student [stuid=" + stuid + ", name=" + name + "]";
 }
 
 

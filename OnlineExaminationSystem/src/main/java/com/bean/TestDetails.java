@@ -45,4 +45,15 @@ public class TestDetails {
 	public void setQid(int qid) {
 		this.qid = qid;
 	}
+	public TestDetails() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "TestDetails [testid=" + testid + ", score=" + score + ", sid=" + sid + ", stuid=" + stuid + ", qid="
+				+ qid + "]";
+	}
+	
+	
 }
