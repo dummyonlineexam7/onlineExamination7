@@ -6,7 +6,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bean.Question;
+import com.bean.Student;
+import com.bean.Subject;
 import com.bean.TestDetails;
+import com.repository.QuestionRepository;
+import com.repository.StudentRepository;
+import com.repository.Subjectrepository;
 import com.repository.TestDetailsRepository;
 
 @Service
@@ -15,6 +21,13 @@ public class TestDetailsService {
 	
 	@Autowired
 	TestDetailsRepository tdr;
+	
+	@Autowired
+	StudentRepository sturep;
+	@Autowired
+	Subjectrepository subrep;
+	@Autowired
+	QuestionRepository qrep;
 	
 	public List<TestDetails> getAllDetails(){
 		return tdr.findAll();
@@ -28,15 +41,36 @@ public class TestDetailsService {
 		}
 		else
 		{
-			TestDetails t=tdr.save(td);
-			if(t!=null)
+			Optional<Student> stuop=sturep.findById(td.getStuid());
+			Optional<Subject> subop=subrep.findById(td.getSid());
+			Optional<Question> qop=qrep.findById(td.getQid());
+			
+			if(stuop.isEmpty())
 			{
-				return "Recored stored successfully";
+				return "Student id not present";
+			}
+			else if(subop.isEmpty())
+			{
+				return "subject id not present";
+			}
+			else if(qop.isEmpty())
+			{
+				return "question is not present";
 			}
 			else
 			{
-				return "Recored didn't stored";
+				TestDetails t=tdr.save(td);
+				if(t!=null)
+				{
+					return "Recored stored successfully";
+				}
+				else
+				{
+					return "Recored didn't stored";
+				}
 			}
+			
+			
 		}
 	}
 	
