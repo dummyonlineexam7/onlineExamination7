@@ -17,8 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bean.Question;
 import com.service.QuestionService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping(value="question")
+@Api(value= "Question Resource Details")
 public class QuestionController {
 
 	@Autowired
@@ -31,16 +35,16 @@ public class QuestionController {
 	}
 	
 	@PostMapping(value="addQuestion",consumes=MediaType.APPLICATION_JSON_VALUE)
-	public String storeQuestion(@RequestBody Question qq) {
-		return qs.storeQuestion(qq);
+	public String storeQuestion(@ApiParam(value= "Send Question Object") @RequestBody Question question) {
+		return qs.storeQuestion(question);
 	}
 	
 	@PutMapping(value="updateQuestion" ,consumes=MediaType.APPLICATION_JSON_VALUE)
-	public String updateQuestion(@RequestBody Question qq) {
-		return qs.updateQuestion(qq);
+	public String updateQuestion(@ApiParam(value= "Send Question Object") @RequestBody Question question) {
+		return qs.updateQuestion(question);
 	}
 	@DeleteMapping(value="deleteQuestion/{qid}")
-	public String deleteQuestion(@PathVariable("qid") int id) {
-		return qs.deleteQuestion(id);
+	public String deleteQuestion(@ApiParam(value= "Send Question Id")@PathVariable("qid") int questionid) {
+		return qs.deleteQuestion(questionid);
 	}
 }

@@ -16,8 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bean.TestDetails;
 import com.service.TestDetailsService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping(value="test")
+@Api(value="TestDetails Resource")
 public class TestDetailsController {
 
 	
@@ -31,21 +35,21 @@ public class TestDetailsController {
 	}
 	
 	@PostMapping(value="storetest", consumes=MediaType.APPLICATION_JSON_VALUE)
-	public String storeDetails(@RequestBody TestDetails td) 
+	public String storeDetails(@ApiParam(value= "Send TestDetails Object")@RequestBody TestDetails testdetails) 
 	{
-		return tds.storeDetails(td);
+		return tds.storeDetails(testdetails);
 	}
 	
 	@DeleteMapping(value="deletetest/{testid}")
-	public String deleteDetails(@PathVariable("testid") int testid) 
+	public String deleteDetails(@ApiParam(value= "Send TestDetails Id")@PathVariable("testid") int testid) 
 	{
 		return tds.deleteDetails(testid);
 	}
 	
 	@PutMapping(value="updatetest",consumes=MediaType.APPLICATION_JSON_VALUE)
-	public String updateDetails(@RequestBody TestDetails td) 
+	public String updateDetails(@ApiParam(value= "Send TestDetails Object")@RequestBody TestDetails testdetails) 
 	{
-		return tds.updateDetails(td);
+		return tds.updateDetails(testdetails);
 	}
 	
 }
