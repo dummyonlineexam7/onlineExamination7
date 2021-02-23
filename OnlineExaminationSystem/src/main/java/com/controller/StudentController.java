@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bean.Student;
 import com.service.StudentService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping(value="student")
+@Api(value="Student Resource Details")
 public class StudentController {
 @Autowired
 StudentService studentservice;
@@ -28,17 +32,17 @@ StudentService studentservice;
 	}
 	
 	@PostMapping(value="insert")
-	public String insertStudentDetails(@RequestBody Student s){
-		return studentservice.insertStudent(s);
+	public String insertStudentDetails(@ApiParam(value= "Send Student Object")@RequestBody Student student){
+		return studentservice.insertStudent(student);
 	}
 	
 	@PutMapping(value="update")
-	public String updateStudentDetails(@RequestBody Student s){
-		return studentservice.updateStudent(s);
+	public String updateStudentDetails(@ApiParam(value= "Send Student Object")@RequestBody Student student){
+		return studentservice.updateStudent(student);
 	}
 	
 	@DeleteMapping(value="delete/{stuid}")
-	public String deleteStudentDetails(@PathVariable ("stuid") int stuid){
+	public String deleteStudentDetails(@ApiParam(value= "Send Student Id")@PathVariable ("stuid") int stuid){
 		return studentservice.deleteStudent(stuid);
 	}
 }
