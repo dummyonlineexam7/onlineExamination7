@@ -11,6 +11,13 @@ public class Subject {
 	@Id
 	private int sid;
 	private String sname;
+	private String level;
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 	public int getSid() {
 		return sid;
 	}

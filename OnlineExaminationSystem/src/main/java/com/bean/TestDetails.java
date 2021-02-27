@@ -14,7 +14,13 @@ public class TestDetails {
 	private int sid;
 	private int stuid;
 	private int qid;
-	
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getTestid() {
 		return testid;
 	}
@@ -52,7 +58,7 @@ public class TestDetails {
 	@Override
 	public String toString() {
 		return "TestDetails [testid=" + testid + ", score=" + score + ", sid=" + sid + ", stuid=" + stuid + ", qid="
-				+ qid + "]";
+				+ qid + ", status=" + status + "]";
 	}
 	
 	

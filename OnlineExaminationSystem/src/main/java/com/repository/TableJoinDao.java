@@ -21,5 +21,13 @@ public class TableJoinDao {
 		List<Object[]> list=qry.getResultList();
 		return list;
 	}
+	
+	public List<Object[]> getQuestionCount(int sbid) {
+		EntityManager manager=emf.createEntityManager();
+		Query qry=manager.createNativeQuery("select subject.sname ,count(question.sid) as num from subject left join question on subject.sid=question.sid where subject.sid=? group by question.sid");
+		qry.setParameter(1,sbid);
+		List<Object[]> list=qry.getResultList();
+		return list;
+	}
 
 }
