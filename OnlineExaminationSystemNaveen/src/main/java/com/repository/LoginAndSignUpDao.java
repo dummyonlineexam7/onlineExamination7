@@ -9,6 +9,8 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bean.Login;
+
 @Repository
 public class LoginAndSignUpDao {
 	@Autowired
@@ -31,5 +33,11 @@ public class LoginAndSignUpDao {
 		}
 	}
 
+	public List<Login> getAllRegisteredDetails()
+	{
+		EntityManager manager=emf.createEntityManager();
+		Query qry=manager.createNativeQuery("select * from login");
+		return qry.getResultList();
+	}
 }
 

@@ -1,0 +1,79 @@
+create database onlinedb;
+use onlinedb;
+create table subject (sid int primary key,sname varchar(100));
+  insert into subject value(1,"Math");
+  insert into subject value(2,"physics");
+
+ alter table subject add column level enum('low_level',
+                         'intermidiate_level','high_level');
+
+------------------------------------------------------------------------------------
+student table:
+use onlinedb;
+create table student(sid int primary key,sname varchar(20),subject varchar(30),score float);
+
+TO CHANGE COLUMN NAME:
+
+ alter table student rename column sid to stuid;
+
+TO DROP COLUMN:
+alter table student drop column subject;
+
+alter table student drop column score;
+
+----------------------------------------------------------------------------------
+question table 
+use onlinedb;
+ create table question (qid int primary key,question varchar(100),
+    optionA varchar(50),optionB varchar(50),optionC varchar(50),
+    optionD varchar(50),answer varchar(50),sid int ,
+    foreign key(sid) references subject(sid));
+
+     alter table question add constraint foreign key (sid) references subject 
+                     (sid) ON DELETE SET NULL;
+
+ 
+   insert into question value(1,"The average of first 50 natural 
+      numbers is …………. "," A. 25.30","B. 25.5","C. 25.00","D. 12.25",
+      "B.25.5",1);
+   
+   insert into question value(2,"The number of 3-digit numbers divisible by 6,
+      is ………….. "," A. 149"," B. 166","C. 150"," D. 151","C. 150",1);
+  
+   insert into question value(3," What is 1004 divided by 2?"," A. 52",
+       " B. 502","C. 520"," D. 5002","B. 502",1);
+
+   insert into question value(4,"106 × 106 - 94 × 94 = ?"," A. 2004",
+        " B. 2400","C. 1904"," D. 1906"," B. 2400",1);
+
+   insert into question value(5,"The simplest form of 1.5 : 2.5 is ……………",
+        " A. 6:10"," B. 15:25","C. 0.75:1.25"," D. 3:5"," D. 3 : 5",1);
+
+
+------------------------------------------------------------------------------------------------------------
+
+testdetails table;
+
+create table testdetails(testid int primary key, score int,sid int,stuid int,qid int,
+foreign key(sid) references subject(sid),
+foreign key(stuid) references student(stuid),
+foreign key (qid) references question(qid));
+
+  alter table testdetails add column status enum('passed',
+        'failed','not-attempted');
+
+alter table testdetails add constraint foreign key (sid) references 
+         subject (sid) ON DELETE SET NULL;
+
+ alter table testdetails add constraint foreign key (stuid) references
+         student (stuid) ON DELETE SET NULL;
+
+alter table testdetails add constraint foreign key (qid) references 
+         question (qid) ON DELETE SET NULL;
+
+-----------------------------------------------------------------------------------------------------
+LOGIN Table:
+
+create table login(logid int primary key,firstname varchar(30),lastname varchar(30),gender enum("Male","Female"),age int,phnnumber long,username varchar(20) not null,password varchar(20) not null);
+
+insert into login values(1,"admin","admin","male",22,9999999999,"admin","admin");

@@ -31,4 +31,10 @@ public class LoginController {
 	{
 		return ls.signUpService(login);
 	}
+	
+	@RequestMapping(value="allregistered", method=RequestMethod.GET)
+	public List<Login> getAllRegisteredDetails()
+	{
+		return ls.registeredDetails();
+	}
 }

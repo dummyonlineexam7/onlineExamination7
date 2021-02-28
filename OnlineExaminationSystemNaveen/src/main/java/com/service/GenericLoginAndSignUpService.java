@@ -62,5 +62,9 @@ public class GenericLoginAndSignUpService{
 			return "Account Registered";
 		}
 	}
-
+	
+	public List<Login> registeredDetails()
+	{
+		return lsd.getAllRegisteredDetails();
+	}
 }
