@@ -53,10 +53,10 @@ public class TestDetailsController {
 		return tds.updateDetails(testdetails);
 	}
 	
-	@GetMapping(value="passedStudentList/{sname}")
-	public  ResponseEntity<List<TestDetails>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
+	@GetMapping(value="passedStudentList/{sname}/{level}")
+	public  ResponseEntity<List<TestDetails>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname,@PathVariable("level") String level)
 	{
-		List<TestDetails> list=tds.getPassedStudentBasedOnSubject(sname);
+		List<TestDetails> list=tds.getPassedStudentBasedOnSubject(sname,level);
 		return ResponseEntity.status(200).body(list);
 	}
 	
@@ -68,9 +68,12 @@ public class TestDetailsController {
 	}
 	
 	@GetMapping(value="testNotAttemped")
-	public ResponseEntity<List<TestDetails>> getTestNotAttempedStudent(){
+	public ResponseEntity<List<TestDetails>> getTestNotAttempedStudent()
+	{
 		List <TestDetails> list= tds.getTestNotAttempedStudent();
 		return ResponseEntity.status(200).body(list);
 	}
+	
+	
 	
 }

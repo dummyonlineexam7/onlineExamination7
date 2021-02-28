@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -108,8 +109,13 @@ public class TestDetailsService {
 		}
 	}
 	
-	public List<TestDetails> getPassedStudentBasedOnSubject(String sname){
-		return tjd.getPassedStudentBasedOnSubject(sname);
+	public List<TestDetails> getPassedStudentBasedOnSubject(String sname,String level){
+		  return tjd.getPassedStudentBasedOnSubject(sname,level);
+		  //Collections.sort(list,(s1,s2)->s1.getScore()-s2.getScore());
+		  //list.stream().filter(li->li.getScore()>50).map(name,)
+		  
+		  
+		//return tjd.getPassedStudentBasedOnSubject(sname);
 		//return tjd.getPassedStudentBasedOnSubject(sname).stream().sorted((s1,s2)->s1.getScore()-s2.getScore()).collect(Collectors.toList());
 	}
 	

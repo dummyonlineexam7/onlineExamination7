@@ -9,6 +9,7 @@ import com.bean.Question;
 import com.bean.Student;
 import com.repository.QuestionRepository;
 import com.repository.Subjectrepository;
+import com.repository.TableJoinDao;
 
 @Service
 public class QuestionService {
@@ -18,6 +19,8 @@ public class QuestionService {
 	
 	@Autowired
 	Subjectrepository sr;
+	@Autowired
+	TableJoinDao tjd;
 	
 	public List<Question> getAllQuestion(){
 		return qc.findAll();
@@ -67,4 +70,15 @@ public class QuestionService {
 			return "Question ID doesn't exists";
 		}
 	}
+	
+	public List<Question> getQuestionBasedOnLevel(String sname, String level)
+	{
+		return tjd.getQuestionBasedOnLevel(sname, level);
+	}
+	
+	public List<Question> getNoOfQuestionByLevel(String sname, String level)
+	{
+		return tjd.getNoOfQuestionByLevel(sname, level);
+	}
+	
 }
