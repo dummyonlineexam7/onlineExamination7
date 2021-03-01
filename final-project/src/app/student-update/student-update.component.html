@@ -1,0 +1,12 @@
+<div>
+<h2>Updatestudent details</h2>
+<form #studentRef="ngForm" (ngSubmit)="updateStudentInfo(studentRef.value)">
+<label>StudentId</label>
+<input type="number" name="stuid" ngModel><br>
+<label>StudentName</label>
+<input type="text" name="name" ngModel><br>
+<input type="submit" value="updatename" class="btn btn-success">
+<input type="reset" value="reset"><br>
+</form>
+{{msg}}
+</div>

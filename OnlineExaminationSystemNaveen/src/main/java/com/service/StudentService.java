@@ -77,7 +77,7 @@ public String updateStudent(Student s)
 	if(res==true)
 	{
 		Student ss=studentrepository.getOne(s.getStuid());
-		ss.setSname(s.getSname());
+		ss.setName(s.getName());
 		studentrepository.saveAndFlush(ss);
 		return "Record Updated Successfully";
 	}
