@@ -10,6 +10,9 @@ import {  studentService } from './student-service';
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { StudentInsertComponent } from './student-insert/student-insert.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { StudentUpdateComponent } from './student-update/student-update.componen
     StudentDeleteComponent,
     StudentDisplayComponent,
     StudentInsertComponent,
-    StudentUpdateComponent
+    StudentUpdateComponent,
+    LoginComponent,
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

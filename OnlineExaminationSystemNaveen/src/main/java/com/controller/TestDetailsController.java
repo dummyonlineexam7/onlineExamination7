@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,6 +51,26 @@ public class TestDetailsController {
 	public String updateDetails(@ApiParam(value= "Send TestDetails Object")@RequestBody TestDetails testdetails) 
 	{
 		return tds.updateDetails(testdetails);
+	}
+	
+	@GetMapping(value="passedStudentList/{sname}")
+	public  ResponseEntity<List<TestDetails>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
+	{
+		List<TestDetails> list=tds.getPassedStudentBasedOnSubject(sname);
+		return ResponseEntity.status(200).body(list);
+	}
+	
+	@GetMapping(value="failedStudentList/{sname}")
+	public ResponseEntity<List<TestDetails>> getFailedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
+	{
+		List<TestDetails> list=tds.getFailedStudentBasedOnSubject(sname);
+		return ResponseEntity.status(200).body(list);
+	}
+	
+	@GetMapping(value="testNotAttemped")
+	public ResponseEntity<List<TestDetails>> getTestNotAttempedStudent(){
+		List <TestDetails> list= tds.getTestNotAttempedStudent();
+		return ResponseEntity.status(200).body(list);
 	}
 	
 }
