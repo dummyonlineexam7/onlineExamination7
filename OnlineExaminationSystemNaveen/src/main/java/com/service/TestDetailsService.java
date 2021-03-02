@@ -1,7 +1,10 @@
 package com.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,7 @@ import com.bean.TestDetails;
 import com.repository.QuestionRepository;
 import com.repository.StudentRepository;
 import com.repository.Subjectrepository;
+import com.repository.TableJoinDao;
 import com.repository.TestDetailsRepository;
 
 @Service
@@ -21,13 +25,14 @@ public class TestDetailsService {
 	
 	@Autowired
 	TestDetailsRepository tdr;
-	
 	@Autowired
 	StudentRepository sturep;
 	@Autowired
 	Subjectrepository subrep;
 	@Autowired
 	QuestionRepository qrep;
+	@Autowired
+	TableJoinDao tjd;
 	
 	public List<TestDetails> getAllDetails(){
 		return tdr.findAll();
@@ -103,5 +108,18 @@ public class TestDetailsService {
 		}
 	}
 	
+	public List<TestDetails> getPassedStudentBasedOnSubject(String sname){
+		return tjd.getPassedStudentBasedOnSubject(sname);
+		//return tjd.getPassedStudentBasedOnSubject(sname).stream().sorted((s1,s2)->s1.getScore()-s2.getScore()).collect(Collectors.toList());
+	}
+	
+	public List<TestDetails> getFailedStudentBasedOnSubject(String sname){
+		return tjd.getFailedStudentBasedOnSubject(sname);
+		//return tjd.getFailedStudentBasedOnSubject(sname).stream().sorted((s1,s2)->s1.getScore()-s2.getScore()).collect(Collectors.toList());
+	}
+	
+	public List<TestDetails> getTestNotAttempedStudent(){
+		return tjd.getTestNotAttempedStudent().stream().collect(Collectors.toList());
+	}
 
 }

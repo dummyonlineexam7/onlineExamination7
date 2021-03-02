@@ -52,9 +52,9 @@ StudentService studentservice;
 		return studentservice.deleteStudent(stuid);
 	}
 	
-	@GetMapping(value="personal/{logid}")
-	public Optional<Login> getPersonalDetails(@ApiParam(value= "Send Student Object")@PathVariable ("logid") int id){
-		return  studentservice.getStudentPersonalDetails(id);
+	@GetMapping(value="personal/{email}")
+	public Optional<Login> getPersonalDetails(@ApiParam(value= "Send Student Object")@PathVariable ("email") String email){
+		return  studentservice.getStudentPersonalDetails(email);
 	}
 	
 	@PutMapping(value="updateprofile")
