@@ -10,9 +10,16 @@ import {  studentService } from './student-service';
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { StudentInsertComponent } from './student-insert/student-insert.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
+
+import { SubjectDeleteComponent } from './subject-delete/subject-delete.component';
+import { SubjectDisplayAllComponent } from './subject-display-all/subject-display-all.component';
+import { SubjectInsertComponent } from './subject-insert/subject-insert.component';
+import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-update-bysid.component';
+
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +28,16 @@ import { SignupComponent } from './signup/signup.component';
     StudentDisplayComponent,
     StudentInsertComponent,
     StudentUpdateComponent,
+
+    SubjectDeleteComponent,
+    SubjectDisplayAllComponent,
+    SubjectInsertComponent,
+    SubjectUpdateBysidComponent
+
     LoginComponent,
     DashboardComponent,
     SignupComponent
+
   ],
   imports: [
     BrowserModule,
