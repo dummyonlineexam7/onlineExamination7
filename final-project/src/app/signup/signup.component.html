@@ -1,0 +1,24 @@
+<div>
+    <h2>SignUp Page</h2>
+    
+    <form [formGroup]="signUpInfo" (ngSubmit)="signUp()">
+    <label>Firstname</label>
+    <input type="text" formControlName="firstname" ><br>
+    <label>Lastname</label>
+    <input type="text" formControlName="lastname" ><br>
+    <label>Gender</label>
+    <input type="radio" formControlName="gender" value="Male">Male
+    <input type="radio" formControlName="gender" value="Female">Female<br>
+    <label>age</label>
+    <input type="number" formControlName="age" ><br>
+    <label>Phn-Number</label>
+    <input type="number" formControlName="phnnumber" ><br>
+    <label>Email</label>
+    <input type="text" formControlName="email" ><br>
+    <label>Password</label>
+    <input type="password" formControlName="password" ><br>
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+    </form>
+    {{msg}}
+    </div>

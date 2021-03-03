@@ -24,9 +24,9 @@ public List<Student> getStudents()
 }
 
 
-public Optional<Login> getStudentPersonalDetails(int id)
+public Optional<Login> getStudentPersonalDetails(String email)
 {
-	return lsr.findById(id);
+	return lsr.findById(email);
 }
 
 public String insertStudent(Student s)
@@ -92,21 +92,21 @@ public String updateStudent(Student s)
 public String updateStudentProfile(Login l)
 {
 	
-	if(lsr.existsById(l.getLogid()))
+	if(lsr.existsById(l.getEmail()))
 	{
-		Login ll=lsr.getOne(l.getLogid());
+		Login ll=lsr.getOne(l.getEmail());
 		ll.setFirstname(l.getFirstname());
 		ll.setLastname(l.getLastname());
 		ll.setGender(l.getGender());
 		ll.setAge(l.getAge());
 		ll.setPhnnumber(l.getPhnnumber());
-		ll.setUsername(l.getUsername());
+		ll.setEmail(l.getEmail());
 		ll.setPassword(l.getPassword());
 		lsr.saveAndFlush(ll);
 		return "Profile Updated Successfully";
 	}
 	else {
-		return "Not Match Found";
+		return "No Match Found";
 	}
 }
 }

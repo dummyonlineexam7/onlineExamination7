@@ -38,22 +38,34 @@ public class GenericLoginAndSignUpService{
 		else {
 			return "Failed try again";
 		}
-	}*/
+	}
 	
-	public String checkLoginService(String username,String password)
+	public String checkLoginService(Login l)
 	{
 		
-		if(lsd.checkLogin(username, password)>0)
+		if(lsd.checkLogin(l)>0)
 		{
 			return "Login Succesfull";
 		}
 		else {
 			return "Failed try again";
 		}
+	}*/
+	public String checkLoginService(Login l) {
+		Login ll=ls.getOne(l.getEmail());
+		System.out.println(ll.getEmail());
+		System.out.println(ll.getPassword());
+		if(ll.getPassword().equals(l.getPassword()))
+		{
+			return "Login Successfull";
+		}
+		else {
+			return "Login failed";
+		}
 	}
 	public String signUpService(Login l)
 	{
-		if(ls.existsById(l.getLogid()))
+		if(ls.existsById(l.getEmail()))
 		{
 			return "Already Account Exists";
 		}
