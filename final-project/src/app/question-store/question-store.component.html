@@ -1,0 +1,24 @@
+<div>
+    <h2>Store Questions</h2>
+    <form [formGroup]="questionInfo" (ngSubmit)="storeQuestionDetails()">
+        <label>Question Id</label>
+        <input type="number" formControlName="qid"><br>
+        <label>Question</label>
+        <input type="text" formControlName="question"><br>
+        <label>OptionA</label>
+        <input type="text" formControlName="optionA"><br>
+        <label>OptionB</label>
+        <input type="text" formControlName="optionB"><br>
+        <label>OptionC</label>
+        <input type="text" formControlName="optionC"><br>
+        <label>OptionD</label>
+        <input type="text" formControlName="optionD"><br>
+        <label>Answer</label>
+        <input type="text" formControlName="answer"><br>
+        <label>SubjectId</label>
+        <input type="number" formControlName="sid"><br>
+        <input type="submit" value="storeQuestionDetails">
+        <input type="reset" value="reset">
+    </form>
+    {{msg}}
+</div>
