@@ -1,0 +1,12 @@
+<div>
+    <h2>UpdateQuestion</h2>
+    <form #questionInfo="ngForm" (ngSubmit)="updateQuestionInfo(questionInfo.value)">
+        <label>QuestionId</label>
+        <input type="number" name="qid" ngModel><br>
+        <label>Question</label>
+        <input type="text" name="question" ngModel><br>
+        <input type="submit" value="updateQuestion" class="btn btn-success">
+        <input type="reset" value="reset"><br>
+        </form>
+        {{msg}}
+</div>

@@ -1,0 +1,29 @@
+<div>
+
+    <h2>Questions Details</h2>
+    <input type="button" value="ShowQuestions" (click)="displayAllQuestions()">
+   <div *ngIf="flag" >
+    <table border=1>
+        <tr>
+          <th>QuestionsId</th>
+          <th>Question</th>
+          <th>OptionA</th>
+          <th>OptionB</th>
+          <th>OptionC</th>
+          <th>OptionD</th>
+          <th>Answer</th>
+          <th>SubjectId</th>
+        </tr>
+        <tr *ngFor="let question of questionInfo">
+            <th>{{question.qid}}</th>
+            <th>{{question.question}}</th>
+            <th>{{question.optionA}}</th>
+            <th>{{question.optionB}}</th>
+            <th>{{question.optionC}}</th>
+            <th>{{question.optionD}}</th>
+            <th>{{question.answer}}</th>
+            <th>{{question.sid}}</th>
+          </tr>
+    </table>
+</div>
+</div>
