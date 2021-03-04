@@ -16,12 +16,12 @@ public class LoginAndSignUpDao {
 	@Autowired
 	EntityManagerFactory emf;
 	
-	public int checkLogin(String username,String password)
+	/*public int checkLogin(Login l)
 	{
 		EntityManager manager=emf.createEntityManager();
 		Query qry=manager.createNativeQuery("select username,password from login where username=:user1 and password=:pass1");
-		qry.setParameter("user1", username);
-		qry.setParameter("pass1", password);
+		qry.setParameter("user1",l.getUsername());
+		qry.setParameter("pass1", l.getPassword());
 		List<String> user=qry.getResultList();
 		if(user.isEmpty())
 		{
@@ -31,7 +31,7 @@ public class LoginAndSignUpDao {
 		{
 			return 1;
 		}
-	}
+	}*/
 
 	public List<Login> getAllRegisteredDetails()
 	{

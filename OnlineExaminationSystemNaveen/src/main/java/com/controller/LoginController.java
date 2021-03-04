@@ -3,6 +3,7 @@ package com.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +18,15 @@ import io.swagger.annotations.ApiParam;
 
 @RestController
 @Api(value="Login Resource Details")
+@CrossOrigin
 public class LoginController {
 	@Autowired
 	GenericLoginAndSignUpService ls;
 	
-	@RequestMapping(value="genericlogin/{username}/{password}", method=RequestMethod.GET)
-	public String checkLogin(@PathVariable ("password")String password,@PathVariable ("username") String username)
+	@RequestMapping(value="genericlogin", method=RequestMethod.POST)
+	public String checkLogin(@RequestBody Login login)
 	{
-		return ls.checkLoginService(username, password);
+		return ls.checkLoginService(login);
 	}
 	@RequestMapping(value="signup", method=RequestMethod.POST)
 	public String signUp(@ApiParam(value= "Send login Object")@RequestBody Login login)

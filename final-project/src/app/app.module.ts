@@ -16,6 +16,16 @@ import { QuestionDisplayComponent } from './question-display/question-display.co
 import { QuestionUpdateComponent } from './question-update/question-update.component';
 import { QuestionDeleteComponent } from './question-delete/question-delete.component';
 
+import { SubjectDeleteComponent } from './subject-delete/subject-delete.component';
+import { SubjectDisplayAllComponent } from './subject-display-all/subject-display-all.component';
+import { SubjectInsertComponent } from './subject-insert/subject-insert.component';
+import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-update-bysid.component';
+
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignupComponent } from './signup/signup.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +33,23 @@ import { QuestionDeleteComponent } from './question-delete/question-delete.compo
     StudentDisplayComponent,
     StudentInsertComponent,
     StudentUpdateComponent,
+
     QuestionStoreComponent,
     QuestionDisplayComponent,
     QuestionUpdateComponent,
     QuestionDeleteComponent
+
+
+    SubjectDeleteComponent,
+    SubjectDisplayAllComponent,
+    SubjectInsertComponent,
+    SubjectUpdateBysidComponent
+
+    LoginComponent,
+    DashboardComponent,
+    SignupComponent
+
+
   ],
   imports: [
     BrowserModule,

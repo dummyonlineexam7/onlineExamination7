@@ -18,10 +18,10 @@ public int getStuid() {
 public void setStuid(int stuid) {
 	this.stuid = stuid;
 }
-public String getSname() {
+public String getName() {
 	return name;
 }
-public void setSname(String name) {
+public void setName(String name) {
 	this.name = name;
 }
 public Student() {

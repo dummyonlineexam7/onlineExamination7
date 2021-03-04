@@ -1,0 +1,19 @@
+<div>
+    <h2>Retrive All Subjects</h2>
+    <input type="button" value="get Subjects" (click)="loadSubjectData()">
+    <div *ngIf="flag">
+        <table border=1>
+         <tr>
+             <th>Sid</th>
+             <th>Sname</th>
+             <th>Level</th>            
+         </tr>
+         <tr *ngFor="let subject of subjectInfo">
+             <td>{{subject.sid}}</td>
+             <td>{{subject.sname}}</td>
+             <td>{{subject.level}}</td>
+         </tr>
+     
+        </table>
+     </div>
+</div>
