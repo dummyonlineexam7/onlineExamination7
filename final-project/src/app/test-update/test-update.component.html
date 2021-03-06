@@ -1,0 +1,15 @@
+<div>
+    <h2>Update Test Details</h2>
+    <form #testRef="ngForm" (ngSubmit)="updateTestData(testRef.value)">
+        <label>Test Id</label>
+        <input type="number" name="testid" ngModel><br/>
+
+        <label>Score</label>
+        <input type="number" name="score" ngModel><br/>
+
+        <input type="submit" value="Update" class="btn btn-success">
+        <input type="reset" value="reset" ><br>
+    </form>
+    {{msg}}
+</div>
+
