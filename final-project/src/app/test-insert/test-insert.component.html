@@ -1,0 +1,27 @@
+<div>
+    <h3>Insert Test Details</h3>
+    <form [formGroup]="testInfo" (ngSubmit)="storeTestDetails()">
+        <label>TestId:</label>
+        <input type="number" formControlName="testid"><br/>
+  
+        <label>Score:</label>
+        <input type="number" formControlName="score"><br/>
+
+        <label>SubjectId:</label>
+        <input type="number" formControlName="sid"><br/>
+
+        <label>StudentId:</label>
+        <input type="number" formControlName="stuid"><br/>
+
+        <label>QuestionId:</label>
+        <input type="number" formControlName="qid"><br/>
+
+        <label>Status:</label>
+        <input type="text" formControlName="status"><br/>
+
+        <input type="submit" value="Insert">
+        <input type="reset" value="reset">
+    </form>
+    {{msg}}
+</div>
+

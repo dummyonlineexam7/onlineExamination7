@@ -11,6 +11,7 @@ import {Subject} from "./subject-module"
 export class SubjectService {
 
   constructor(public httpClient:HttpClient) { }
+  
   storeSubjectDetails(subjectRef:any):Observable<string>{
     return this.httpClient.post("http://localhost:9090/subject/storesubject",subjectRef,{responseType:"text"})
   }

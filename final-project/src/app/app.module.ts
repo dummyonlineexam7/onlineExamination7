@@ -19,6 +19,13 @@ import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-upda
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+import { TestInsertComponent } from './test-insert/test-insert.component';
+import { TestDisplayAllComponent } from './test-display-all/test-display-all.component';
+import { TestDeleteComponent } from './test-delete/test-delete.component';
+import { TestUpdateComponent } from './test-update/test-update.component';
+import { TestPassedStudentComponent } from './test-passed-student/test-passed-student.component';
+import { TestFailedStudentComponent } from './test-failed-student/test-failed-student.component';
+import { TestNotAttemptComponent } from './test-not-attempt/test-not-attempt.component';
 
 
 @NgModule({
@@ -32,11 +39,18 @@ import { SignupComponent } from './signup/signup.component';
     SubjectDeleteComponent,
     SubjectDisplayAllComponent,
     SubjectInsertComponent,
-    SubjectUpdateBysidComponent
+    SubjectUpdateBysidComponent,
 
     LoginComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    TestInsertComponent,
+    TestDisplayAllComponent,
+    TestDeleteComponent,
+    TestUpdateComponent,
+    TestPassedStudentComponent,
+    TestFailedStudentComponent,
+    TestNotAttemptComponent
 
   ],
   imports: [
