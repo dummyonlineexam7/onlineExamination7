@@ -24,6 +24,12 @@ import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-upda
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+import { StudentPersonalDetailsComponent } from './student-personal-details/student-personal-details.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { MyGaurds } from './app.gaurds';
+import { NocomponentComponent } from './nocomponent/nocomponent.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 
 
 @NgModule({
@@ -47,7 +53,16 @@ import { SignupComponent } from './signup/signup.component';
 
     LoginComponent,
     DashboardComponent,
+
+    SignupComponent,
+    StudentPersonalDetailsComponent,
+    UpdateProfileComponent,
+    NocomponentComponent,
+    StudentComponent,
+    StudentDashboardComponent
+
     SignupComponent
+
 
 
   ],
@@ -55,7 +70,11 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule
   ],
+
+  providers: [studentService,MyGaurds],
+
   providers: [studentService,questionService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

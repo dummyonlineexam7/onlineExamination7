@@ -1,0 +1,15 @@
+<div>
+    <h2>Profile Details</h2>
+    <label>Email</label>
+    <input type="text" #email><br>
+    <input type="button" value="Get-Profile" (click)="profileDetails(email.value)"><br>
+    <div *ngIf="flag">
+        FirstName       :       {{profileInfo.firstname}}<br>
+        LastName        :       {{profileInfo.lastname}}<br>
+        Gender          :       {{profileInfo.gender}}<br>
+        Age             :       {{profileInfo.age}}<br>
+        Phn-Number      :       {{profileInfo.phnnumber}}<br>
+        Email           :       {{profileInfo.email}}<br>
+    </div>
+     
+</div>

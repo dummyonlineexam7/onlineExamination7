@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient} from "@angular/common/http"
 import { Observable } from "rxjs";
 import { Student} from "./student-module"
+import { Login } from "./login-module";
 /*@Injectable()
 export class studentDisplayService{
     constructor(public http:HttpClient){}
@@ -29,4 +30,13 @@ export class studentService{
       deleteStudentInfo(stuid:any):Observable<string>{
         return this.http.delete("http://localhost:9090/student/delete/"+stuid,{responseType:"text"})
       }
+
+      loadPersonalDetails(email:string):Observable<Login>{
+        return this.http.get<Login>("http://localhost:9090/student/personal/"+email)
+        
+    }
+
+    updateProfileInfo(loginRef:any):Observable<string>{
+      return this.http.put("http://localhost:9090/student/updateprofile",loginRef,{responseType:"text"})
+    }
 }
