@@ -1,8 +1,8 @@
-<div>
-    <h2>Retrive All Subjects</h2>
-    <input type="button" value="get Subjects" (click)="loadSubjectData()">
-    <div *ngIf="flag">
-        <table border=1>
+<div id="div1">
+    <div id="div2"><h4>Retrive All Subjects</h4></div>
+    <input type="button" value="get Subjects" id="btn1" class="btn btn-warning" (click)="loadSubjectData()">
+    <div *ngIf="flag" id="tablediv">
+        <table border=1 >
          <tr>
              <th>Sid</th>
              <th>Sname</th>

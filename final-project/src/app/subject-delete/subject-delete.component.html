@@ -1,7 +1,7 @@
-<div>
-    <h2>Delete Record</h2>
-    <label>SubjectId</label>
-    <input type="number" #sid><br/>
-    <input type="button" value="Delete Record" (click)="deleteSubjectData(sid.value)"><br/>
+<div id="div1">
+    <div id="div2"><h4>Delete Record</h4></div>
+    <label>Subject Id:</label>
+    <input type="number" id="input1" #sid><br/>
+    <input type="button" id="btn1" class="btn btn-warning" value="Delete Record" (click)="deleteSubjectData(sid.value)"><br/>
     {{msg}}
 </div>

@@ -1,12 +1,36 @@
-
+#div1{
+    margin-top: 30px;
+    height: 360px;
+}
 div{
-    background: #bd1e43;
+    background: #dbc9cd;
     display: inline-block;
-    margin: 10% 15%;
-    padding: 2%;
-    border-radius: 10%;
+    margin-top: 18px;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 #log{
-    margin-top: 10%;
+    margin-top: 7%;
+    margin-left: 10px;
+    width: 100px;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+#label1{
+    margin-left: 26px;
+}
+#label2{
+    margin-top: 10px;
+}
+#input1{
+    margin-right: 5px;
+    margin-left: 10px;
+}
+#input2{
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
