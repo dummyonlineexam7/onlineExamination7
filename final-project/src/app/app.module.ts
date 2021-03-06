@@ -10,6 +10,11 @@ import {  studentService } from './student-service';
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { StudentInsertComponent } from './student-insert/student-insert.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
+import { QuestionStoreComponent } from './question-store/question-store.component';
+import { questionService } from './question-service';
+import { QuestionDisplayComponent } from './question-display/question-display.component';
+import { QuestionUpdateComponent } from './question-update/question-update.component';
+import { QuestionDeleteComponent } from './question-delete/question-delete.component';
 
 import { SubjectDeleteComponent } from './subject-delete/subject-delete.component';
 import { SubjectDisplayAllComponent } from './subject-display-all/subject-display-all.component';
@@ -19,6 +24,7 @@ import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-upda
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+
 import { TestInsertComponent } from './test-insert/test-insert.component';
 import { TestDisplayAllComponent } from './test-display-all/test-display-all.component';
 import { TestDeleteComponent } from './test-delete/test-delete.component';
@@ -26,6 +32,14 @@ import { TestUpdateComponent } from './test-update/test-update.component';
 import { TestPassedStudentComponent } from './test-passed-student/test-passed-student.component';
 import { TestFailedStudentComponent } from './test-failed-student/test-failed-student.component';
 import { TestNotAttemptComponent } from './test-not-attempt/test-not-attempt.component';
+
+import { StudentPersonalDetailsComponent } from './student-personal-details/student-personal-details.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { MyGaurds } from './app.gaurds';
+import { NocomponentComponent } from './nocomponent/nocomponent.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+
 
 
 @NgModule({
@@ -36,6 +50,12 @@ import { TestNotAttemptComponent } from './test-not-attempt/test-not-attempt.com
     StudentInsertComponent,
     StudentUpdateComponent,
 
+    QuestionStoreComponent,
+    QuestionDisplayComponent,
+    QuestionUpdateComponent,
+    QuestionDeleteComponent
+
+
     SubjectDeleteComponent,
     SubjectDisplayAllComponent,
     SubjectInsertComponent,
@@ -43,6 +63,7 @@ import { TestNotAttemptComponent } from './test-not-attempt/test-not-attempt.com
 
     LoginComponent,
     DashboardComponent,
+
     SignupComponent,
     TestInsertComponent,
     TestDisplayAllComponent,
@@ -52,12 +73,29 @@ import { TestNotAttemptComponent } from './test-not-attempt/test-not-attempt.com
     TestFailedStudentComponent,
     TestNotAttemptComponent
 
+
+    SignupComponent,
+    StudentPersonalDetailsComponent,
+    UpdateProfileComponent,
+    NocomponentComponent,
+    StudentComponent,
+    StudentDashboardComponent
+
+    SignupComponent
+
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule
   ],
-  providers: [studentService],
+
+  providers: [studentService,MyGaurds],
+
+  providers: [studentService,questionService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

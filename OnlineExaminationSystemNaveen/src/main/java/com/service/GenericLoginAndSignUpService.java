@@ -52,15 +52,20 @@ public class GenericLoginAndSignUpService{
 		}
 	}*/
 	public String checkLoginService(Login l) {
+		if(ls.existsById(l.getEmail()))
+		{
 		Login ll=ls.getOne(l.getEmail());
-		System.out.println(ll.getEmail());
-		System.out.println(ll.getPassword());
 		if(ll.getPassword().equals(l.getPassword()))
 		{
 			return "Login Successfull";
 		}
 		else {
 			return "Login failed";
+		}
+		}
+		else
+		{
+			return "Invalid Email or Password";
 		}
 	}
 	public String signUpService(Login l)
