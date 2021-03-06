@@ -1,0 +1,31 @@
+<div>
+        <h2>Update Profile Page</h2>
+        
+        <form #loginInfo="ngForm" (ngSubmit)="updateProfile(loginInfo.value)">
+        <label>Firstname</label>
+        <input type="text" name="firstname" ngModel><br>
+
+        <label>Lastname</label>
+        <input type="text" name="lastname" ngModel><br>
+
+        <label>Gender</label>
+        <input type="radio" name="gender" value="Male" ngModel>Male
+        <input type="radio" name="gender" value="Female" ngModel>Female<br>
+
+        <label>age</label>
+        <input type="number" name="age" ngModel><br>
+
+        <label>Phn-Number</label>
+        <input type="number" name="phnnumber" ngModel><br>
+
+        <label>Email</label>
+        <input type="text" name="email" ngModel><br>
+
+        <label>Password</label>
+        <input type="password" name="password" ngModel><br>
+        
+        <input type="submit" value="Update-Profile" class="btn btn-success">
+        <input type="reset" value="reset"><br>
+        </form>
+        {{msg}}
+</div>    

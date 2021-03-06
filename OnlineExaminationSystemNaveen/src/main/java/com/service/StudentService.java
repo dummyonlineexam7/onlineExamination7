@@ -100,7 +100,6 @@ public String updateStudentProfile(Login l)
 		ll.setGender(l.getGender());
 		ll.setAge(l.getAge());
 		ll.setPhnnumber(l.getPhnnumber());
-		ll.setEmail(l.getEmail());
 		ll.setPassword(l.getPassword());
 		lsr.saveAndFlush(ll);
 		return "Profile Updated Successfully";

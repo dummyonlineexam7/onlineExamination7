@@ -13,6 +13,12 @@ import { StudentUpdateComponent } from './student-update/student-update.componen
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+import { StudentPersonalDetailsComponent } from './student-personal-details/student-personal-details.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { MyGaurds } from './app.gaurds';
+import { NocomponentComponent } from './nocomponent/nocomponent.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +29,18 @@ import { SignupComponent } from './signup/signup.component';
     StudentUpdateComponent,
     LoginComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    StudentPersonalDetailsComponent,
+    UpdateProfileComponent,
+    NocomponentComponent,
+    StudentComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule
   ],
-  providers: [studentService],
+  providers: [studentService,MyGaurds],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
