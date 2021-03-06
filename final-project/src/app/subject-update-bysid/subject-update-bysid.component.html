@@ -1,0 +1,14 @@
+<div>
+    <h2>Update Subject Details</h2>
+    <form #subjectRef="ngForm" (ngSubmit)="updateSubjectData(subjectRef.value)">
+        <label>SubjectId</label>
+        <input type="number" name="sid" ngModel><br/>
+
+        <label>Subject</label>
+        <input type="text" name="sname" ngModel><br/>
+
+        <input type="submit" value="Update" class="btn btn-success">
+        <input type="reset" value="reset" class="btn btn-success"><br>
+    </form>
+    {{msg}}
+</div>
