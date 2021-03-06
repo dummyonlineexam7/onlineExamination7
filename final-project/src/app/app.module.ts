@@ -39,6 +39,8 @@ import { MyGaurds } from './app.gaurds';
 import { NocomponentComponent } from './nocomponent/nocomponent.component';
 import { StudentComponent } from './student/student.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { QuestionComponent } from './question/question.component';
+import { SubjectComponent } from './subject/subject.component';
 
 
 
@@ -81,7 +83,11 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     StudentComponent,
     StudentDashboardComponent,
 
-    SignupComponent
+    SignupComponent,
+
+    QuestionComponent,
+
+    SubjectComponent
 
 
 

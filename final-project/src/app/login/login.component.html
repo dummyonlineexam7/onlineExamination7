@@ -1,15 +1,16 @@
 <div>
     <h2>Login Page</h2>
-    
+    <div>
     <form [formGroup]="loginInfo" (ngSubmit)="checkUser()">
-    <label>Email</label>
-    <input type="text" formControlName="email" ><br>
-    <label>Password</label>
-    <input type="password" formControlName="password" ><br>
-    <input type="submit" value="submit">
-    <input type="reset" value="reset">
+    
+                <label>Email</label>
+               <input type="text" formControlName="email" ><br>
+               <label>Password</label>
+                <input type="text" formControlName="password" ><br>
+                <input type="submit" value="submit" id="log">
+                <input type="reset" value="reset" id="log">
+            
     </form>
-    <a routerLink="signup">signup</a><br>
-    <router-outlet></router-outlet>
-   
+</div>
+    <a routerLink="/signup">signup</a><br>
     </div>

@@ -1,15 +1,16 @@
 <div>
     <h2>Admin Dashboard</h2>
 
-    <div align=right>
-            <input type="button" value="logout" (click)="logout()">
-    </div>
-    <a routerLink="student">Student</a>
-    
+     <nav class="navbar">
+            <ul>
+                <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
+                <li><a routerLink="student">Student</a></li>
+                
+                <li><a routerLink="subject">Subject</a> </li>
+                
+               <li><a routerLink="question">Question</a></li>
 
-    <hr/>
-    <router-outlet></router-outlet>
-   
-
-
-</div>
+            </ul>  
+     </nav>
+     <router-outlet></router-outlet>
+   </div>

@@ -1,0 +1,14 @@
+*{
+    margin: 4px;
+}
+div{
+    background: #bd1e43;
+    display: inline-block;
+    margin: 10% 25%;
+    padding: 2%;
+    border-radius: 10%;
+}
+
+#log{
+    margin-top: 10%;
+}
