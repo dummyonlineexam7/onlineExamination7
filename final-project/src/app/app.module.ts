@@ -53,7 +53,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     QuestionStoreComponent,
     QuestionDisplayComponent,
     QuestionUpdateComponent,
-    QuestionDeleteComponent
+    QuestionDeleteComponent,
 
 
     SubjectDeleteComponent,
@@ -71,7 +71,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     TestUpdateComponent,
     TestPassedStudentComponent,
     TestFailedStudentComponent,
-    TestNotAttemptComponent
+    TestNotAttemptComponent,
 
 
     SignupComponent,
@@ -79,7 +79,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     UpdateProfileComponent,
     NocomponentComponent,
     StudentComponent,
-    StudentDashboardComponent
+    StudentDashboardComponent,
 
     SignupComponent
 
@@ -92,9 +92,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule
   ],
 
-  providers: [studentService,MyGaurds],
-
-  providers: [studentService,questionService],
+  providers: [studentService,questionService,MyGaurds],
 
   bootstrap: [AppComponent]
 })
