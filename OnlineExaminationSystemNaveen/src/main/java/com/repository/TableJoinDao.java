@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bean.PassedStudent;
 import com.bean.Question;
 import com.bean.TestDetails;
 
@@ -33,11 +34,11 @@ public class TableJoinDao {
 		return list;
 	}
 	
-	public List<TestDetails> getPassedStudentBasedOnSubject(String sname){
+	public List<PassedStudent> getPassedStudentBasedOnSubject(String sname){
 		EntityManager manager=emf.createEntityManager();
 		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score>50;");
 		qry.setParameter(1, sname);
-		List<TestDetails> list=qry.getResultList();
+		List<PassedStudent> list=qry.getResultList();
 		return list;
 	}
 	

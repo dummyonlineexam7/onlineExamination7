@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bean.PassedStudent;
 import com.bean.TestDetails;
 import com.service.TestDetailsService;
 
@@ -23,6 +25,7 @@ import io.swagger.annotations.ApiParam;
 @RestController
 @RequestMapping(value="test")
 @Api(value="TestDetails Resource")
+@CrossOrigin
 public class TestDetailsController {
 
 	
@@ -54,9 +57,9 @@ public class TestDetailsController {
 	}
 	
 	@GetMapping(value="passedStudentList/{sname}")
-	public  ResponseEntity<List<TestDetails>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
+	public  ResponseEntity<List<PassedStudent>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
 	{
-		List<TestDetails> list=tds.getPassedStudentBasedOnSubject(sname);
+		List<PassedStudent> list=tds.getPassedStudentBasedOnSubject(sname);
 		return ResponseEntity.status(200).body(list);
 	}
 	
