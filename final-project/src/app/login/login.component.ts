@@ -28,6 +28,7 @@ flag:boolean=false
        // this.flag=true;
        console.log(data)
        console.log(loginRef.email)
+       sessionStorage.setItem("name",loginRef.email)
        if(loginRef.email=="admin@gmail.com")
       {
         console.log(loginRef.email)

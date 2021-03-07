@@ -6,10 +6,3 @@ export interface TestDetails{
     qid:number;
     status:string;
 }
-
-export interface PassedStudent{
-    sname:string;
-    name:string;
-    score:number;
-    status:string;
-}

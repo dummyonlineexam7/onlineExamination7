@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bean.PassedStudent;
 import com.bean.Question;
 import com.bean.Student;
 import com.bean.Subject;
@@ -108,7 +109,7 @@ public class TestDetailsService {
 		}
 	}
 	
-	public List<TestDetails> getPassedStudentBasedOnSubject(String sname){
+	public List<PassedStudent> getPassedStudentBasedOnSubject(String sname){
 		return tjd.getPassedStudentBasedOnSubject(sname);
 		//return tjd.getPassedStudentBasedOnSubject(sname).stream().sorted((s1,s2)->s1.getScore()-s2.getScore()).collect(Collectors.toList());
 	}

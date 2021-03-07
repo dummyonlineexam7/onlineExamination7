@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PassedStudent } from '../test-module';
+import { passstudent } from '../pass-student.module';
+import { TestDetails } from '../test-module';
 import { TestService } from '../test.service';
 
 @Component({
@@ -8,7 +9,9 @@ import { TestService } from '../test.service';
   styleUrls: ['./test-passed-student.component.css']
 })
 export class TestPassedStudentComponent implements OnInit {
-  passedDetailsInfo:Array<PassedStudent>=[]
+  passedDetailsInfo:Array<passstudent>=[]
+  passedDetailsInfo1:string=""
+  //Info:Array<passstudent>=[]
   flag:boolean=false
   constructor(public testsur:TestService) { }
 
@@ -16,8 +19,20 @@ export class TestPassedStudentComponent implements OnInit {
   }
 
   loadPassedSubjectData(sname:any){
-    this.flag=true;
-    this.testsur.loadPassedStudentDetails(sname).subscribe(data=>this.passedDetailsInfo=data)
-  }
+    
+    this.testsur.loadPassedStudentDetails(sname).subscribe(data=>{
+      if(data!=null)
+      {
+        this.flag=true;
+       // this.passedDetailsInfo1=JSON.stringify(data)
+        this.passedDetailsInfo1=JSON.stringify(data)
+    console.log(this.passedDetailsInfo1)
+      
+    this.passedDetailsInfo=JSON.parse(this.passedDetailsInfo1)
+    console.log(this.passedDetailsInfo)
+      }
+    //this.passedDetailsInfo=data
+  })
+}
 
 }
