@@ -20,6 +20,10 @@ import { QuestionStoreComponent } from './question-store/question-store.componen
 import { QuestionUpdateComponent } from './question-update/question-update.component';
 import { QuestionComponent } from './question/question.component';
 import { SubjectComponent } from './subject/subject.component';
+import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-update-bysid.component';
+import { SubjectInsertComponent } from './subject-insert/subject-insert.component';
+import { SubjectDisplayAllComponent } from './subject-display-all/subject-display-all.component';
+import { SubjectDeleteComponent } from './subject-delete/subject-delete.component';
 
 const routes: Routes = [
 
@@ -42,7 +46,10 @@ const routes: Routes = [
     {path:"delete",component: QuestionDeleteComponent}
   ]},
   {path:"subject",component:SubjectComponent,children:[
-    {path:"UpdateStudent",component:StudentUpdateComponent}
+    {path:"AddSubject",component:SubjectInsertComponent},
+    {path:"RetriveSubject",component:SubjectDisplayAllComponent},
+    {path:"DeleteSubject",component:SubjectDeleteComponent},
+    {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
     ]}
 ]},
 

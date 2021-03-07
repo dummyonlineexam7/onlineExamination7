@@ -1,4 +1,28 @@
 *{
     text-align: center;
-    
+}
+h2{
+    margin-top: 30px;
+}
+#divtext{
+    background-color: lavender;
+    float: right;
+    margin-right: 10px;
+    width: 69%;
+    height: 100px;
+}
+#divimg{
+    float: left;
+    height: 100px;
+    width: 29%;
+    margin-left: 10px;
+    background-image: url(C:\Users\HP\Desktop\onlineimg.png);
+    background-size: 100% 100%;
+}
+#maindiv{
+    height: 70px;
+}
+hr{
+    margin-top: 30px;
+    background-color: indigo;
 }

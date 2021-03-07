@@ -1,0 +1,18 @@
+#tablediv{
+    margin-left: 205px;
+    margin-top: 50px;
+}
+#div1{
+    background-color:cornsilk;
+    width: 40%;
+    height: 140px;
+    margin-left: 30%;
+}
+#div2{
+    background-color:deepskyblue;
+    height: 60px;
+}
+#btn1{
+    margin-top: 20px;
+    width: 150px;
+}
