@@ -2,3 +2,7 @@
     width: 160px;
     margin-top: 10px;
 }
+span{
+    display: inline-block;
+    margin-left: 0.8%;
+}
