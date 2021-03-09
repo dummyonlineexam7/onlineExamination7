@@ -1,5 +1,7 @@
 package com.repository;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -33,21 +35,48 @@ public class TableJoinDao {
 		List<Object[]> list=qry.getResultList();
 		return list;
 	}
-	
-	public List<PassedStudent> getPassedStudentBasedOnSubject(String sname){
+	List<PassedStudent> list1=new ArrayList<>();
+	public List<PassedStudent> getPassedStudentBasedOnSubjectDao(String sname,String level){
+		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score>50;");
+		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score>50 and subject.level=?;");
 		qry.setParameter(1, sname);
-		List<PassedStudent> list=qry.getResultList();
-		return list;
+		qry.setParameter(2, level);
+		List<?> list=qry.getResultList();
+		Iterator<?> it=list.iterator();
+		while(it.hasNext()) {
+			Object obj[]=(Object[])it.next();
+			PassedStudent ps=new PassedStudent();
+			ps.setSname((String) obj[0]);
+			ps.setName((String) obj[1]);
+			ps.setScore((int) obj[2]);
+			ps.setStatus((String) obj[3]);
+			list1.add(ps);	
+		}
+		//System.out.println(list1);
+		return list1;
 	}
 	
-	public List<TestDetails> getFailedStudentBasedOnSubject(String sname){
+	
+	public List<PassedStudent> getFailedStudentBasedOnSubjectDao(String sname,String level){
+		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score<50;");
+		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score<50 and subject.level=?;");
 		qry.setParameter(1, sname);
-		List<TestDetails> list=qry.getResultList();
-		return list;
+		qry.setParameter(2, level);
+		List<?> list=qry.getResultList();
+		Iterator<?> it=list.iterator();
+		while(it.hasNext()) {
+			Object obj[]=(Object[])it.next();
+			PassedStudent ps=new PassedStudent();
+			ps.setSname((String) obj[0]);
+			ps.setName((String) obj[1]);
+			ps.setScore((int) obj[2]);
+			ps.setStatus((String) obj[3]);
+			list1.add(ps);	
+		}
+		//System.out.println(list1);
+		return list1;
 	}
 	
 	public List<TestDetails> getTestNotAttempedStudent(){
