@@ -1,1 +1,41 @@
-<p>test-failed-student works!</p>
+<div>
+    <h2>Retrive Failed Student Details</h2>
+    <!--
+    <label>Subject Name</label>
+    <input type="text" #sname><br/>
+    <input type="submit" value="get Details" (click)="loadPassedSubjectData(sname.value)">
+    
+    <form #studentRef="ngForm" (ngSubmit)="loadPassedSubjectData(sname.value)">
+        <label>Subjectname</label>
+        <input type="text" name="sname" ngModel><br>
+        <input type="submit" value="updatename" class="btn btn-success">
+        <input type="reset" value="reset"><br>
+        </form>
+        -->
+        <form [formGroup]="failedInfo" (ngSubmit)="loadFailedSubjectData()">
+            <label>Subjectname</label>
+            <input type="text" formControlName="sname"><br>
+            <label>SubjectLevel</label>
+            <input type="text" formControlName="level"><br>
+            <input type="submit" value="getfailedInfo">
+            <input type="reset" value="reset">
+        </form>
+    <div *ngIf="flag">
+        <table border=1>
+         <tr>
+             
+             <th>Name</th>
+             <th>Score</th>
+             <th>Status</th>            
+         </tr>
+         <tr *ngFor="let details of failedDetailsInfo">
+            
+             <td>{{details.name}}</td>
+             <td>{{details.score}}</td>
+             <td>{{details.status}}</td>
+         </tr>
+     
+        </table>
+     </div>
+</div>
+

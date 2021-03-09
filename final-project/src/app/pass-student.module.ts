@@ -1,6 +1,3 @@
-export interface passstudent{
-    sname:string,
-    name:string,
-    score:number
-    status:string
+export class PassStudent{
+   constructor(public sname:string,public name:string,public score:number,public status:string){}
 }

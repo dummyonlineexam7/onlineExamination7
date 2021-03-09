@@ -56,17 +56,17 @@ public class TestDetailsController {
 		return tds.updateDetails(testdetails);
 	}
 	
-	@GetMapping(value="passedStudentList/{sname}")
-	public  ResponseEntity<List<PassedStudent>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
+	@GetMapping(value="passedStudentList/{sname}/{level}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public  ResponseEntity<List<PassedStudent>> getPassedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname, @PathVariable("level") String level)
 	{
-		List<PassedStudent> list=tds.getPassedStudentBasedOnSubject(sname);
+		List<PassedStudent> list=tds.getPassedStudentBasedOnSubjectService(sname,level);
 		return ResponseEntity.status(200).body(list);
 	}
 	
-	@GetMapping(value="failedStudentList/{sname}")
-	public ResponseEntity<List<TestDetails>> getFailedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname)
+	@GetMapping(value="failedStudentList/{sname}/{level}")
+	public ResponseEntity<List<PassedStudent>> getFailedStudentBasedOnSubject(@ApiParam(value = "send subject name") @PathVariable("sname") String sname,@PathVariable("level") String level)
 	{
-		List<TestDetails> list=tds.getFailedStudentBasedOnSubject(sname);
+		List<PassedStudent> list=tds.getFailedStudentBasedOnSubjectService(sname,level);
 		return ResponseEntity.status(200).body(list);
 	}
 	

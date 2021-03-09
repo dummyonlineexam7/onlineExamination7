@@ -109,13 +109,13 @@ public class TestDetailsService {
 		}
 	}
 	
-	public List<PassedStudent> getPassedStudentBasedOnSubject(String sname){
-		return tjd.getPassedStudentBasedOnSubject(sname);
+	public List<PassedStudent> getPassedStudentBasedOnSubjectService(String sname,String level){
+		return tjd.getPassedStudentBasedOnSubjectDao(sname,level);
 		//return tjd.getPassedStudentBasedOnSubject(sname).stream().sorted((s1,s2)->s1.getScore()-s2.getScore()).collect(Collectors.toList());
 	}
 	
-	public List<TestDetails> getFailedStudentBasedOnSubject(String sname){
-		return tjd.getFailedStudentBasedOnSubject(sname);
+	public List<PassedStudent> getFailedStudentBasedOnSubjectService(String sname,String level){
+		return tjd.getFailedStudentBasedOnSubjectDao(sname,level);
 		//return tjd.getFailedStudentBasedOnSubject(sname).stream().sorted((s1,s2)->s1.getScore()-s2.getScore()).collect(Collectors.toList());
 	}
 	

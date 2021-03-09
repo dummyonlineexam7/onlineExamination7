@@ -1,15 +1,13 @@
 package com.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
-@Entity
 public class PassedStudent {
-	@Id
+	
 private String sname;
 private String name;
 private int score;
 private String status;
+
 public String getSname() {
 	return sname;
 }
@@ -33,6 +31,14 @@ public String getStatus() {
 }
 public void setStatus(String status) {
 	this.status = status;
+}
+public PassedStudent() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+@Override
+public String toString() {
+	return "PassedStudent [sname=" + sname + ", name=" + name + ", score=" + score + ", status=" + status + "]";
 }
 
 }

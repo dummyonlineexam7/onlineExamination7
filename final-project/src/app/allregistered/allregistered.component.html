@@ -1,0 +1,25 @@
+<div>
+    <input type="button" value="get details" (click)="allRegistered()">
+    <div *ngIf="flag">
+        <table border=1>
+         <tr>
+             <th>FirstName</th>
+             <th>LastName</th>
+             <th>Gender</th>
+             <th>Age</th>
+             <th>Phn-Number</th>
+             <th>Email</th>
+            
+         </tr>
+         <tr *ngFor="let reg of registeredInfo">
+             <td>{{reg.firstname}}</td>
+             <td>{{reg.lastname}}</td>
+             <td>{{reg.gender}}</td>
+             <td>{{reg.age}}</td>
+             <td>{{reg.phnnumber}}</td>
+             <td>{{reg.email}}</td>
+         </tr>
+     
+        </table>
+     </div>
+</div>
