@@ -26,6 +26,10 @@ public List<Student> getStudents()
 
 public Optional<Login> getStudentPersonalDetails(String email)
 {
+	if(email.matches("admin@gmail.com"))
+	{
+		return Optional.empty();
+	}
 	return lsr.findById(email);
 }
 
@@ -92,8 +96,13 @@ public String updateStudent(Student s)
 public String updateStudentProfile(Login l)
 {
 	
+		
+	
 	if(lsr.existsById(l.getEmail()))
 	{
+		if(l.getEmail().matches("admin@gmail.com")){
+			return "Access Not Granted";
+		}
 		Login ll=lsr.getOne(l.getEmail());
 		ll.setFirstname(l.getFirstname());
 		ll.setLastname(l.getLastname());

@@ -19,6 +19,7 @@ export class QuestionDisplayComponent implements OnInit {
   displayAllQuestions():void{
     this.flag=true;
     this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
+   // console.log(this.questionInfo)
   }
     
   }

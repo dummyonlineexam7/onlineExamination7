@@ -18,6 +18,7 @@ export class StudentDisplayComponent implements OnInit {
   loadStudentData():void{
     this.flag=true;
     this.obj.loadStudentDisplay().subscribe(data=>this.studentInfo=data);
+    console.log(this.studentInfo)
   }
 
 }

@@ -16,4 +16,8 @@ export class LoginService {
   signUpService(signUpRef:any):Observable<string>{
     return this.http.post("http://localhost:9090/signup",signUpRef,{responseType:"text"})
   }
+
+  allRegisteredDetails():Observable<Login[]>{
+    return this.http.get<Login[]>("http://localhost:9090/allregistered")
+  }
 }
