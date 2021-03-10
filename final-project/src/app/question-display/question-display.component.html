@@ -1,9 +1,9 @@
-<div>
+<div id="div1">
 
-    <h2>Questions Details</h2>
-    <input type="button" value="ShowQuestions" (click)="displayAllQuestions()">
-   <div *ngIf="flag" >
-    <table border=1>
+    <div id="div2"><h2>Questions Details</h2></div>
+    <input type="button" value="ShowQuestions" id="btn1" class="btn btn-warning" (click)="displayAllQuestions()">
+   <div *ngIf="flag" id="div3">
+    <table border=1 id="tablediv">
         <tr>
           <th>QuestionsId</th>
           <th>Question</th>

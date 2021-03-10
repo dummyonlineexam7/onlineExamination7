@@ -1,0 +1,22 @@
+#tablediv{
+    float: left;
+   width: 100%;
+}
+#div1{
+    background-color:cornsilk;
+    width: 50%;
+    height: 140px;
+    margin-left: 25%;
+}
+#div2{
+    background-color:deepskyblue;
+    height: 60px;
+}
+#div3{
+    margin-left: 0%;
+    width: 100%;
+}
+#btn1{
+    margin-top: 20px;
+    width: 150px;
+}

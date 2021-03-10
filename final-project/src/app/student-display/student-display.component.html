@@ -1,8 +1,10 @@
-<div>
-    <h2>All Student Details</h2>
-    <input type="button" value="get students" (click)="loadStudentData()">
-        <div *ngIf="flag">
-   <table border=1>
+
+
+<div id="div1">
+    <h2 id="div2">All Student Details</h2>
+    <input type="button" value="get students" id="btn1" class="btn btn-warning" (click)="loadStudentData()">
+    <div *ngIf="flag">
+   <table border=1 id="tablediv">
     <tr>
         <th>Sid</th>
         <th>name</th>

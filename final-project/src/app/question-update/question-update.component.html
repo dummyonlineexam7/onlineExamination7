@@ -1,12 +1,12 @@
-<div>
-    <h2>UpdateQuestion</h2>
+<div  id="div1">
+    <div id="div2"><h2>UpdateQuestion</h2></div>
     <form #questionInfo="ngForm" (ngSubmit)="updateQuestionInfo(questionInfo.value)">
-        <label>QuestionId</label>
-        <input type="number" name="qid" ngModel><br>
-        <label>Question</label>
-        <input type="text" name="question" ngModel><br>
-        <input type="submit" value="updateQuestion" class="btn btn-success">
-        <input type="reset" value="reset"><br>
+        <label id="label1">QuestionId</label>
+        <input type="number" id="input1" name="qid" ngModel><br>
+        <label id="label2">Question</label>
+        <input type="text" id="input2" name="question" ngModel><br>
+        <input type="submit" value="updateQuestion" id="btn1" class="btn btn-warning" class="btn btn-success">
+        <input type="reset" value="reset"  id="btn1" class="btn btn-warning"><br>
         </form>
         {{msg}}
 </div>

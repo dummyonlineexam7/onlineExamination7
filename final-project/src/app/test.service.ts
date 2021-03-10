@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { passstudent } from './pass-student.module';
+import { PassStudent } from './pass-student.module';
+
 import { TestDetails } from './test-module';
 
 @Injectable({
@@ -29,9 +30,15 @@ export class TestService {
     return this.httpClient.delete("http://localhost:9090/test/deletetest/"+testid,{responseType:"text"})
   }
 
-  loadPassedStudentDetails(sname:any):Observable<passstudent[]>{
-    return this.httpClient.get<passstudent[]>("http://localhost:9090/test/passedStudentList/"+sname);
+  loadPassedStudentDetails(passedRef:any):Observable<PassStudent[]>{
+    console.log(passedRef.sname)
+    console.log(passedRef.level)
+    return this.httpClient.get<PassStudent[]>("http://localhost:9090/test/passedStudentList/"+passedRef.sname+"/"+passedRef.level);
   }
 
-
+  loadFailedStudentDetails(failedRef:any):Observable<PassStudent[]>{
+    console.log(failedRef.sname)
+    console.log(failedRef.level)
+    return this.httpClient.get<PassStudent[]>("http://localhost:9090/test/failedStudentList/"+failedRef.sname+"/"+failedRef.level);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { passstudent } from '../pass-student.module';
-import { TestDetails } from '../test-module';
+import { FormControl, FormGroup } from '@angular/forms';
+import { PassStudent } from '../pass-student.module';
 import { TestService } from '../test.service';
 
 @Component({
@@ -9,30 +9,47 @@ import { TestService } from '../test.service';
   styleUrls: ['./test-passed-student.component.css']
 })
 export class TestPassedStudentComponent implements OnInit {
-  passedDetailsInfo:Array<passstudent>=[]
+  passedInfo = new FormGroup({
+    sname:new FormControl(),
+    level:new FormControl()
+  });
+
+  passedDetailsInfo:Array<PassStudent>=[]
   passedDetailsInfo1:string=""
-  //Info:Array<passstudent>=[]
   flag:boolean=false
+  a:number=1
   constructor(public testsur:TestService) { }
 
   ngOnInit(): void {
-  }
-
-  loadPassedSubjectData(sname:any){
-    
-    this.testsur.loadPassedStudentDetails(sname).subscribe(data=>{
+   /*    this.route.paramMap.subscribe(params=>{
+      this.sname=params.get('sname.value');
+    this.testsur.loadPassedStudentDetails(this.sname).subscribe(data=>{
       if(data!=null)
       {
         this.flag=true;
-       // this.passedDetailsInfo1=JSON.stringify(data)
-        this.passedDetailsInfo1=JSON.stringify(data)
-    console.log(this.passedDetailsInfo1)
-      
-    this.passedDetailsInfo=JSON.parse(this.passedDetailsInfo1)
-    console.log(this.passedDetailsInfo)
+        this.passedDetailsInfo=data;
       }
-    //this.passedDetailsInfo=data
   })
+  })
+}*/
+  }
+
+  loadPassedSubjectData(){
+    let passedRef=this.passedInfo.value;
+    console.log(passedRef.sname)
+    console.log(passedRef.level)
+    this.testsur.loadPassedStudentDetails(passedRef).subscribe(data=>{
+      if(data!=null)
+      {
+        this.flag=true;
+        this.passedDetailsInfo=data;
+      this.a=0;
+      }
+  })
+  console.log(this.passedDetailsInfo.length)
 }
+//this.passedDetailsInfo=null
+
+
 
 }

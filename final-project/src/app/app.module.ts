@@ -42,6 +42,8 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { QuestionComponent } from './question/question.component';
 import { SubjectComponent } from './subject/subject.component';
 import { TakeTestComponent } from './take-test/take-test.component';
+import { TestcomComponent } from './testcom/testcom.component';
+import { AllregisteredComponent } from './allregistered/allregistered.component';
 
 
 
@@ -89,7 +91,11 @@ import { TakeTestComponent } from './take-test/take-test.component';
     QuestionComponent,
 
     SubjectComponent,
-    TakeTestComponent
+    TakeTestComponent,
+
+    TestcomComponent,
+
+    AllregisteredComponent
 
 
 
