@@ -1,23 +1,23 @@
 <div id="div1">
     <div id="div2"><h2>Store Questions</h2></div>
     <form [formGroup]="questionInfo" (ngSubmit)="storeQuestionDetails()">
-        <label id="label1">Question Id</label>
+        <label id="label1">Question Id:</label>
         <input type="number" id="input1" formControlName="qid"><br>
-        <label id="label2">Question</label>
+        <label id="label2">Question:</label>
         <input type="text"  id="input2" formControlName="question"><br>
-        <label id="label3">OptionA</label>
+        <label id="label3">OptionA:</label>
         <input type="text"  id="input3" formControlName="optionA"><br>
-        <label id="label4">OptionB</label>
+        <label id="label4">OptionB:</label>
         <input type="text"  id="input4" formControlName="optionB"><br>
-        <label id="label5">OptionC</label>
+        <label id="label5">OptionC:</label>
         <input type="text"  id="input5" formControlName="optionC"><br>
-        <label id="label6">OptionD</label>
+        <label id="label6">OptionD:</label>
         <input type="text" id="input6" formControlName="optionD"><br>
-        <label id="label7">Answer</label>
+        <label id="label7">Answer:</label>
         <input type="text"  id="input7" formControlName="answer"><br>
-        <label id="label8">SubjectId</label>
+        <label id="label8">SubjectId:</label>
         <input type="number"  id="input8" formControlName="sid"><br>
-        <input type="submit"  id="btn1" class="btn btn-warning" value="storeQuestionDetails">
+        <input type="submit"  id="btn1" class="btn btn-warning" value="store">
         <input type="reset" id="btn1" class="btn btn-warning" value="reset">
     </form>
     {{msg}}

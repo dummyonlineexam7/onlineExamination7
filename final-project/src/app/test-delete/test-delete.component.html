@@ -1,8 +1,8 @@
-<div>
-    <h2>Delete Record</h2>
-    <label>Test Id</label>
-    <input type="number" #testid><br/>
-    <input type="button" value="Delete Record" (click)="deleteTestData(testid.value)"><br/>
+<div id="div1">
+    <div id="div2"><h4>Delete Record</h4></div>
+    <label id="label1">Test Id:</label>
+    <input type="number" id="input1" #testid><br/>
+    <input type="button" value="Delete Record" id="btn1" (click)="deleteTestData(testid.value)" class="btn btn-warning"><br/>
     {{msg}}
 </div>
 
