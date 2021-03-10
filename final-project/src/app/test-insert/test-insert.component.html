@@ -1,26 +1,27 @@
-<div>
-    <h3>Insert Test Details</h3>
+<div id="div1">
+    <div id="div2"><h4>Insert Test Details</h4></div>
+
     <form [formGroup]="testInfo" (ngSubmit)="storeTestDetails()">
-        <label>TestId:</label>
-        <input type="number" formControlName="testid"><br/>
+        <label id="level1">TestId:</label>
+        <input type="number" id="input1" formControlName="testid"><br/>
   
-        <label>Score:</label>
-        <input type="number" formControlName="score"><br/>
+        <label id="level2">Score:</label>
+        <input type="number" id="input2" formControlName="score"><br/>
 
-        <label>SubjectId:</label>
-        <input type="number" formControlName="sid"><br/>
+        <label id="level3">SubjectId:</label>
+        <input type="number" id="input3" formControlName="sid"><br/>
 
-        <label>StudentId:</label>
-        <input type="number" formControlName="stuid"><br/>
+        <label id="level4">StudentId:</label>
+        <input type="number" id="input4" formControlName="stuid"><br/>
 
-        <label>QuestionId:</label>
-        <input type="number" formControlName="qid"><br/>
+        <label id="level5">QuestionId:</label>
+        <input type="number" id="input5" formControlName="qid"><br/>
 
-        <label>Status:</label>
-        <input type="text" formControlName="status"><br/>
+        <label id="level6">Status:</label>
+        <input type="text" id="input6" formControlName="status"><br/>
 
-        <input type="submit" value="Insert">
-        <input type="reset" value="reset">
+        <input type="submit" value="Insert" id="btn1" class="btn btn-warning">
+        <input type="reset" value="reset" id="btn1" class="btn btn-warning">
     </form>
     {{msg}}
 </div>
