@@ -11,7 +11,7 @@
     <div *ngIf="flag">
         <ul id="ul">
             <li>{{QuestionInfo[i]?.question}}</li>
-            <li><input type="radio" name="option" value="{{QuestionInfo[i]?.optionA}}" [(ngModel)]="myRadio" (click)="check()">{{ QuestionInfo[i]?.optionA}}</li>
+            <li><input type="radio" name="option" value="{{QuestionInfo[i]?.optionA}}" [(ngModel)]="myRadio" (click)="check()"></li><li>{{ QuestionInfo[i]?.optionA}}</li>
             <li><input type="radio" name="option" (click)="check()">{{ QuestionInfo[i]?.optionB}}</li>
             <li><input type="radio" name="option" (click)="check()">{{ QuestionInfo[i]?.optionC}}</li>
             <li><input type="radio" name="option" (click)="check()">{{ QuestionInfo[i]?.optionD}}</li>

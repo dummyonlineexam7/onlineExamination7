@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bean.Question;
 import com.bean.Student;
+import com.bean.Taketest;
 import com.repository.QuestionRepository;
 import com.repository.Subjectrepository;
 import com.repository.TableJoinDao;
@@ -71,7 +72,7 @@ public class QuestionService {
 		}
 	}
 	
-	public List<Question> getQuestionBasedOnLevel(String sname, String level)
+	public List<Taketest> getQuestionBasedOnLevel(String sname, String level)
 	{
 		return tjd.getQuestionBasedOnLevel(sname, level);
 	}
