@@ -89,7 +89,7 @@ public class TableJoinDao {
 	
 	List<Taketest> list11=new ArrayList<>();
 	public List<Taketest> getQuestionBasedOnLevel(String sname, String level){
-		list1.clear();
+		list11.clear();
 		EntityManager manager=emf.createEntityManager();
 		
 		Query qry=manager.createNativeQuery("select question,optionA,optionB,optionC,optionD,answer from question where sid=(select sid from subject where sname=? and level=?)");

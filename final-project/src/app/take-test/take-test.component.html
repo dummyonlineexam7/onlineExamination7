@@ -1,21 +1,21 @@
 <div>
     <h4>Take Test</h4>
-    <form #testRef="ngForm" (ngSubmit)="TakeTestData(testRef.value)">
-    <label>Subject:</label>
-    <input type="text" name="sname" ngModel>
+    <form [formGroup]="testRef" (ngSubmit)="Test()">
+    <!-- <label>Subject:</label>
+    <input type="text" formControlName="sname">
     <label>Level:</label>
-    <input type="text" name="level" ngModel>
+    <input type="text" formControlName="level">
 
-    <input type="submit" value="Take Test">
+    <input type="submit" value="Take Test"> -->
     
     <div *ngIf="flag">
         <ul id="ul">
             <li>{{QuestionInfo[i]?.question}}</li>
-            <li><input type="radio" name="option" value="{{QuestionInfo[i]?.optionA}}" [(ngModel)]="myRadio" (click)="check()"></li><li>{{ QuestionInfo[i]?.optionA}}</li>
-            <li><input type="radio" name="option" (click)="check()">{{ QuestionInfo[i]?.optionB}}</li>
-            <li><input type="radio" name="option" (click)="check()">{{ QuestionInfo[i]?.optionC}}</li>
-            <li><input type="radio" name="option" (click)="check()">{{ QuestionInfo[i]?.optionD}}</li>
-            <input type="submit" value="Previous" name="previous" id="previous" (click)="previousquestion()" [disabled]="i==0">&nbsp;
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionA}}" >{{QuestionInfo[i]?.optionA}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionB}}" >{{QuestionInfo[i]?.optionB}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionC}}" >{{QuestionInfo[i]?.optionC}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionD}}" >{{QuestionInfo[i]?.optionD}}</li>
+            <input type="button" value="Previous" name="previous" id="previous" (click)="previousquestion()" [disabled]="i==0">&nbsp;
             <input type="submit" value="Next" name="next" id="next" (click)="nextquestion()" [disabled]="i==QuestionInfo.length-1">
         </ul>
         

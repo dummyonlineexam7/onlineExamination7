@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Question } from '../question-module';
 import { questionService } from '../question-service';
 
@@ -9,40 +10,35 @@ import { questionService } from '../question-service';
 })
 export class TakeTestComponent implements OnInit {
 
-  QuestionInfo:Array<any>=[];
+  Question:Array<any>=[];
   flag:boolean=false
   i:number=0
   myRadio:string=""
-
+  testRef=new FormGroup({
+    sname:new FormControl(),
+    level:new FormControl(),
+  })
+   name:any
+  
   msg:string="You are already in last question"
   constructor(public taketestSur:questionService) { }
 
   ngOnInit(): void {
+    let obj1=sessionStorage.getItem("obj")
+    if(obj1!=null){
+    this.Question=obj1;
+    } 
   }
-
-  TakeTestData(testRef:any){
-    this.flag=true
-    this.taketestSur.getQuestionsBylevelandSubject(testRef).subscribe(data=>{
-      if(data!=null){
-        this.flag=true;
-        this.QuestionInfo=data;
-        //console.log(this.QuestionInfo=Array.from(Object.keys(data),k=>data));
-        //console.log(this.QuestionInfo[this.i]?.answer)
-      }
-
-    });
-
-  }
+  
+  
   nextquestion(){
-   this.i++;
+    console.log(this.name.option)
+     this.i++;
   }
   previousquestion(){
     this.i--;
   }
-  check(){
-   // this.selectedanswer=document.getElementsByName('option');
-    console.log(this.myRadio)
-  }
+  
   calculatemarks(){
     //this.selectedanswer=document.getElementsByName('option');
   }

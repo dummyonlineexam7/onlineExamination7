@@ -36,6 +36,7 @@ import { StudentPersonalDetailsComponent } from './student-personal-details/stud
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { TestFailedStudentComponent } from './test-failed-student/test-failed-student.component';
 import { TakeTestComponent } from './take-test/take-test.component';
+import { TestStartComponent } from './test-start/test-start.component';
 
 const routes: Routes = [
 
@@ -79,10 +80,13 @@ const routes: Routes = [
 {path:"\studentdasboard",component:StudentDashboardComponent,canActivate:[MyGaurds],children:[
  {path:"profile",component:StudentPersonalDetailsComponent},
  {path:"update",component:UpdateProfileComponent},
-  {path:"\TakeTest",component:TakeTestComponent}
+  {path:"TakeTest",component:TestStartComponent,children:[
+    {path:"\Test",component:TakeTestComponent}
+  ]}
   ]},
+
   
-  {path:"\TakeTest",component:TakeTestComponent}
+  {path:"\Test",component:TakeTestComponent}
   
 
 ]
