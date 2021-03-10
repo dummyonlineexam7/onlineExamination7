@@ -1,9 +1,10 @@
 <div id="div1">
-        <h2 id="div2">Update Profile Page</h2>
-        
+     <div id="div2">   <h2 >Update Profile Page</h2></div>
+        <div id="tablediv">
         <form #loginInfo="ngForm" (ngSubmit)="updateProfile(loginInfo.value)">
-        <label id="label1">Firstname</label>
-        <input type="text" id="input1" name="firstname" ngModel><br>
+        <span> <label>Firstname</label></span>
+        <input type="text"  id="input1" name="firstname" ngModel><br>
+
 
         <label id="label2">Lastname</label>
         <input type="text" id="input2" name="lastname" ngModel><br>
@@ -24,8 +25,10 @@
         <label id="label7">Password</label>
         <input type="password" id="input8" name="password" ngModel><br>
         
-        <input type="submit" value="Update-Profile" class="btn btn-success">
+        <input type="submit" value="Update-Profile" class="btn btn-success"  id="btn1">
         <input type="reset" value="reset"><br>
         </form>
+
+        </div>
         {{msg}}
 </div>    

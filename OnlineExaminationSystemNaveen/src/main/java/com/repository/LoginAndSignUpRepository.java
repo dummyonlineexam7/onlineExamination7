@@ -11,6 +11,5 @@ import com.bean.Login;
 
 public interface LoginAndSignUpRepository extends JpaRepository<Login, String> {
 
-	@Query(value = "SELECT firstname,lastname,gender,age,phnnumber FROM Login l")
-	List<Login> registeredDetails();
+	
 }

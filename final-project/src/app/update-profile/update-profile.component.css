@@ -1,7 +1,15 @@
+
 #div1{
     background-color:cornsilk;
     width: 40%;
     height: 500px;
+     margin-left: 205px;
+    margin-top: 50px;
+}
+#div1{
+    background-color:cornsilk;
+    width: 40%;
+    height: 140px;
     margin-left: 30%;
 }
 #div2{
@@ -40,5 +48,7 @@
 }
 #label3,#label4,#label5,#label6,#label7{
     margin-left: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
+    width: 150px;
 }
+
