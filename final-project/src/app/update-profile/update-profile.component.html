@@ -1,28 +1,28 @@
-<div>
-        <h2>Update Profile Page</h2>
+<div id="div1">
+        <h2 id="div2">Update Profile Page</h2>
         
         <form #loginInfo="ngForm" (ngSubmit)="updateProfile(loginInfo.value)">
-        <label>Firstname</label>
-        <input type="text" name="firstname" ngModel><br>
+        <label id="label1">Firstname</label>
+        <input type="text" id="input1" name="firstname" ngModel><br>
 
-        <label>Lastname</label>
-        <input type="text" name="lastname" ngModel><br>
+        <label id="label2">Lastname</label>
+        <input type="text" id="input2" name="lastname" ngModel><br>
 
-        <label>Gender</label>
-        <input type="radio" name="gender" value="Male" ngModel>Male
-        <input type="radio" name="gender" value="Female" ngModel>Female<br>
+        <label id="label3">Gender</label>
+        <input type="radio" id="input3" name="gender" value="Male" ngModel>Male
+        <input type="radio" id="input4" name="gender" value="Female" ngModel>Female<br>
 
-        <label>age</label>
-        <input type="number" name="age" ngModel><br>
+        <label id="label4">age</label>
+        <input type="number" id="input5" name="age" ngModel><br>
 
-        <label>Phn-Number</label>
-        <input type="number" name="phnnumber" ngModel><br>
+        <label id="label5">Phn-Number</label>
+        <input type="number" id="input6" name="phnnumber" ngModel><br>
 
-        <label>Email</label>
-        <input type="text" name="email" ngModel><br>
+        <label id="label6">Email</label>
+        <input type="text" id="input7" name="email" ngModel><br>
 
-        <label>Password</label>
-        <input type="password" name="password" ngModel><br>
+        <label id="label7">Password</label>
+        <input type="password" id="input8" name="password" ngModel><br>
         
         <input type="submit" value="Update-Profile" class="btn btn-success">
         <input type="reset" value="reset"><br>
