@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Question;
+import com.bean.Taketest;
 import com.service.QuestionService;
 
 import io.swagger.annotations.Api;
@@ -55,9 +56,9 @@ public class QuestionController {
 	}
 	
 	@GetMapping(value="getQuestionBylevel/{sname}/{level}")
-	public ResponseEntity<List<Question>> getQuestionByLevel(@ApiParam(value = "send subject name and level") @PathVariable("sname") String sname,@PathVariable("level") String level)
+	public ResponseEntity<List<Taketest>> getQuestionByLevel(@ApiParam(value = "send subject name") @PathVariable("sname") String sname,@PathVariable("level") String level)
 	{
-		List<Question> list=qs.getQuestionBasedOnLevel(sname,level);
+		List<Taketest> list=(List<Taketest>) qs.getQuestionBasedOnLevel(sname,level);
 		return ResponseEntity.status(200).body(list);
 	}
 	
