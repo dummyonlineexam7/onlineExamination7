@@ -1,14 +1,17 @@
 <div>
     <h4>Take Test</h4>
-    <form [formGroup]="testRef" (ngSubmit)="Test()">
+   
     <!-- <label>Subject:</label>
     <input type="text" formControlName="sname">
     <label>Level:</label>
     <input type="text" formControlName="level">
 
     <input type="submit" value="Take Test"> -->
-    
-    <div *ngIf="flag">
+    <form [formGroup]="testRef" (ngSubmit)="Test()">
+        <input type="submit" value="Start Test">
+    </form>
+    <form [formGroup]="testRef" (ngSubmit)="nextquestion()">
+         <div *ngIf="flag">
         <ul id="ul">
             <li>{{QuestionInfo[i]?.question}}</li>
             <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionA}}" >{{QuestionInfo[i]?.optionA}}</li>
@@ -16,15 +19,17 @@
             <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionC}}" >{{QuestionInfo[i]?.optionC}}</li>
             <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionD}}" >{{QuestionInfo[i]?.optionD}}</li>
             <input type="button" value="Previous" name="previous" id="previous" (click)="previousquestion()" [disabled]="i==0">&nbsp;
-            <input type="submit" value="Next" name="next" id="next" (click)="nextquestion()" [disabled]="i==QuestionInfo.length-1">
+            <input type="submit" value="Next" name="next" id="next"  [disabled]="i==QuestionInfo.length-1">
         </ul>
         
-    </div>  
+         </div> 
+        </form>    
 
-    </form>
-
-    <span *ngIf="i==QuestionInfo.length-1">{{msg}}</span><br/>
-    <input type="Submit" value="submit" [disabled]="i!=QuestionInfo.length-1" (click)="calculatemarks()">
-
+        <span *ngIf="i==QuestionInfo.length-1">{{msg}}</span><br/>
+   
+        <form [formGroup]="testRef" (ngSubmit)="nextquestion()">
+   
+    <input type="Submit" value="submit" [disabled]="i!=QuestionInfo.length-1" >
+        </form>
 </div>
 

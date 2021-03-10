@@ -44,6 +44,7 @@ import { SubjectComponent } from './subject/subject.component';
 import { TakeTestComponent } from './take-test/take-test.component';
 import { TestcomComponent } from './testcom/testcom.component';
 import { AllregisteredComponent } from './allregistered/allregistered.component';
+import { TestStartComponent } from './test-start/test-start.component';
 
 
 
@@ -86,7 +87,7 @@ import { AllregisteredComponent } from './allregistered/allregistered.component'
     StudentComponent,
     StudentDashboardComponent,
 
-    SignupComponent,
+    
 
     QuestionComponent,
 
@@ -95,7 +96,8 @@ import { AllregisteredComponent } from './allregistered/allregistered.component'
 
     TestcomComponent,
 
-    AllregisteredComponent
+    AllregisteredComponent,
+    TestStartComponent
 
 
 

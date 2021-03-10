@@ -1,10 +1,10 @@
 <div>
-<form [formGroup]="testRef" (ngSubmit)="TakeTestData()">
-    <label>Subject:</label>
-    <input type="text" formControlName="sname">
-    <label>Level:</label>
-    <input type="text" formControlName="level">
 
-    <input type="submit" value="Take Test">
+<form #testRef1="ngForm" (ngSubmit)="TakeTestData(testRef1.value)">
+    <label>Subject:</label>
+    <input type="text" name="sname" ngModel>
+    <label>Level:</label>
+    <input type="text" name="level" ngModel>
+    <input type="submit" value="TakeTest">
 </form>
 </div>

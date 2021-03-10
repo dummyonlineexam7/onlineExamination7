@@ -21,8 +21,8 @@ export class questionService{
         return this.http.delete("http://localhost:9090/question/deleteQuestion/"+qid,{responseType:"text"})
     }
 
-    getQuestionsBylevelandSubject(questionref:any):Observable<Question[]>{
-        console.log(questionref)
-        return this.http.get<Question[]>("http://localhost:9090/question/getQuestionBylevel/"+questionref.sname+"/"+questionref.level);
+    getQuestionsBylevelandSubject(sname:string,level:string):Observable<Question[]>{
+     console.log(sname ,level)
+        return this.http.get<Question[]>("http://localhost:9090/question/getQuestionBylevel/"+sname+"/"+level);
     }
 }
