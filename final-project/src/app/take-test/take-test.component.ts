@@ -10,37 +10,74 @@ import { questionService } from '../question-service';
 })
 export class TakeTestComponent implements OnInit {
 
-  Question:Array<any>=[];
+  QuestionInfo:Array<any>=[];
   flag:boolean=false
   i:number=0
-  myRadio:string=""
+  count:number=0
   testRef=new FormGroup({
-    sname:new FormControl(),
-    level:new FormControl(),
+    option:new FormControl()
   })
-   name:any
-  
+   name:any;
+  sname:string=""
+  level:string=""
+  ques:Array<Question>=[]
   msg:string="You are already in last question"
   constructor(public taketestSur:questionService) { }
 
   ngOnInit(): void {
-    let obj1=sessionStorage.getItem("obj")
-    if(obj1!=null){
-    this.Question=obj1;
+    
+     let a=sessionStorage.getItem("obj")
+     let b=sessionStorage.getItem("obj1")
+    if(a!=null && b!=null){
+    this.sname=a;
+    this.level=b;
+    console.log(this.sname)
+    console.log(this.level)
+
     } 
+   
   }
   
+  Test(){
+    
+    this.QuestionInfo.length=0
+    this.flag=true
+    this.taketestSur.getQuestionsBylevelandSubject(this.sname,this.level).subscribe(data=>{
+      if(data!=null){
+        this.flag=true;
+        this.QuestionInfo=data;
+        this.ques=this.QuestionInfo
+       
+       // console.log(this.QuestionInfo.ans)
+        //console.log(this.QuestionInfo[this.i]?.answer)
+      }
+
+    });
+   // console.log(this.name.option)
+  }
   
   nextquestion(){
-    console.log(this.name.option)
+    this.name=this.testRef.value
+    console.log("iterator value",this.i)
+    //console.log(this.name.option)
+    
+    if(this.name.option==this.ques[this.i].answer)
+    {
+     
+      this.count++;
+      if(this.i==this.QuestionInfo.length-1)
+      {
+        console.log("score is",this.count)
+      }
+      
+    }
      this.i++;
+     //console.log(this.i)
   }
   previousquestion(){
     this.i--;
   }
   
-  calculatemarks(){
-    //this.selectedanswer=document.getElementsByName('option');
-  }
+  
 
 }
