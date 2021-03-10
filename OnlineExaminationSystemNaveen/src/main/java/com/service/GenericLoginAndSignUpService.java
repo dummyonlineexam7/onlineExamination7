@@ -82,6 +82,6 @@ public class GenericLoginAndSignUpService{
 	
 	public List<Login> registeredDetails()
 	{
-		return lsd.getAllRegisteredDetails();
+		return ls.findAll();
 	}
 }
