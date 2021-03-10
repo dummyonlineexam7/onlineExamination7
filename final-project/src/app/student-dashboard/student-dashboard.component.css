@@ -27,7 +27,10 @@ body{
  
  }
  .navbar ul li {
-  float: left;
+  float: right;
+ }
+ .navbar ul .rt{
+   float: left;
  }
  .navbar ul #li{
     float:right;

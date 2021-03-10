@@ -1,8 +1,8 @@
-<div>
-    <h2>Profile Details</h2>
-    <label>Email</label>
-    <input type="text" #email><br>
-    <input type="button" value="Get-Profile" (click)="profileDetails(email.value)"><br>
+<div id="div1">
+    <h2 id="div2">Profile Details</h2>
+    <label id="label1">Email</label>
+    <input type="text" id="input1" #email><br>
+    <input type="button" id="input2" value="Get-Profile" (click)="profileDetails(email.value)"><br>
     <div *ngIf="flag">
         FirstName       :       {{profileInfo.firstname}}<br>
         LastName        :       {{profileInfo.lastname}}<br>
