@@ -36,7 +36,7 @@ public class LoginAndSignUpDao {
 	public List<Login> getAllRegisteredDetails()
 	{
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select firstname,lastname,gender,age,phnnumber,email from login");
+		Query qry=manager.createQuery("select * from Login");
 		return qry.getResultList();
 	}
 }

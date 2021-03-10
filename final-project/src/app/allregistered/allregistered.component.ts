@@ -17,7 +17,11 @@ export class AllregisteredComponent implements OnInit {
 
   allRegistered():void{
     this.flag=true
-    this.loginser.allRegisteredDetails().subscribe(data=>this.registeredInfo=data)
+    this.loginser.allRegisteredDetails().subscribe(data=>{
+      if(data!=null)
+      {this.registeredInfo=data}
+      console.log(this.registeredInfo)
+    })
    
    // this.registeredInfo=data
   }
