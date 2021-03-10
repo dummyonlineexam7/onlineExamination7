@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bean.PassedStudent;
 import com.bean.Question;
+import com.bean.Taketest;
 import com.bean.TestDetails;
 
 @Repository
@@ -86,13 +87,31 @@ public class TableJoinDao {
 		return list;
 	}
 	
-	public List<Question> getQuestionBasedOnLevel(String sname, String level){
+	List<Taketest> list11=new ArrayList<>();
+	public List<Taketest> getQuestionBasedOnLevel(String sname, String level){
+		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select question from question where sid=(select sid from subject where sname=? and level=?)");
+		
+		Query qry=manager.createNativeQuery("select question,optionA,optionB,optionC,optionD,answer from question where sid=(select sid from subject where sname=? and level=?)");
 		qry.setParameter(1, sname);
 		qry.setParameter(2, level);
-		List<Question> list=qry.getResultList();
-		return list;
+		List<?> list=qry.getResultList();
+		
+		Iterator<?> it=list.iterator();
+		while(it.hasNext()) {
+			Object obj[]=(Object[])it.next();
+			
+			Taketest tt= new Taketest();
+			
+			tt.setQuestion((String)obj[0]);
+			tt.setOptionA((String)obj[1]);
+			tt.setOptionB((String)obj[2]);
+			tt.setOptionC((String)obj[3]);
+			tt.setOptionD((String)obj[4]);
+			tt.setAnswer((String)obj[5]);
+			list11.add(tt);
+		}
+		return list11;
 	}
 	
 	public List<Question> getNoOfQuestionByLevel(String sname, String level) {
