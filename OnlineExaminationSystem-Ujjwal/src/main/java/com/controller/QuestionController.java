@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Question;
+import com.bean.Taketest;
 import com.service.QuestionService;
 
 import io.swagger.annotations.Api;
@@ -24,6 +26,7 @@ import io.swagger.annotations.ApiParam;
 @RestController
 @RequestMapping(value="question")
 @Api(value= "Question Resource Details")
+@CrossOrigin
 public class QuestionController {
 
 	@Autowired
@@ -50,9 +53,9 @@ public class QuestionController {
 	}
 	
 	@GetMapping(value="getQuestionBylevel/{sname}/{level}")
-	public ResponseEntity<List<Question>> getQuestionByLevel(@ApiParam(value = "send subject name and level") @PathVariable("sname") String sname,@PathVariable("level") String level)
+	public ResponseEntity<List<Taketest>> getQuestionByLevel(@ApiParam(value = "send subject name") @PathVariable("sname") String sname,@PathVariable("level") String level)
 	{
-		List<Question> list=qs.getQuestionBasedOnLevel(sname,level);
+		List<Taketest> list=(List<Taketest>) qs.getQuestionBasedOnLevel(sname,level);
 		return ResponseEntity.status(200).body(list);
 	}
 	
