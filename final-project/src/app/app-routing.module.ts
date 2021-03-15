@@ -43,6 +43,7 @@ const routes: Routes = [
 {path:"\login",component:LoginComponent,children:[
   {path:"\signup",component:SignupComponent}
 ]},
+{path:"\signup",component:SignupComponent},
 {path:"",redirectTo:"\login",pathMatch:"full"},
  // {path:"**",component:NocomponentComponent},
 {path:"\admindashboard",component:DashboardComponent,canActivate:[MyGaurds],children:[
