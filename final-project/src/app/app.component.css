@@ -16,7 +16,11 @@ h2{
     height: 100px;
     width: 29%;
     margin-left: 10px;
+
+    background-image: url("C:\Users\HP\Desktop\onlineimg.png");
+
     background-image: url("C:\Users\Abhayankar\Desktop\repositories\Project_Zensar\onlineExamination7\online.jpeg");
+
     background-size: 100% 100%;
 }
 #maindiv{
