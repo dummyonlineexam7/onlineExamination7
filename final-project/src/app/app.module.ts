@@ -45,6 +45,8 @@ import { TakeTestComponent } from './take-test/take-test.component';
 import { TestcomComponent } from './testcom/testcom.component';
 import { AllregisteredComponent } from './allregistered/allregistered.component';
 import { TestStartComponent } from './test-start/test-start.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 
@@ -97,7 +99,9 @@ import { TestStartComponent } from './test-start/test-start.component';
     TestcomComponent,
 
     AllregisteredComponent,
-    TestStartComponent
+    TestStartComponent,
+    AboutusComponent,
+    ContactusComponent
 
 
 
