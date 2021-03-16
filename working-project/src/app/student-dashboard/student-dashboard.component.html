@@ -1,0 +1,25 @@
+<div>
+    <h2>Student Dashboard</h2>
+    <h3>welcome {{username}}</h3>
+    <nav class="navbar">
+        <ul>
+            <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
+
+            <li><a routerLink="contact">ContactUs</a></li>
+            
+            <li><a routerLink="about">AboutUs</a> </li>
+
+            <li class="rt"><a routerLink="profile">Student Profile</a></li>
+            
+            <li class="rt"><a routerLink="update">Update Profile</a> </li>
+
+            <li class="rt"><a routerLink="TakeTest">Take-Test</a> </li>
+
+           
+
+        </ul>  
+ </nav>
+ <router-outlet></router-outlet>
+
+
+</div>

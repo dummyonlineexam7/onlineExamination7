@@ -1,0 +1,61 @@
+#div1{
+    background-color:cornsilk;
+    width: 40%;
+    height: 400px;
+    margin-left: 30%;
+}
+#div2{
+    background-color:deepskyblue;
+    height: 60px;
+}
+#btn1{
+    width: 110px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+#level2{
+    margin-left: 2px;
+}
+#level3{
+    margin-right: 9px;
+}
+#level4{
+    margin-left: 7px;
+}
+
+#level6{
+    margin-left: 22px;
+}
+
+
+
+#input1{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#input2{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#input3{
+    margin-right: 24px;
+    margin-top: 10px;  
+}
+#input4{
+    margin-right: 35px;
+    margin-top: 10px; 
+    margin-left: 10px;
+}
+#input5{
+    margin-right: 37px;
+    margin-top: 10px; 
+    margin-left: 10px;
+}
+#input6{
+    margin-right: 25px;
+    margin-top: 10px; 
+    margin-left: 10px;
+}
+

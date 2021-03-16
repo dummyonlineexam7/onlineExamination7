@@ -1,0 +1,26 @@
+<p id="p1"><marquee>Welcome to online Examination System</marquee></p>
+<div id="maindiv1">
+<div id="div1">
+    <h2>Login Page</h2>
+    <div>
+    <form [formGroup]="loginInfo" (ngSubmit)="checkUser()">
+    
+                <label id="label1">Email:</label>
+               <input type="text" id="input1" formControlName="email" ><br>
+               <label id="label2">Password:</label>
+                <input type="text" id="input2" formControlName="password" ><br>
+                <input type="submit" value="submit" id="log1" class="btn btn-warning">
+                <input type="reset" value="reset" id="log2" class="btn btn-warning">
+            
+    </form>
+
+    
+    
+    
+    <p id="p2">Not Registered? <a routerLink="/signup">signup</a></p><br>
+    {{msg}}
+</div>
+  
+
+</div>
+</div>

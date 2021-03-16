@@ -1,0 +1,102 @@
+#ul{
+    list-style-type: none;
+}
+#btn1{
+    width: 110px;
+    margin-top: 12px;
+    border-radius: 4px;
+    margin-left: 40px;
+}
+#previous{
+    width: 110px;
+    border-radius: 4px;
+}
+#next{
+    width: 110px;
+    border-radius: 4px;
+}
+#submit-test{
+    width: 110px;
+    border-radius: 4px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+#hr1{
+    margin-right: 40px;
+    border-top: 0.5px solid;
+}
+#div1{
+    background-color:deepskyblue;
+     width: 85%; 
+    height: 60px;
+    /* margin-left: 30%; */
+}
+#div2{
+    background-color:cornsilk;
+    width: 520px;
+    height: 400px;
+    /* margin-left: 30%; */
+}
+#leftdiv{
+    /* width: 28%; */
+    width: 330px;
+    height: 500px;
+    background-color:rgb(156, 223, 245);
+    float: left;
+}
+#middlediv{
+    width: 45%;
+    float: left;
+    margin-left: 50px;
+}
+ #rightdiv{
+    /* width: 10%; */
+    width: 370px;
+    height: 500px;
+    float:right; 
+    background-color:rgb(156, 223, 245);
+} 
+#timerdiv{
+    background-color: rgb(87, 173, 87);
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 115px;
+    font-family: Arial, sans-serif;
+    
+}
+#timerdiv span{
+    font-size: 2em;
+    margin: 0 3px 0 15px;
+}
+#q1_btn{
+    margin-left: 10px;
+}
+#q1_btn:hover{
+    cursor: pointer;
+}
+#q2_btn{
+    margin-left: 10px;
+}
+#q2_btn:hover{
+    cursor: pointer;
+}
+
+#q3_btn{
+    margin-left: 10px;
+}
+#q3_btn:hover{
+    cursor: pointer;
+}
+#q4_btn{
+    margin-left: 10px;
+}
+#q4_btn:hover{
+    cursor: pointer;
+} 
+
+h5{
+    text-align: left;
+    color:black;
+}

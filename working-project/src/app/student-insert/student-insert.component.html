@@ -1,0 +1,12 @@
+<div id="div1">
+    <h2 id="div2">insert student details</h2>
+    <form [formGroup]="studentInfo" (ngSubmit)="storeStudentDetails()">
+        <label id="label1">StudentId</label>
+        <input type="number" id="input1" formControlName="stuid"><br>
+        <label id="label2">Studentname</label>
+        <input type="text" id="input2" formControlName="name"><br>
+        <input type="submit"  id="btn1" class="btn btn-warning" value="storeStudentDetails">
+        <input type="reset"  id="btn1" class="btn btn-warning" value="reset">
+    </form>
+    {{msg}}
+</div>
