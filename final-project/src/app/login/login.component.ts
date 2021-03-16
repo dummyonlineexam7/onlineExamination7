@@ -9,7 +9,7 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-msg:string="Login Successfull"
+msg:string=""
 flag:boolean=false
   loginInfo=new FormGroup({
     email:new FormControl,
@@ -26,23 +26,27 @@ flag:boolean=false
       if(data=="Login Successfull")
       {
        // this.flag=true;
-       console.log(data)
-       console.log(loginRef.email)
+      // console.log(data)
+      // console.log(loginRef.email)
        sessionStorage.setItem("name",loginRef.email)
        if(loginRef.email=="admin@gmail.com")
       {
-        console.log(loginRef.email)
+        //console.log(loginRef.email)
         sessionStorage.setItem("name",loginRef.email)
         this.router.navigate(["admindashboard"])
         //this.router1.navigate(["admindashboard"])
        }
        else{
-        console.log(loginRef.email)
+       // console.log(loginRef.email)
         sessionStorage.setItem("name",loginRef.email)
         this.router.navigate(["studentdasboard"])
         
        }
        //this.router1.navigate(["admindashboard"])
+      }
+      else
+      {
+          this.msg=data;
       }
     });
    
