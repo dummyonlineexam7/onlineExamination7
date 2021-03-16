@@ -2,13 +2,19 @@
     <div id="div2"><h4>Update Subject Details</h4></div>
     <form #subjectRef="ngForm" (ngSubmit)="updateSubjectData(subjectRef.value)">
         <label id="label1">Subject Id:</label>
-        <input type="number" id="input1" name="sid" ngModel><br/>
+        <input type="number" id="input1" name="sid" [(ngModel)]="sid" ngModel disabled><br/>
 
         <label id="label2">Subject:</label>
-        <input type="text" id="input2" name="sname" ngModel><br/>
+        <input type="text" id="input2" name="sname" [(ngModel)]="sname" ngModel><br/>
+
+        <label id="label2">Level:</label>
+        <input type="text" id="input3" name="level" [(ngModel)]="level" ngModel><br/>
 
         <input type="submit" value="Update" id="btn1" class="btn btn-warning">
-        <input type="reset" value="reset" id="btn1" class="btn btn-warning"><br>
     </form>
-    {{msg}}
+    <div id="backbtn"> 
+        Back to previous page?<a (click)="goback()" id="clickhere">click here</a>
+    </div>
+    <p style="color: green;">{{msg}}</p>
+
 </div>
