@@ -37,6 +37,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { TestFailedStudentComponent } from './test-failed-student/test-failed-student.component';
 import { TakeTestComponent } from './take-test/take-test.component';
 import { TestStartComponent } from './test-start/test-start.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
 
@@ -83,7 +85,9 @@ const routes: Routes = [
  {path:"update",component:UpdateProfileComponent},
   {path:"TakeTest",component:TestStartComponent,children:[
     {path:"\Test",component:TakeTestComponent}
-  ]}
+  ]},
+  {path:"about",component:AboutusComponent},
+  {path:"contact",component:ContactusComponent}
   ]},
 
   
