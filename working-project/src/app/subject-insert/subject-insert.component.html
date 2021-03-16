@@ -1,0 +1,22 @@
+<div id="div1">
+    
+    <div id="div2"><h4>Insert Subject</h4></div>
+    
+    <form [formGroup]="subjectInfo" (ngSubmit)="storeSubjectDetails()">
+        <label id="label1">subject Id:</label>
+        <input type="number" id="input1" formControlName="sid"><br/>
+  
+        <label id="label2">subject Name:</label>
+        <input type="text" id="input2" formControlName="sname"><br/>
+
+        <label id="label3">Question Level:</label>
+        <input type="text" id="input3" formControlName="level"><br/>
+
+        <input type="submit" value="Insert" id="btn1" class="btn btn-warning">
+        <input type="reset" value="reset" id="btn1" class="btn btn-warning">
+    </form>
+    {{msg}}
+    
+</div>
+
+

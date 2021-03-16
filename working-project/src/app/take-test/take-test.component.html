@@ -1,0 +1,66 @@
+<div>
+<div id="leftdiv">
+    <h5>Questions:</h5>
+    <input type="submit" name="q1" id="q1_btn" value="1" (click)="GoToQuestion1()">
+    <input type="submit" name="q1" id="q2_btn" value="2" (click)="GoToQuestion2()">
+    <input type="submit" name="q1" id="q3_btn" value="3" (click)="GoToQuestion3()">
+    <input type="submit" name="q1" id="q4_btn" value="4" >
+
+    <input type="submit" name="q1" id="q1_btn" value="5">
+    <input type="submit" name="q1" id="q2_btn" value="6">
+    <input type="submit" name="q1" id="q3_btn" value="7">
+    <input type="submit" name="q1" id="q4_btn" value="8">
+
+</div>
+
+<div id="middlediv">
+    <!-- <h4>Take Test</h4> -->
+   
+    <!-- <label>Subject:</label>
+    <input type="text" formControlName="sname">
+    <label>Level:</label>
+    <input type="text" formControlName="level">
+
+    <input type="submit" value="Take Test"> -->
+    <div id="div1">
+    <form [formGroup]="testRef" (ngSubmit)="Test()">
+        <input type="submit" value="Start Test" id="btn1" class="btn btn-warning">
+    </form>
+    </div>
+    <form [formGroup]="testRef" (ngSubmit)="nextquestion()">
+         <div *ngIf="flag" id="div2">
+        <ul id="ul">
+            <li>{{QuestionInfo[i]?.question}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionA}}" >{{QuestionInfo[i]?.optionA}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionB}}" >{{QuestionInfo[i]?.optionB}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionC}}" >{{QuestionInfo[i]?.optionC}}</li>
+            <li><input type="radio" formControlName="option" value="{{QuestionInfo[i]?.optionD}}" >{{QuestionInfo[i]?.optionD}}</li>
+            <hr id="hr1">
+            <input type="button" value="Previous" name="previous" id="previous" (click)="previousquestion()" [disabled]="i==0" class="btn btn-warning">&nbsp;&nbsp;
+            <input type="submit" value="Next" name="next" id="next"  [disabled]="i==QuestionInfo.length-1" class="btn btn-warning">
+        </ul>
+        <form [formGroup]="testRef" (ngSubmit)="nextquestion()">
+            
+            <input type="Submit" value="submit Test" [disabled]="i!=QuestionInfo.length-1" class="btn btn-warning" id="submit-test" >
+            
+        </form>
+         </div> 
+        </form>    
+
+        <span *ngIf="i==QuestionInfo.length-1">{{msg}}</span><br/>
+   
+        <!-- <form [formGroup]="testRef" (ngSubmit)="nextquestion()">
+   
+    <input type="Submit" value="submit Test" [disabled]="i!=QuestionInfo.length-1" class="btn btn-warning" id="submit-test">
+        </form> -->
+</div>
+<div id="rightdiv">
+    <div id="timerdiv">
+        timer Part
+    </div>
+</div>
+
+</div>
+
+
+

@@ -1,0 +1,20 @@
+#div1{
+    background-color:cornsilk;
+    width: 40%;
+    height: 200px;
+    margin-left: 30%;
+}
+#div2{
+    background-color:deepskyblue;
+    height: 60px;
+}
+#input1{
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#input2{
+    width: 110px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
