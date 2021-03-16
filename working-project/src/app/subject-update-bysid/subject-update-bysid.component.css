@@ -1,7 +1,7 @@
 #div1{
     background-color:cornsilk;
     width: 40%;
-    height: 250px;
+    height: 300px;
     margin-left: 30%;
 }
 #div2{
@@ -31,4 +31,12 @@
 #label2{
     margin-left: 4px;
     margin-top: 10px;
+}
+
+#backbtn{
+    margin-top: 10px;
+}
+#clickhere:hover{
+    cursor: pointer;
+    color: blue;
 }

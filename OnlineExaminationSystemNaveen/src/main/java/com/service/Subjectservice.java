@@ -55,6 +55,7 @@ public class Subjectservice {
 			{
 				Subject ss=op.get();
 				ss.setSname(s.getSname());
+				ss.setLevel(s.getLevel());
 				sr.saveAndFlush(ss);
 				return "Recored Updated Successfully";
 			}

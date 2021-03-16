@@ -1,5 +1,30 @@
-#btn1{
-    width: 160px;
-    margin-top: 10px;
-    margin-left: 10px;
+#div1{
+    background-image: linear-gradient(to bottom, #03a9f43b, rgb(231, 227, 227), white);
 }
+#div2{
+    background-color:deepskyblue;
+    width: 501px;
+    margin-left: 33%;
+    height: 60px;
+}
+#tablediv{
+    margin-left: 33%;
+    background-color:cornsilk;
+    width: 33%;
+    height: 100%;
+}
+#datatable{
+    width: 500px;
+}
+
+#deleteicon:hover{
+    cursor: pointer;
+}
+#updateicon{
+    width: 20px;
+    height: 20px;
+}
+#updateicon:hover{
+    cursor: pointer;
+}
+

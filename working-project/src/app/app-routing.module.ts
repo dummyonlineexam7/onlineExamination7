@@ -61,12 +61,11 @@ const routes: Routes = [
     {path:"Update",component:QuestionUpdateComponent},
     {path:"delete",component: QuestionDeleteComponent}
   ]},
-  {path:"subject",component:SubjectComponent,children:[
-    {path:"AddSubject",component:SubjectInsertComponent},
-    {path:"RetriveSubject",component:SubjectDisplayAllComponent},
-    {path:"DeleteSubject",component:SubjectDeleteComponent},
-    {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
-    ]},
+  {path:"\subject",component:SubjectComponent,children:[
+    {path:"\UpdateSubject",component:SubjectUpdateBysidComponent}
+  ]},
+  //{path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
+  
     {path:"TestDetails",component:TestcomComponent,children:[
       {path:"Insert-Test-Details",component:TestInsertComponent},
       {path:"Delete-Test-Details",component:TestDeleteComponent},
@@ -79,7 +78,7 @@ const routes: Routes = [
     {path:"Registered",component:AllregisteredComponent}
 
 ]},
-
+{path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
 {path:"\studentdasboard",component:StudentDashboardComponent,canActivate:[MyGaurds],children:[
  {path:"profile",component:StudentPersonalDetailsComponent},
  {path:"update",component:UpdateProfileComponent},
