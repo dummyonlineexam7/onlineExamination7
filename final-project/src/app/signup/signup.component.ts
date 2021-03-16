@@ -29,4 +29,8 @@ signUpInfo=new FormGroup({
    // this.stuser.updateStudentInfo(studentInfo).subscribe(data=>console.log(data))
   }
 
+  goback(){
+    window.history.back();
+  }
+
 }
