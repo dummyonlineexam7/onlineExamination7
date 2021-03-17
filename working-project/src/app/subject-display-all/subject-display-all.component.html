@@ -6,12 +6,16 @@
          <tr>
              <th>Sid</th>
              <th>Sname</th>
-             <th>Level</th>            
+             <th>Level</th> 
+                         
          </tr>
          <tr *ngFor="let subject of subjectInfo">
              <td>{{subject.sid}}</td>
              <td>{{subject.sname}}</td>
              <td>{{subject.level}}</td>
+             <td><input type="submit" value="delete"></td>
+             <td><input type="submit" value="update"></td>
+             
          </tr>
      
         </table>

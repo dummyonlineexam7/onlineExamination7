@@ -1,10 +1,31 @@
-<div>
-    <a routerLink="AddSubject" id="btn1" class="btn btn-primary">Add Subject</a>
-    <a routerLink="RetriveSubject" id="btn1" class="btn btn-primary">Get All Subjects</a>
-    <a routerLink="DeleteSubject" id="btn1" class="btn btn-primary">Delete subject</a>
-    <a routerLink="UpdateSubject" id="btn1" class="btn btn-primary">Update subject</a>
-    <hr/>
-    <router-outlet></router-outlet>
+<div id="div1">
+    <div id="div2"><h4>Data Of all subjects</h4></div>
+    
+    <div id="tablediv">
+        <table border=1 id="datatable">
+         <tr>
+             <th style="font-size: 20px;">Sid</th>
+             <th style="font-size: 20px;">Sname</th>
+             <th style="font-size: 20px;">Level</th> 
+                         
+         </tr>
+         <tr *ngFor="let subject of subjectInfo">
+             <td style="font-size: 17px;">{{subject.sid}}</td>
+             <td style="font-size: 17px;">{{subject.sname}}</td>
+             <td style="font-size: 17px;">{{subject.level}}</td>
+             <input type="hidden" name="sid" value="{{subject.sid}}" #sid>
+             <input type="hidden" name="sname" value="{{subject.sname}}" #sname>
+             <input type="hidden" name="level" value="{{subject.level}}" #level>
+
+              <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteSubjectData(subject.sid) "></i></td>
+              <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateSubjectData(sid.value,sname.value,level.value)"></i></td>
+             
+         </tr>
+        
+        </table>
+        {{msg}}
+     </div>
+    
 
 </div>
 
