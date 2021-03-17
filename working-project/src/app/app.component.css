@@ -17,7 +17,14 @@ h2{
     width: 29%;
     margin-left: 10px;
     background-image: url("../assets/onlineimg.png");
-   /* background-image: url(".././assets/onlineimg.png");*/
+
+
+    /*background-image: url("C:\Users\admin\Desktop\onlineExamination\onlineExamination7\working-project\src\assets\onlineimg.png");
+
+   /* background-image: url(".././assets/onlineimg.png");
+
+    background-image: url(".././assets/onlineimg.png");*/
+
 
     background-size: 100% 100%;
 }

@@ -64,18 +64,18 @@ const routes: Routes = [
     {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
     ]},*/
   {path:"\subject",component:SubjectComponent,children:[
-    {path:"\UpdateSubject",component:SubjectUpdateBysidComponent}
+    {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
   ]},
   //{path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
   
 
-    {path:"TestDetails",component:TestcomComponent,children:[
-      {path:"Insert-Test-Details",component:TestInsertComponent},
-      {path:"Delete-Test-Details",component:TestDeleteComponent},
-      {path:"Update-Test-Details",component:TestUpdateComponent},
-      {path:"DisplayAll-Test-Details",component:TestDisplayAllComponent},
-      {path:"passedstudentlist",component:TestPassedStudentComponent},
-      {path:"failedstudentlist",component:TestFailedStudentComponent}
+    {path:"\TestDetails",component:TestcomComponent,children:[
+     // {path:"Insert-Test-Details",component:TestInsertComponent},
+     // {path:"Delete-Test-Details",component:TestDeleteComponent},
+      {path:"\UpdateTestDetails",component:TestUpdateComponent}
+     // {path:"DisplayAll-Test-Details",component:TestDisplayAllComponent},
+     // {path:"passedstudentlist",component:TestPassedStudentComponent},
+     // {path:"failedstudentlist",component:TestFailedStudentComponent}
 
     ]},
     {path:"Registered",component:AllregisteredComponent}
