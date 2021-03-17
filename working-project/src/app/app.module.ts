@@ -10,11 +10,9 @@ import {  studentService } from './student-service';
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { StudentInsertComponent } from './student-insert/student-insert.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
-import { QuestionStoreComponent } from './question-store/question-store.component';
+
 import { questionService } from './question-service';
-import { QuestionDisplayComponent } from './question-display/question-display.component';
-import { QuestionUpdateComponent } from './question-update/question-update.component';
-import { QuestionDeleteComponent } from './question-delete/question-delete.component';
+
 
 import { SubjectDeleteComponent } from './subject-delete/subject-delete.component';
 import { SubjectDisplayAllComponent } from './subject-display-all/subject-display-all.component';
@@ -47,6 +45,7 @@ import { AllregisteredComponent } from './allregistered/allregistered.component'
 import { TestStartComponent } from './test-start/test-start.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { QuestionUpdateComponent } from './question-update/question-update.component';
 
 
 
@@ -57,11 +56,6 @@ import { ContactusComponent } from './contactus/contactus.component';
     StudentDisplayComponent,
     StudentInsertComponent,
     StudentUpdateComponent,
-
-    QuestionStoreComponent,
-    QuestionDisplayComponent,
-    QuestionUpdateComponent,
-    QuestionDeleteComponent,
 
 
     SubjectDeleteComponent,
@@ -101,7 +95,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     AllregisteredComponent,
     TestStartComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    QuestionUpdateComponent
 
 
 

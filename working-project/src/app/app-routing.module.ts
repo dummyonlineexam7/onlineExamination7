@@ -14,10 +14,6 @@ import { StudentInsertComponent } from './student-insert/student-insert.componen
 import { StudentUpdateComponent } from './student-update/student-update.component';
 import { StudentComponent } from './student/student.component';
 
-import { QuestionDeleteComponent } from './question-delete/question-delete.component';
-import { QuestionDisplayComponent } from './question-display/question-display.component';
-import { QuestionStoreComponent } from './question-store/question-store.component';
-import { QuestionUpdateComponent } from './question-update/question-update.component';
 import { QuestionComponent } from './question/question.component';
 import { SubjectComponent } from './subject/subject.component';
 import { SubjectUpdateBysidComponent } from './subject-update-bysid/subject-update-bysid.component';
@@ -39,6 +35,7 @@ import { TakeTestComponent } from './take-test/take-test.component';
 import { TestStartComponent } from './test-start/test-start.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { QuestionUpdateComponent } from './question-update/question-update.component';
 
 const routes: Routes = [
 
@@ -56,16 +53,24 @@ const routes: Routes = [
     {path:"UpdateStudent",component:StudentUpdateComponent}
   ]},
   {path:"question",component:QuestionComponent,children:[
-    {path:"store",component:QuestionStoreComponent},
-    {path:"get",component: QuestionDisplayComponent},
-    {path:"Update",component:QuestionUpdateComponent},
-    {path:"delete",component: QuestionDeleteComponent}
+   /*{path:"store",component:QuestionStoreComponent},
+    {path:"get",component: QuestionDisplayComponent},*/
+   {path:"\Update",component:QuestionUpdateComponent }
+   /* {path:"delete",component: QuestionDeleteComponent}*/
   ]},
+  
+ /* {path:"subject",component:SubjectComponent,children:[
+    {path:"AddSubject",component:SubjectInsertComponent},
+    {path:"RetriveSubject",component:SubjectDisplayAllComponent},
+    {path:"DeleteSubject",component:SubjectDeleteComponent},
+    {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
+    ]},*/
   {path:"\subject",component:SubjectComponent,children:[
     {path:"\UpdateSubject",component:SubjectUpdateBysidComponent}
   ]},
   //{path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
   
+
     {path:"TestDetails",component:TestcomComponent,children:[
       {path:"Insert-Test-Details",component:TestInsertComponent},
       {path:"Delete-Test-Details",component:TestDeleteComponent},

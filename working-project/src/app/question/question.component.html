@@ -1,11 +1,61 @@
 
-<div class="dis">
-    <span><a routerLink="store" id="btn1" class="btn btn-primary">Store Questions</a><br></span>
+<div id="div1">
+ 
+ <div *ngIf="flag" id="div3">
+  <table border=1 id="tablediv">
+      <tr>
+        <th>Question no.</th>
+        <th>Question</th>
+        <th>OptionA</th>
+        <th>OptionB</th>
+        <th>OptionC</th>
+        <th>OptionD</th>
+        <th>Answer</th>
+        <th>Subject</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <tr *ngFor="let question of questionInfo">
+          <td>{{question.qid}}</td>
+          <td>{{question.question}}</td>
+          <td>{{question.optionA}}</td>
+          <td>{{question.optionB}}</td>
+          <td>{{question.optionC}}</td>
+          <td>{{question.optionD}}</td>
+          <td>{{question.answer}}</td>
+          <td>{{question.sid}}</td>
+        <!--  <td><a routerLink="Update" id="btn1">Update</a><br></td>-->
+          <td><input type="button" value="Delete" (click)="deleteRecord(question.qid)"/></td>
+          <td><input type="button" value="Update" (click)="updateRecord(question)"/></td>
+        </tr>
+       
+        <tr id="tr1" *ngIf="field" [formGroup]="questionAdd" >
+          
+          <td> <input type="number" formControlName="qid"></td>
+          <td><input type="text" formControlName="question"></td>
+          <td><input type="text" formControlName="optionA"></td>
+          <td><input type="text" formControlName="optionB"></td>
+          <td> <input type="text" formControlName="optionC"></td>
+          <td> <input type="text" formControlName="optionD"></td>
+          <td><input type="text" formControlName="answer"/></td>
+          <td> <input type="number" formControlName="sid"/></td>
+          <td> <input type="button" value="Delete" /></td>
+          <td> <input type="button" value="Update"/></td>
+        
+        </tr>
+        <input type="button" value="Add_Data" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>
+        <input type="submit"  id="btn1" class="btn btn-warning" value="submit" (click)="storeStudentDetails()"/>
+      </table>
+      {{msg}}
+</div>
+  
+  <router-outlet></router-outlet>
+
+    <!--<span><a routerLink="store" id="btn1" class="btn btn-primary">Store Questions</a><br></span>
     <span><a routerLink="get" id="btn1" class="btn btn-primary">Display Questions</a><br></span>
     <span><a routerLink="Update" id="btn1" class="btn btn-primary">Update Questions</a><br></span>
   <span><a routerLink="delete" id="btn1" class="btn btn-primary">Delete Questions</a><br></span>
-<hr>
-    <router-outlet></router-outlet>
-
+    <hr>
+   <router-outlet></router-outlet>
+  -->
 </div>
 
