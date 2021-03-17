@@ -1,13 +1,24 @@
 *{
     margin: 4px;
 }
-div{
+#maindiv{
     background: #dbc9cd;
     display: inline-block;
     padding: 2%;
-    border-radius: 10%;
+    border-radius: 3%;
 }
-
+#formdiv{
+    width: 300px;
+}
+form mat-form-field{
+    width: 260px;
+}
+form mat-form-field input, form mat-form-field mat-label{
+    font-size: 17px;
+}
+form mat-form-field mat-error{
+    font-size: 14px;
+}
 #log{
     margin-top: 10%;
 }

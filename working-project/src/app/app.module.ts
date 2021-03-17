@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentDeleteComponent } from './student-delete/student-delete.component';
@@ -46,6 +51,7 @@ import { TestStartComponent } from './test-start/test-start.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { QuestionUpdateComponent } from './question-update/question-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -103,8 +109,9 @@ import { QuestionUpdateComponent } from './question-update/question-update.compo
 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule
+    BrowserModule,MatCardModule,MatRadioModule,
+    AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule, BrowserAnimationsModule,MatFormFieldModule
+    ,MatInputModule
   ],
 
   providers: [studentService,questionService,MyGaurds],

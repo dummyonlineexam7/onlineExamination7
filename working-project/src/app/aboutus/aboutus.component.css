@@ -1,0 +1,46 @@
+#div1{
+    height: 720px;
+    width: 98%;
+    margin-left: 15px;
+    background-color: rgba(230, 227, 215, 0.959);
+}
+#div2{
+    height: 60px;
+    width: 98%;
+    margin-left: 15px;
+    color:rgb(114, 113, 113);
+    font-size: 27px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-color: rgb(114, 114, 243); */
+}
+#leftdiv{
+float: left;
+width: 47%;
+height: 600px;
+/* background-color:red; */
+margin-left: 15px;
+}
+#rightdiv{
+float: right;
+width: 47%;
+height: 600px;
+/* background-color: royalblue; */
+margin-right: 15px;
+text-align: justify;
+}
+#studentimg{
+    margin-top: 40px;
+}
+#paragraph{
+    font-size: 19px;
+    margin-top: 40px;
+    margin-right: 50px;
+}
+#lastdiv{
+    background-color: indigo;
+    width: 98%;
+    margin-left: 15px;
+    height: 100px;
+    color: white;
+}
