@@ -1,6 +1,7 @@
 package com.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,14 +49,16 @@ public class QuestionService {
 	}
 	
 	public String updateQuestion(Question qq) {
-		boolean n=qc.existsById(qq.getQid());
-		if(n) {
+		//boolean n=qc.existsById(qq.getQid());
+		Optional<Question> qo= qc.findById(qq.getQid());
+		if(qo.isPresent()) {
 			Question q= qc.getOne(qq.getQid());
+			//System.out.println(qq.getQuestion());
 			q.setQuestion(qq.getQuestion());
 			q.setOptionA(qq.getOptionA());
 			q.setOptionB(qq.getOptionB());
 			q.setOptionC(qq.getOptionC());
-			q.setOptionD(qq.getOptionD());
+		    q.setOptionD(qq.getOptionD());
 			q.setAnswer(qq.getAnswer());
 			
 			qc.saveAndFlush(q);
