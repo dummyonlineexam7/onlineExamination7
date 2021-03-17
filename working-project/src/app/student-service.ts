@@ -25,6 +25,7 @@ export class studentService{
       }
 
       updateStudentInfo(studentRef:any):Observable<string>{
+        console.log(studentRef)
         return this.http.put("http://localhost:9090/student/update",studentRef,{responseType:"text"})
       }
       deleteStudentInfo(stuid:any):Observable<string>{

@@ -66,7 +66,7 @@ const routes: Routes = [
     {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
     ]},*/
   {path:"\subject",component:SubjectComponent,children:[
-    {path:"\UpdateSubject",component:SubjectUpdateBysidComponent}
+    {path:"UpdateSubject",component:SubjectUpdateBysidComponent}
   ]},
   //{path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
   
