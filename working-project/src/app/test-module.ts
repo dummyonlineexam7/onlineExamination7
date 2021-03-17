@@ -1,8 +1,8 @@
 export interface TestDetails{
-    testid:number;
+    testname:string;
     score:number;
-    sid:number;
-    stuid:number;
-    qid:number;
+    sname:string;
+    firstname:string;
     status:string;
+    noofquestions:number;
 }

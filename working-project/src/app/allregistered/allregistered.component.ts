@@ -13,8 +13,13 @@ export class AllregisteredComponent implements OnInit {
   constructor(public loginser:LoginService) { }
 
   ngOnInit(): void {
+    this.loginser.allRegisteredDetails().subscribe(data=>{
+      if(data!=null)
+      {this.registeredInfo=data}
+      console.log(this.registeredInfo)
+    })
   }
-
+/*
   allRegistered():void{
     this.flag=true
     this.loginser.allRegisteredDetails().subscribe(data=>{
@@ -25,4 +30,6 @@ export class AllregisteredComponent implements OnInit {
    
    // this.registeredInfo=data
   }
+   */
+  
 }
