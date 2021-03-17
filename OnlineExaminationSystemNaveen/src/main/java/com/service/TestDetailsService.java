@@ -35,11 +35,13 @@ public class TestDetailsService {
 	@Autowired
 	TableJoinDao tjd;
 	
-	public List<TestDetails> getAllDetails(){
-		return tdr.findAll();
+	public List<PassedStudent> getAllDetails(){
+		return tjd.getTestdetails();
 	}
 	
 	public String storeDetails(TestDetails td) {
+		int id=100;
+		td.setTestid(id++);
 		Optional<TestDetails> op=tdr.findById(td.getTestid());
 		if(op.isPresent())
 		{

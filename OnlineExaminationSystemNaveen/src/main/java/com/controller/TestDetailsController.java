@@ -33,7 +33,7 @@ public class TestDetailsController {
 	TestDetailsService tds;
 	
 	@GetMapping(value="gettest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<TestDetails> getAllDetails()
+	public List<PassedStudent> getAllDetails()
 	{
 		return tds.getAllDetails();
 	}

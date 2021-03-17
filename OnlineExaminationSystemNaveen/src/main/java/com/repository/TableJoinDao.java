@@ -37,10 +37,29 @@ public class TableJoinDao {
 		return list;
 	}
 	List<PassedStudent> list1=new ArrayList<>();
+	public List<PassedStudent> getTestdetails(){
+		list1.clear();
+		EntityManager manager=emf.createEntityManager();
+		Query qry=manager.createNativeQuery("select t.testname,l.firstname,s.sname,t.noofquestions,t.score,t.status from testdetails t,login l,subject s where t.email=l.email and s.sid=t.sid");
+		List<?> list=qry.getResultList();
+		Iterator<?> it=list.iterator();
+		while(it.hasNext()) {
+			Object obj[]=(Object[])it.next();
+			PassedStudent ps=new PassedStudent();
+			ps.setTestname((String) obj[0]);
+			ps.setFirstname((String) obj[1]);
+			ps.setSname((String) obj[2]);
+			ps.setNoofquestions((int) obj[3]);
+			ps.setScore((int) obj[4]);
+			ps.setStatus((String) obj[5]);
+			list1.add(ps);	
+		}
+		return list1;
+	}
 	public List<PassedStudent> getPassedStudentBasedOnSubjectDao(String sname,String level){
 		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score>50 and subject.level=?;");
+		Query qry=manager.createNativeQuery("select subject.sname,login.firstname,testdetails.score,testdetails.status from login join testdetails on login.email=testdetails.email join subject on subject.sid=testdetails.sid where subject.sname=? and score>50 and subject.level=?;");
 		qry.setParameter(1, sname);
 		qry.setParameter(2, level);
 		List<?> list=qry.getResultList();
@@ -49,7 +68,7 @@ public class TableJoinDao {
 			Object obj[]=(Object[])it.next();
 			PassedStudent ps=new PassedStudent();
 			ps.setSname((String) obj[0]);
-			ps.setName((String) obj[1]);
+			ps.setFirstname((String) obj[1]);
 			ps.setScore((int) obj[2]);
 			ps.setStatus((String) obj[3]);
 			list1.add(ps);	
@@ -62,7 +81,7 @@ public class TableJoinDao {
 	public List<PassedStudent> getFailedStudentBasedOnSubjectDao(String sname,String level){
 		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select subject.sname,student.name,testdetails.score,testdetails.status from student join testdetails on student.stuid=testdetails.stuid join subject on subject.sid=testdetails.sid where subject.sname=? and score<50 and subject.level=?;");
+		Query qry=manager.createNativeQuery("select subject.sname,login.firstname,testdetails.score,testdetails.status from login join testdetails on login.email=testdetails.email join subject on subject.sid=testdetails.sid where subject.sname=? and score<50 and subject.level=?;");
 		qry.setParameter(1, sname);
 		qry.setParameter(2, level);
 		List<?> list=qry.getResultList();
@@ -71,7 +90,7 @@ public class TableJoinDao {
 			Object obj[]=(Object[])it.next();
 			PassedStudent ps=new PassedStudent();
 			ps.setSname((String) obj[0]);
-			ps.setName((String) obj[1]);
+			ps.setFirstname((String) obj[1]);
 			ps.setScore((int) obj[2]);
 			ps.setStatus((String) obj[3]);
 			list1.add(ps);	
@@ -82,7 +101,7 @@ public class TableJoinDao {
 	
 	public List<TestDetails> getTestNotAttempedStudent(){
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select * from student where stuid not in(select stuid from testdetails);");
+		Query qry=manager.createNativeQuery("select * from login where email not in(select email from testdetails);");
 		List<TestDetails> list=qry.getResultList();
 		return list;
 	}

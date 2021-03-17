@@ -1,12 +1,30 @@
-<div>
-
+<div id="div1">
+    <h2 id="div2">All Student Details</h2>
     
+    
+   <table border=1 id="tablediv">
+    <tr>
+        <th>Sid</th>
+        <th>name</th>
+       
+    </tr>
+    <tr *ngFor="let student of studentInfo">
+        <td>{{student.stuid}}</td>
+        <td>{{student.name}}</td>
+    </tr>
 
-    <span><a routerLink="DisplayStudents" id="btn1" class="btn btn-primary">Display Students</a><br></span>
-    <span><a routerLink="AddStudent" id="btn1" class="btn btn-primary">Add Student</a><br></span>
-    <span><a routerLink="UpdateStudent" id="btn1" class="btn btn-primary">Update Student</a><br></span>
+  
 
-    <hr/>
-    <router-outlet></router-outlet>
-
+   <tr>
+   
+    <form [formGroup]="studentInfo1" (ngSubmit)="storeStudentDetails()">
+       
+        <td> <input type="number" id="input1" formControlName="stuid"></td>
+        
+        <td> <input type="text" id="input2" formControlName="name"></td>
+        <input type="submit"  id="btn1" class="btn btn-warning" value="AddRecord">
+    </form>
+    
+</tr>
+</table>
 </div>

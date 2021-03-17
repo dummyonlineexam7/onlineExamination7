@@ -3,22 +3,23 @@ package com.bean;
 
 public class PassedStudent {
 	
+private String firstname;
 private String sname;
-private String name;
 private int score;
 private String status;
-
+private String testname;
+private int noofquestions;
+public String getFirstname() {
+	return firstname;
+}
+public void setFirstname(String firstname) {
+	this.firstname = firstname;
+}
 public String getSname() {
 	return sname;
 }
 public void setSname(String sname) {
 	this.sname = sname;
-}
-public String getName() {
-	return name;
-}
-public void setName(String name) {
-	this.name = name;
 }
 public int getScore() {
 	return score;
@@ -32,13 +33,24 @@ public String getStatus() {
 public void setStatus(String status) {
 	this.status = status;
 }
-public PassedStudent() {
-	super();
-	// TODO Auto-generated constructor stub
+public String getTestname() {
+	return testname;
+}
+public void setTestname(String testname) {
+	this.testname = testname;
+}
+public int getNoofquestions() {
+	return noofquestions;
+}
+public void setNoofquestions(int noofquestions) {
+	this.noofquestions = noofquestions;
 }
 @Override
 public String toString() {
-	return "PassedStudent [sname=" + sname + ", name=" + name + ", score=" + score + ", status=" + status + "]";
+	return "PassedStudent [firstname=" + firstname + ", sname=" + sname + ", score=" + score + ", status=" + status
+			+ ", testname=" + testname + ", noofquestions=" + noofquestions + "]";
 }
+
+
 
 }
