@@ -18,6 +18,7 @@ export class questionService{
     }
     
     deleteQuestion(qid:any):Observable<string>{
+
         return this.http.delete("http://localhost:9090/question/deleteQuestion/"+qid,{responseType:"text"})
     }
 

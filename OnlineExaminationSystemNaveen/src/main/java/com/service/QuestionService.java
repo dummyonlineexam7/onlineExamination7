@@ -52,6 +52,12 @@ public class QuestionService {
 		if(n) {
 			Question q= qc.getOne(qq.getQid());
 			q.setQuestion(qq.getQuestion());
+			q.setOptionA(qq.getOptionA());
+			q.setOptionB(qq.getOptionB());
+			q.setOptionC(qq.getOptionC());
+			q.setOptionD(qq.getOptionD());
+			q.setAnswer(qq.getAnswer());
+			
 			qc.saveAndFlush(q);
 		return "Question is updated!!!";
 		}
