@@ -1,24 +1,38 @@
-<div>
-    <table border=1>
+<div id="div1">
+    <div id="div2"><h4>Details</h4></div>
+    <div id="tablediv">
+    <table border=1 align=center id="datatable">
         <tr>
-            <th>TestName</th>
-            <th>Name</th>
-            <th>Subject</th>
-            <th>Questions</th>
-            <th>Score</th>
-            <th>Status</th>
+            <th  style="font-size: 20px">TestName</th>
+            <th style="font-size: 20px">Name</th>
+            <th style="font-size: 20px">Subject</th>
+            <th style="font-size: 20px">Questions</th>
+            <th style="font-size: 20px">Score</th>
+            <th style="font-size: 20px">Status</th>
+            <th style="font-size: 20px" colspan="2">Action</th>
            
         </tr>
         <tr *ngFor="let test of testInfo">
-            <td>{{test.testname}}</td>
-            <td>{{test.firstname}}</td>
-            <td>{{test.sname}}</td>
-            <td>{{test.noofquestions}}</td>
-            <td>{{test.score}}</td>
-            <td>{{test.status}}</td>
+            <td style="font-size: 17px">{{test.testname}}</td>
+            <td  style="font-size: 17px">{{test.firstname}}</td>
+            <td  style="font-size: 17px">{{test.sname}}</td>
+            <td  style="font-size: 17px">{{test.noofquestions}}</td>
+            <td  style="font-size: 17px">{{test.score}}</td>
+            <td  style="font-size: 17px">{{test.status}}</td>
+            <input type="hidden" name="testid" value="{{test.testid}}" #testid>
+            <input type="hidden" name="testname" value="{{test.testname}}" #testname>
+            <input type="hidden" name="noofquestions" value="{{test.noofquestions}}" #noofquestions>
+            <input type="hidden" name="score" value="{{test.score}}" #score>
+            <input type="hidden" name="status" value="{{test.status}}" #status>
+
+             <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
+             <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
+            
         </tr>
     
        </table>
+       {{msg}}
+    </div>
 </div>
 
 
