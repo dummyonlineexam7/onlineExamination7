@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SubjectService } from '../subject.service';
 
 @Component({
@@ -12,24 +13,25 @@ export class SubjectUpdateBysidComponent implements OnInit {
   sid:any;
   sname:any;
   level:any;
-  constructor(public subser:SubjectService) { }
+  constructor(public subser:SubjectService,public router:Router) { }
 
   ngOnInit(): void {
     let ssid=sessionStorage.getItem("id")
     if(ssid!=null)
     {
-      this.sid=ssid
+      this.sid=JSON.parse(ssid)
     }
     let ssname=sessionStorage.getItem("name")
     if(ssname!=null)
     {
-      this.sname=ssname
+      this.sname=JSON.parse(ssname)
     }
     let llevel=sessionStorage.getItem("level")
     if(llevel!=null)
     {
-      this.level=llevel
+      this.level=JSON.parse(llevel)
     }
+
   }
 
   updateSubjectData(subjectInfo:any){
@@ -38,6 +40,11 @@ export class SubjectUpdateBysidComponent implements OnInit {
 
   goback(){
     window.history.back();
+  }
+
+  logout(){
+    sessionStorage.removeItem("name");
+    this.router.navigate(["login"]);
   }
 
 }
