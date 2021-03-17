@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import {Subject} from '../subject-module'
 import { SubjectService } from '../subject.service';
@@ -13,6 +14,15 @@ export class SubjectComponent implements OnInit {
   // flag:boolean=false
   msg:string=""
   result:boolean=false;
+  click : boolean=false;
+  field:boolean=false;
+
+  subjectAdd=new FormGroup({
+    sid:new FormControl(),
+    sname:new FormControl(),
+    level:new FormControl(),
+  })
+
   constructor(public obj:SubjectService,public router:Router) { }
 
   ngOnInit(): void {
@@ -39,5 +49,16 @@ export class SubjectComponent implements OnInit {
     //console.log(id,internetkit)
   }
   
+  fieldAppear():void{
+    this.field= !this.field;
+    //this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
+  }
+
+  storeSubjectDetails(){
+    let subjectRef= this.subjectAdd.value;
+    this.obj.storeSubjectDetails(subjectRef).subscribe(data=>this.msg=data);
+    this.field= false;
+   
+  }
 
 }
