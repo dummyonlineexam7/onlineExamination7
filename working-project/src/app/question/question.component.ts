@@ -16,6 +16,7 @@ export class QuestionComponent implements OnInit {
   field:boolean=false;
   click : boolean=false;
 
+
   questionAdd=new FormGroup({
     qid:new FormControl(),
     question:new FormControl(),
@@ -27,12 +28,14 @@ export class QuestionComponent implements OnInit {
     sid:new FormControl()
   })
   msg:string="";
-  constructor( public questionService:questionService) { }
+  constructor( public questionService:questionService,public router:Router) { }
 
   ngOnInit(): void {
     this.flag=!this.field;
     this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
   }
+
+  
   fieldAppear():void{
     this.field= !this.field;
     //this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
@@ -43,7 +46,9 @@ export class QuestionComponent implements OnInit {
    }
   storeStudentDetails(){
     let questionRef= this.questionAdd.value;
-    this.questionService.storeQuestion(questionRef).subscribe(data=>this.msg=data);
+    this.questionService.storeQuestion(questionRef).subscribe(data=>{
+      this.getData()
+    });
     this.field= false;
    
   }
@@ -56,9 +61,20 @@ export class QuestionComponent implements OnInit {
     });
   }
 
-  updateRecord(question:any){
-   
+  updateRecord(qid:any,question:any,optionA:any,optionB:any,optionC:any,optionD:any,answer:any,sid:any){
+    sessionStorage.setItem("QuestionNo",qid),
+    sessionStorage.setItem("Question",question),
+    sessionStorage.setItem("OptionA",optionA),
+    sessionStorage.setItem("OptionB",optionB),
+    sessionStorage.setItem("OptionC",optionC),
+    sessionStorage.setItem("OptionD",optionD),
+    sessionStorage.setItem("Answer",answer),
+    sessionStorage.setItem("Subject",sid),
+
+     this.router.navigate(["QuestionUpdate"])
   }
+
+ 
   //displayAllQuestions():void{
     //this.flag=true;
     //this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);

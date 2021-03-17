@@ -4,8 +4,12 @@
     border-radius: 0px;
 
    /* background-image: url("C:\Users\admin\Desktop\onlineExamination\onlineExamination7\final-project\src\assets\images\onlineimg.jpg"); */
-     background-image: url("C:\Users\admin\Desktop\onlineExamination\onlineExamination7\working-project\src\assets\background.jpg"); 
-  /*  background-image: url("../../assets/background.jpg"); */
+
+     /*background-image: url("../../assets/Images/background.jpg"); */
+   background-image: url("../../assets/background.jpg"); 
+     /*   background-image: url("C:\Users\admin\Desktop\onlineExamination\onlineExamination7\working-project\src\assets\background.jpg"); 
+ background-image: url("../../assets/background.jpg"); */
+
 
 
     background-image: url("../../assets/background.jpg"); 
