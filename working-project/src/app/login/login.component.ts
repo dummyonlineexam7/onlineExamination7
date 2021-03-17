@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 
@@ -11,15 +11,20 @@ import { LoginService } from '../login.service';
 export class LoginComponent implements OnInit {
 msg:string=""
 flag:boolean=false
-  loginInfo=new FormGroup({
-    email:new FormControl,
-    password:new FormControl
-  });
-  constructor(public loginser:LoginService,public router:Router,public router1:Router) { }
-
+  // loginInfo=new FormGroup({
+  //   email:new FormControl,
+  //   password:new FormControl
+  // });
+  constructor(public loginser:LoginService,public router:Router,public router1:Router, private fb: FormBuilder) { }
+  loginInfo = this.fb.group({
+    email:['', [Validators.required, Validators.email]],
+    password:['', Validators.required]
+  })
   ngOnInit(): void {
   }
   checkUser(){
+    if(this.loginInfo.valid)
+    {
     let loginRef=this.loginInfo.value;
     this.loginser.loginCheck(loginRef).subscribe(data=>{
       
@@ -51,5 +56,5 @@ flag:boolean=false
     });
    
   }
-
+  }
 }
