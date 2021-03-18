@@ -6,5 +6,5 @@ export interface Question{
 	 optionC: string;
 	 optionD: string;
       answer: string;
-      sid:number;  
+      sid:number;
 }

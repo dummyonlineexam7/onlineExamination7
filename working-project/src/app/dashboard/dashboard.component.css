@@ -35,7 +35,10 @@ body{
    margin-top: 16px;
    margin-right: 25px;
 }
-.navbar a:hover{
+.navbar a:hover {
    background: #545668;
    height: 60px;
 }
+/* #a1:active{
+   background-color: red
+} */

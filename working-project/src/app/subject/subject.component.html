@@ -8,6 +8,7 @@
              <th style="font-size: 20px;">Sid</th>
              <th style="font-size: 20px;">Sname</th>
              <th style="font-size: 20px;">Level</th> 
+             <th style="font-size: 20px;" colspan="2">Action</th>
                          
          </tr>
          <tr *ngFor="let subject of subjectInfo">
@@ -20,11 +21,24 @@
 
               <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteSubjectData(subject.sid) "></i></td>
               <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateSubjectData(sid.value,sname.value,level.value)"></i></td>
-             
          </tr>
+
+
+         <tr id="tr1" *ngIf="field" [formGroup]="subjectAdd" >
+            <td> <input type="number" formControlName="sid" id="input1"></td>
+            <td><input type="text" formControlName="sname" id="input2"></td>
+            <td><input type="text" formControlName="level" id="input3"></td>
+        </tr>
+
+          <!-- <input type="button" value="Add Subject" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>
+          <input type="submit"  id="btn1" class="btn btn-warning" value="submit" (click)="storeSubjectDetails()"/> -->
+
+
         
         </table>
-        {{msg}}
+        <input type="button" value="Add Subject" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>&nbsp;
+        <input type="submit"  id="btn1" class="btn btn-warning" value="submit" (click)="storeSubjectDetails()"/>
+        <div id="massege">{{msg}}</div>
      </div>
     
 

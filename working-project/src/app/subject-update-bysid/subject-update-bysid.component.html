@@ -1,4 +1,4 @@
-<div>
+  <div>
     <h2>Admin Dashboard</h2>
 
      <nav class="navbar">
@@ -6,17 +6,16 @@
                 <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
                 <li><a routerLink="student">Student</a></li>
                 
-                <!-- <li><a routerLink="subject">Subject</a> </li> -->
+                
                 <li><a routerLink="subject" id="btn1">subject</a></li>
-              <!--<li><a routerLink="question">Question</a></li> 
-               <li><a routerLink="question">Question</a></li>-->
+              
                 <li><a routerLink="question">Question</a></li> 
                <li><a routerLink="TestDetails">TestDetails</a></li>
                <li><a routerLink="Registered">RegisteredCandidates</a></li>
 
             </ul>  
      </nav>
-   </div>
+   </div>  
 
 
 
@@ -24,18 +23,18 @@
     <div id="div2"><h4>Update Subject Details</h4></div>
     <form #subjectRef="ngForm" (ngSubmit)="updateSubjectData(subjectRef.value)">
         <label id="label1">Subject Id:</label>
-        <input type="number" id="input1" name="sid" [(ngModel)]="sid" ngModel><br/>
+        <input type="number" id="input1" name="sid" [(ngModel)]="sid" ngModel ><br/>
 
         <label id="label2">Subject:</label>
         <input type="text" id="input2" name="sname" [(ngModel)]="sname" ngModel><br/>
 
-        <label id="label2">Level:</label>
+        <label id="label3">Level:</label>
         <input type="text" id="input3" name="level" [(ngModel)]="level" ngModel><br/>
 
         <input type="submit" value="Update" id="btn1" class="btn btn-warning">
     </form>
     <div id="backbtn"> 
-        Back to previous page?<a (click)="goback()" id="clickhere">click here</a>
+        Back to previous page?<a (click)="goback()" id="clickhere"> click here</a>
     </div>
     <p style="color: green;">{{msg}}</p>
 

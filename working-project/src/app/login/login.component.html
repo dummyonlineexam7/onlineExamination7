@@ -2,24 +2,42 @@
 <div id="maindiv1">
 <div id="div1">
     <h2>Login Page</h2>
-    <div>
-    <form [formGroup]="loginInfo" (ngSubmit)="checkUser()">
+    <mat-card>
+    <!-- <form [formGroup]="loginInfo" (ngSubmit)="checkUser()">
     
                 <label id="label1">Email:</label>
-               <input type="text" id="input1" formControlName="email" ><br>
-               <label id="label2">Password:</label>
+                <input type="text" id="input1" formControlName="email" ><br>
+                <label id="label2">Password:</label>
                 <input type="text" id="input2" formControlName="password" ><br>
                 <input type="submit" value="submit" id="log1" class="btn btn-warning">
                 <input type="reset" value="reset" id="log2" class="btn btn-warning">
-            
-    </form>
+    </form> -->
+
+
+        <form  autocomplete="off" [formGroup]="loginInfo"
+            (ngSubmit)="checkUser()">
+            <mat-form-field>
+                <mat-label><i class="fas fa-user"></i> Email</mat-label>
+                <input matInput placeholder="abc@gmail.com" formControlName="email">
+                <mat-error>This Field is required</mat-error>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label><i class="fas fa-lock"></i> Password</mat-label>
+                <input matInput type="password" placeholder="Enter Password" formControlName="password">
+                <mat-error>This Field is required</mat-error>
+            </mat-form-field>
+        <br/>
+            <button mat-raised-button type="submit" class="btn">Signin</button>
+        </form>
+        <p>Don't have an account?<a routerLink="/signup" style="text-decoration: none;"> SignUp</a></p>
 
     
     
     
-    <p id="p2">Not Registered? <a routerLink="/signup">signup</a></p><br>
+    <!-- <p id="p2">Not Registered? <a routerLink="/signup">signup</a></p><br> -->
     {{msg}}
-</div>
+    </mat-card>
   
 
 </div>

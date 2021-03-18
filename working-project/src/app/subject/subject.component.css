@@ -7,6 +7,15 @@
     margin-left: 33%;
     height: 60px;
 }
+#btn1{
+    width: 120px;
+    background-color: rgba(194, 187, 187, 0.856);
+    margin-top: 10px;
+    border: none;
+}
+#btn1:hover{
+    background-color: rgb(177, 169, 169);
+}
 #tablediv{
     margin-left: 33%;
     background-color:cornsilk;
@@ -27,4 +36,18 @@
 #updateicon:hover{
     cursor: pointer;
 }
+#input1{
+    width: 100%;
+}
+#input2{
+    width: 100%;
+}
+#input3{
+    width: 100%;
+} 
+#massege{
+    color: green;
+margin-top: 10px;
+}
+
 
