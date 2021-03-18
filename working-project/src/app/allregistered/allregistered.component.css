@@ -1,3 +1,4 @@
+
 #div2{
     background-color:deepskyblue;
     width: 40%;
@@ -20,3 +21,36 @@
     width: 50%;
  }
  
+
+
+/*#div1{
+    background-image: linear-gradient(to bottom, #03a9f43b, rgb(231, 227, 227), white);
+}
+#div2{
+    background-color:deepskyblue;
+    width: 495px;
+    margin-left: 33%;
+    height: 60px;
+}
+#tablediv{
+    margin-left: 33%;
+    background-color:cornsilk;
+    width: 44%;
+    height: 100%;
+}*/
+#datatable{
+    width: 500px;
+}
+
+#deleteicon:hover{
+    cursor: pointer;
+}
+#updateicon{
+    width: 20px;
+    height: 20px;
+}
+#updateicon:hover{
+    cursor: pointer;
+}
+
+

@@ -23,6 +23,7 @@ export class TestService {
   }
 
   updateTestDetails(testRef:any):Observable<string>{
+    console.log(testRef)
     return this.httpClient.put("http://localhost:9090/test/updatetest",testRef,{responseType:"text"})
   }
   
@@ -30,15 +31,15 @@ export class TestService {
     return this.httpClient.delete("http://localhost:9090/test/deletetest/"+testid,{responseType:"text"})
   }
 
-  loadPassedStudentDetails(passedRef:any):Observable<PassStudent[]>{
-    console.log(passedRef.sname)
-    console.log(passedRef.level)
-    return this.httpClient.get<PassStudent[]>("http://localhost:9090/test/passedStudentList/"+passedRef.sname+"/"+passedRef.level);
+  loadPassedStudentDetails(sname:any,slevel:any):Observable<TestDetails[]>{
+    console.log(sname)
+    console.log(slevel)
+    return this.httpClient.get<TestDetails[]>("http://localhost:9090/test/passedStudentList/"+sname+"/"+slevel);
   }
 
-  loadFailedStudentDetails(failedRef:any):Observable<PassStudent[]>{
-    console.log(failedRef.sname)
-    console.log(failedRef.level)
-    return this.httpClient.get<PassStudent[]>("http://localhost:9090/test/failedStudentList/"+failedRef.sname+"/"+failedRef.level);
+  loadFailedStudentDetails(sname:any,slevel:any):Observable<TestDetails[]>{
+    console.log(sname)
+    console.log(slevel)
+    return this.httpClient.get<TestDetails[]>("http://localhost:9090/test/failedStudentList/"+sname+"/"+slevel);
   }
 }

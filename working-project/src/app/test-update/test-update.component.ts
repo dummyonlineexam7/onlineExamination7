@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TestService } from '../test.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class TestUpdateComponent implements OnInit {
   status:any
   testid:any
 
-  constructor(public testsur:TestService) { }
+  constructor(public testsur:TestService,public router:Router) { }
 
   ngOnInit(): void {
     let tn=sessionStorage.getItem("tname")
@@ -37,10 +38,11 @@ export class TestUpdateComponent implements OnInit {
     {
       this.status=tstatus
     }
-    let tid=sessionStorage.getItem("testid")
+    let tid=sessionStorage.getItem("id")
     if(tid!=null)
     {
       this.testid=tid
+      console.log("testid is :"+this.testid)
     }
   }
 
@@ -50,5 +52,9 @@ export class TestUpdateComponent implements OnInit {
   }
   goback(){
     window.history.back();
+  }
+  logout(){
+    sessionStorage.removeItem("name");
+    this.router.navigate(["login"]);
   }
 }

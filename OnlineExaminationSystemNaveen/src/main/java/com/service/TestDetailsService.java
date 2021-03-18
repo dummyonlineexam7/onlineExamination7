@@ -9,11 +9,13 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bean.Login;
 import com.bean.PassedStudent;
 import com.bean.Question;
 import com.bean.Student;
 import com.bean.Subject;
 import com.bean.TestDetails;
+import com.repository.LoginAndSignUpRepository;
 import com.repository.QuestionRepository;
 import com.repository.StudentRepository;
 import com.repository.Subjectrepository;
@@ -27,7 +29,7 @@ public class TestDetailsService {
 	@Autowired
 	TestDetailsRepository tdr;
 	@Autowired
-	StudentRepository sturep;
+	LoginAndSignUpRepository lr;
 	@Autowired
 	Subjectrepository subrep;
 	@Autowired
@@ -49,13 +51,13 @@ public class TestDetailsService {
 		}
 		else
 		{
-			Optional<Student> stuop=sturep.findById(td.getStuid());
+			Optional<Login> lrop=lr.findById(td.getEmail());
 			Optional<Subject> subop=subrep.findById(td.getSid());
 			Optional<Question> qop=qrep.findById(td.getQid());
 			
-			if(stuop.isEmpty())
+			if(lrop.isEmpty())
 			{
-				return "Student id not present";
+				return "Candidate id not present";
 			}
 			else if(subop.isEmpty())
 			{
@@ -102,6 +104,9 @@ public class TestDetailsService {
 		{
 			TestDetails t=op.get();
 			t.setScore(td.getScore());
+			t.setNoofquestions(td.getNoofquestions());
+			t.setStatus(td.getStatus());
+			t.setTestname(td.getTestname());
 			tdr.saveAndFlush(t);
 			return "Recored updated Successfully";
 		}

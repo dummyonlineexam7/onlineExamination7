@@ -1,8 +1,26 @@
 <div id="div1">
+
+    <div *ngIf="flag">
+       
+    <select name="sub" value="{{sub}}" #sub>
+        <option *ngFor="let sub of subjectInfo">
+            {{sub.sname}}
+        </option>
+    </select>
+    <select name="slevel" value="{{slevel}}" #slevel>
+       <option value="low_level" id="level">Low</option>
+       <option value="intermidiate_level" id="level">Intermediate</option>
+       <option value="high_level"  id="level">High</option>
+    </select>
+    <input type="button" value="Passed" (click)="passedList(sub.value,slevel.value)">
+    <input type="button" value="Failed" (click)="failedList(sub.value,slevel.value)">
+    </div>
+
     <div id="div2"><h4>Details</h4></div>
     <div id="tablediv">
     <table border=1 align=center id="datatable">
         <tr>
+
             <th  >TestName</th>
             <th >Name</th>
             <th >Subject</th>
@@ -16,6 +34,7 @@
             <td style="font-size: 17px">{{test.testname}}</td>
             <td  style="font-size: 17px">{{test.firstname}}</td>
             <td  style="font-size: 17px">{{test.sname}}</td>
+            <td  style="font-size: 17px">{{test.level}}</td>
             <td  style="font-size: 17px">{{test.noofquestions}}</td>
             <td  style="font-size: 17px">{{test.score}}</td>
             <td  style="font-size: 17px">{{test.status}}</td>
