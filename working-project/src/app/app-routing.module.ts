@@ -74,7 +74,7 @@ const routes: Routes = [
     {path:"\TestDetails",component:TestcomComponent,children:[
      // {path:"Insert-Test-Details",component:TestInsertComponent},
      // {path:"Delete-Test-Details",component:TestDeleteComponent},
-      {path:"\UpdateTestDetails",component:TestUpdateComponent}
+      {path:"UpdateTestDetails",component:TestUpdateComponent}
      // {path:"DisplayAll-Test-Details",component:TestDisplayAllComponent},
      // {path:"passedstudentlist",component:TestPassedStudentComponent},
      // {path:"failedstudentlist",component:TestFailedStudentComponent}
@@ -83,6 +83,7 @@ const routes: Routes = [
     {path:"Registered",component:AllregisteredComponent}
 
 ]},
+{path:"\UpdateTestDetails",component:TestUpdateComponent},
 {path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
 {path:"\studentdasboard",component:StudentDashboardComponent,canActivate:[MyGaurds],children:[
  {path:"profile",component:StudentPersonalDetailsComponent},

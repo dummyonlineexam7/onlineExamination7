@@ -12,15 +12,11 @@ public class TestDetails {
 	private int testid;
 	private int score;
 	private int sid;
-	private int stuid;
 	private int qid;
 	private String status;
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	private int noofquestions;
+	private String email;
+	private String testname;
 	public int getTestid() {
 		return testid;
 	}
@@ -39,27 +35,44 @@ public class TestDetails {
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
-	public int getStuid() {
-		return stuid;
-	}
-	public void setStuid(int stuid) {
-		this.stuid = stuid;
-	}
 	public int getQid() {
 		return qid;
 	}
 	public void setQid(int qid) {
 		this.qid = qid;
 	}
-	public TestDetails() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public int getNoofquestions() {
+		return noofquestions;
+	}
+	public void setNoofquestions(int noofquestions) {
+		this.noofquestions = noofquestions;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTestname() {
+		return testname;
+	}
+	public void setTestname(String testname) {
+		this.testname = testname;
 	}
 	@Override
 	public String toString() {
-		return "TestDetails [testid=" + testid + ", score=" + score + ", sid=" + sid + ", stuid=" + stuid + ", qid="
-				+ qid + ", status=" + status + "]";
+		return "TestDetails [testid=" + testid + ", score=" + score + ", sid=" + sid + ", qid=" + qid + ", status="
+				+ status + ", noofquestions=" + noofquestions + ", email=" + email + ", testname=" + testname + "]";
 	}
+	
+	
+	
 	
 	
 }

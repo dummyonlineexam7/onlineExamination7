@@ -9,6 +9,8 @@ private int score;
 private String status;
 private String testname;
 private int noofquestions;
+private int testid;
+private String level;
 public String getFirstname() {
 	return firstname;
 }
@@ -45,11 +47,25 @@ public int getNoofquestions() {
 public void setNoofquestions(int noofquestions) {
 	this.noofquestions = noofquestions;
 }
+public int getTestid() {
+	return testid;
+}
+public void setTestid(int testid) {
+	this.testid = testid;
+}
+public String getLevel() {
+	return level;
+}
+public void setLevel(String level) {
+	this.level = level;
+}
 @Override
 public String toString() {
 	return "PassedStudent [firstname=" + firstname + ", sname=" + sname + ", score=" + score + ", status=" + status
-			+ ", testname=" + testname + ", noofquestions=" + noofquestions + "]";
+			+ ", testname=" + testname + ", noofquestions=" + noofquestions + ", testid=" + testid + ", level=" + level
+			+ "]";
 }
+
 
 
 
