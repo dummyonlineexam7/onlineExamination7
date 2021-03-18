@@ -35,7 +35,7 @@ export class TestPassedStudentComponent implements OnInit {
   }
 
   loadPassedSubjectData(){
-    let passedRef=this.passedInfo.value;
+    /*let passedRef=this.passedInfo.value;
     console.log(passedRef.sname)
     console.log(passedRef.level)
     this.testsur.loadPassedStudentDetails(passedRef).subscribe(data=>{
@@ -49,7 +49,7 @@ export class TestPassedStudentComponent implements OnInit {
   console.log(this.passedDetailsInfo.length)
 }
 //this.passedDetailsInfo=null
-
-
+*/
+  }
 
 }

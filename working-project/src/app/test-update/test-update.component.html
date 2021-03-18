@@ -1,7 +1,28 @@
+<div>
+    <h2>Admin Dashboard</h2>
 
+     <nav class="navbar">
+            <ul>
+                <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
+                <li><a routerLink="student">Student</a></li>
+                
+                <!-- <li><a routerLink="subject">Subject</a> </li> -->
+                <li><a routerLink="subject" id="btn1">subject</a></li>
+              <!--<li><a routerLink="question">Question</a></li> 
+               <li><a routerLink="question">Question</a></li>-->
+                <li><a routerLink="question">Question</a></li> 
+               <li><a routerLink="TestDetails">TestDetails</a></li>
+               <li><a routerLink="Registered">RegisteredCandidates</a></li>
+
+            </ul>  
+     </nav>
+   </div>
 <div id="div1">
     <div id="div2"><h4>Update TestDetails</h4></div>
     <form #testInfo="ngForm" (ngSubmit)="updateTestData(testInfo.value)">
+        <label id="label1">TestId : </label>
+        <input type="hidden" id="input1" name="testid" [(ngModel)]="testid" ngModel><br/>
+
         <label id="label1">TestName : </label>
         <input type="text" id="input1" name="testname" [(ngModel)]="testname" ngModel><br/>
 
@@ -9,10 +30,10 @@
         <input type="number" id="input2" name="noofquestions" [(ngModel)]="noofquestions" ngModel><br/>
 
         <label id="label2">Score : </label>
-        <input type="number" id="input3" name="score" [(ngModel)]="score" ngModel><br/>
+        <input type="number" id="input1" name="score" [(ngModel)]="score" ngModel><br/>
 
         <label id="label1">Status : </label>
-        <input type="text" id="input1" name="status" [(ngModel)]="status" ngModel><br/>
+        <input type="text" id="input2" name="status" [(ngModel)]="status" ngModel><br/>
 
         <input type="submit" value="Update" id="btn1" class="btn btn-warning">
     </form>

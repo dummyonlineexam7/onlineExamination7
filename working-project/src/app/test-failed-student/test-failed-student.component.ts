@@ -22,7 +22,7 @@ export class TestFailedStudentComponent implements OnInit {
   ngOnInit(): void {
   }
   loadFailedSubjectData(){
-    let failedRef=this.failedInfo.value;
+  /*  let failedRef=this.failedInfo.value;
     console.log(failedRef.sname)
     console.log(failedRef.level)
     this.testsur.loadFailedStudentDetails(failedRef).subscribe(data=>{
@@ -34,5 +34,6 @@ export class TestFailedStudentComponent implements OnInit {
       }
   })
   console.log(this.failedDetailsInfo.length)
-}
+}*/
+  }
 }

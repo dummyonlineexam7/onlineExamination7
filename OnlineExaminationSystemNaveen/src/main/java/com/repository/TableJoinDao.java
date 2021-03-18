@@ -40,18 +40,20 @@ public class TableJoinDao {
 	public List<PassedStudent> getTestdetails(){
 		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select t.testname,l.firstname,s.sname,t.noofquestions,t.score,t.status from testdetails t,login l,subject s where t.email=l.email and s.sid=t.sid");
+		Query qry=manager.createNativeQuery(" select t.testid,t.testname,l.firstname,s.sname,s.level,t.noofquestions,t.score,t.status from testdetails t,login l,subject s where t.email=l.email and s.sid=t.sid");
 		List<?> list=qry.getResultList();
 		Iterator<?> it=list.iterator();
 		while(it.hasNext()) {
 			Object obj[]=(Object[])it.next();
 			PassedStudent ps=new PassedStudent();
-			ps.setTestname((String) obj[0]);
-			ps.setFirstname((String) obj[1]);
-			ps.setSname((String) obj[2]);
-			ps.setNoofquestions((int) obj[3]);
-			ps.setScore((int) obj[4]);
-			ps.setStatus((String) obj[5]);
+			ps.setTestid((int) obj[0]);
+			ps.setTestname((String) obj[1]);
+			ps.setFirstname((String) obj[2]);
+			ps.setSname((String) obj[3]);
+			ps.setLevel((String) obj[4]);
+			ps.setNoofquestions((int) obj[5]);
+			ps.setScore((int) obj[6]);
+			ps.setStatus((String) obj[7]);
 			list1.add(ps);	
 		}
 		return list1;
@@ -59,7 +61,7 @@ public class TableJoinDao {
 	public List<PassedStudent> getPassedStudentBasedOnSubjectDao(String sname,String level){
 		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select subject.sname,login.firstname,testdetails.score,testdetails.status from login join testdetails on login.email=testdetails.email join subject on subject.sid=testdetails.sid where subject.sname=? and score>50 and subject.level=?;");
+		Query qry=manager.createNativeQuery("select t.testid,t.testname,l.firstname,s.sname,s.level,t.noofquestions,t.score,t.status from testdetails t,login l,subject s where t.email=l.email and s.sid=t.sid and sname=? and level=? and score>50 order by(score) desc");
 		qry.setParameter(1, sname);
 		qry.setParameter(2, level);
 		List<?> list=qry.getResultList();
@@ -67,10 +69,14 @@ public class TableJoinDao {
 		while(it.hasNext()) {
 			Object obj[]=(Object[])it.next();
 			PassedStudent ps=new PassedStudent();
-			ps.setSname((String) obj[0]);
-			ps.setFirstname((String) obj[1]);
-			ps.setScore((int) obj[2]);
-			ps.setStatus((String) obj[3]);
+			ps.setTestid((int) obj[0]);
+			ps.setTestname((String) obj[1]);
+			ps.setFirstname((String) obj[2]);
+			ps.setSname((String) obj[3]);
+			ps.setLevel((String) obj[4]);
+			ps.setNoofquestions((int) obj[5]);
+			ps.setScore((int) obj[6]);
+			ps.setStatus((String) obj[7]);
 			list1.add(ps);	
 		}
 		//System.out.println(list1);
@@ -81,7 +87,7 @@ public class TableJoinDao {
 	public List<PassedStudent> getFailedStudentBasedOnSubjectDao(String sname,String level){
 		list1.clear();
 		EntityManager manager=emf.createEntityManager();
-		Query qry=manager.createNativeQuery("select subject.sname,login.firstname,testdetails.score,testdetails.status from login join testdetails on login.email=testdetails.email join subject on subject.sid=testdetails.sid where subject.sname=? and score<50 and subject.level=?;");
+		Query qry=manager.createNativeQuery("select t.testid,t.testname,l.firstname,s.sname,s.level,t.noofquestions,t.score,t.status from testdetails t,login l,subject s where t.email=l.email and s.sid=t.sid and sname=? and level=? and score<50 order by(score) desc");
 		qry.setParameter(1, sname);
 		qry.setParameter(2, level);
 		List<?> list=qry.getResultList();
@@ -89,10 +95,14 @@ public class TableJoinDao {
 		while(it.hasNext()) {
 			Object obj[]=(Object[])it.next();
 			PassedStudent ps=new PassedStudent();
-			ps.setSname((String) obj[0]);
-			ps.setFirstname((String) obj[1]);
-			ps.setScore((int) obj[2]);
-			ps.setStatus((String) obj[3]);
+			ps.setTestid((int) obj[0]);
+			ps.setTestname((String) obj[1]);
+			ps.setFirstname((String) obj[2]);
+			ps.setSname((String) obj[3]);
+			ps.setLevel((String) obj[4]);
+			ps.setNoofquestions((int) obj[5]);
+			ps.setScore((int) obj[6]);
+			ps.setStatus((String) obj[7]);
 			list1.add(ps);	
 		}
 		//System.out.println(list1);
@@ -107,6 +117,8 @@ public class TableJoinDao {
 	}
 	
 	List<Taketest> list11=new ArrayList<>();
+	
+	
 	public List<Taketest> getQuestionBasedOnLevel(String sname, String level){
 		list11.clear();
 		EntityManager manager=emf.createEntityManager();
