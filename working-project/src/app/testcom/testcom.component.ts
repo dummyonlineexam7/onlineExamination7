@@ -73,46 +73,65 @@ export class TestcomComponent implements OnInit {
     this.passedDetails=[]
     this.testsur.loadPassedStudentDetails(sub,slevel).subscribe(data=>{
     console.log("aa"+this.passedDetails)
-    if(data!=null && data.find)
+    if(data.length==0) //data!=null && data.find
       {
-        this.flag3=false
-        this.flag1=false;
-        this.flag4=false
-       console.log("displaying"+this.passedDetails.length)
-        this.flag2=true;
-        this.passedDetails=data;
-        console.log("zz"+this.passedDetails)
-      }
-      else
-     {
-      console.log("not displaying "+this.passedDetails.length)
+        console.log("not displaying "+this.passedDetails.length)
         console.log("no data"+this.flag1,this.flag2,this.flag3,this.flag4)
         this.flag3=false
         this.flag1=false;
         this.flag2=false
         this.flag4=true;
         console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+       /*this.flag3=false
+        this.flag1=false;
+        this.flag4=false
+       console.log("displaying"+this.passedDetails.length)
+        this.flag2=true;
+        this.passedDetails=data;
+        console.log("zz"+this.passedDetails)*/
+      }
+      else
+     {
+      this.flag3=false
+      this.flag1=false;
+      this.flag4=false
+     console.log("displaying"+this.passedDetails.length)
+      this.flag2=true;
+      this.passedDetails=data;
+      console.log("zz"+this.passedDetails)
+
+      /*console.log("not displaying "+this.passedDetails.length)
+        console.log("no data"+this.flag1,this.flag2,this.flag3,this.flag4)
+        this.flag3=false
+        this.flag1=false;
+        this.flag2=false
+        this.flag4=true;
+        console.log(this.flag1,this.flag2,this.flag3,this.flag4)*/
         
       }})
   }
   failedList(sub:any,slevel:any){ 
     this.testsur.loadFailedStudentDetails(sub,slevel).subscribe(data=>{
-    if(data!=null)
+    if(data.length==0)  //data!=null
       {
-        this.flag1=false
-        this.flag2=false
-        this.flag4=false
-        this.flag3=true
-       this.failedDetails=data;
-        
-      }
-      else{
-        console.log(this.flag1,this.flag2,this.flag3,this.flag4)
         this.flag1=false
         this.flag2=false
         this.flag3=false
         this.flag4=true;
-        console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+       // this.flag1=false
+        //this.flag2=false
+        //this.flag4=false
+        //this.flag3=true
+       //this.failedDetails=data;
+        
+      }
+      else{
+        //console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+        this.flag1=false
+        this.flag2=false
+        this.flag3=false
+        this.flag4=true;
+       // console.log(this.flag1,this.flag2,this.flag3,this.flag4)
        
         
       }})
