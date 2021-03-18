@@ -17,16 +17,38 @@ export class TestcomComponent implements OnInit {
   subjectInfo:Array<Subject>=[]
   passedDetails:Array<TestDetails>=[]
   failedDetails:Array<TestDetails>=[]
+  a:Array<any>=[]
+  norecordmsg:string="No Records Found.."
   res:boolean=false
   msg:string=""
   flag:boolean=false
+  flag1:boolean=false
+  flag2:boolean=false
+  flag3:boolean=false
+  flag4:boolean=false
   constructor(public testsur:TestService,public router:Router,public obj:SubjectService) { }
 
   ngOnInit(): void {
-    this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data);
+   
+    this.testsur.loadTestDetails().subscribe(data=>{
+    if(data!=null){
     this.flag=true;
+    this.flag1=true;
+    this.flag2=false
+    this.flag3=false
+    this.testInfo=data
     this.obj.loadSubjectDetails().subscribe(data=>this.subjectInfo=data)
+    }
+    else{
+      this.flag=false
+    this.flag1=false;
+    this.flag2=false
+    this.flag3=false
+    this.flag4=true;
+
+    }})
   }
+
   gettest()
   {
     this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data);
@@ -48,11 +70,53 @@ export class TestcomComponent implements OnInit {
     //console.log(id,internetkit)
   }
   passedList(sub:any,slevel:any){
-    this.testsur.loadPassedStudentDetails(sub,slevel).subscribe(data=>this.passedDetails=data)
-    console.log(this.passedDetails)
+    this.passedDetails=[]
+    this.testsur.loadPassedStudentDetails(sub,slevel).subscribe(data=>{
+    console.log("aa"+this.passedDetails)
+    if(data!=null)
+      {
+        this.flag3=false
+        this.flag1=false;
+        this.flag4=false
+       console.log("displaying"+this.passedDetails.length)
+        this.flag2=true;
+        this.passedDetails=data;
+        console.log("zz"+this.passedDetails)
+      }
+      else
+     {
+      console.log("not displaying "+this.passedDetails.length)
+        console.log("no data"+this.flag1,this.flag2,this.flag3,this.flag4)
+        this.flag3=false
+        this.flag1=false;
+        this.flag2=false
+        this.flag4=true;
+        console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+        
+      }})
   }
-  failedList(sub:any,slevel:any){
-    this.testsur.loadFailedStudentDetails(sub,slevel).subscribe(data=>this.failedDetails=data)
-    console.log(this.failedDetails)
+  failedList(sub:any,slevel:any){ 
+    this.testsur.loadFailedStudentDetails(sub,slevel).subscribe(data=>{
+    if(data!=null)
+      {
+        this.flag1=false
+        this.flag2=false
+        this.flag4=false
+        this.flag3=true
+       this.failedDetails=data;
+        
+      }
+      else{
+        console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+        this.flag1=false
+        this.flag2=false
+        this.flag3=false
+        this.flag4=true;
+        console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+       
+        
+      }})
   }
+
+ 
 }

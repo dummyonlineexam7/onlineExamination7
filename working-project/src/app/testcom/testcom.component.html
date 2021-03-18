@@ -1,22 +1,67 @@
-<div id="div1">
+<div>
+
 
     <div *ngIf="flag">
        
-    <select name="sub" value="{{sub}}" #sub>
-        <option *ngFor="let sub of subjectInfo">
-            {{sub.sname}}
-        </option>
-    </select>
-    <select name="slevel" value="{{slevel}}" #slevel>
-       <option value="low_level" id="level">Low</option>
-       <option value="intermidiate_level" id="level">Intermediate</option>
-       <option value="high_level"  id="level">High</option>
-    </select>
-    <input type="button" value="Passed" (click)="passedList(sub.value,slevel.value)">
-    <input type="button" value="Failed" (click)="failedList(sub.value,slevel.value)">
+                <select name="sub" value="{{sub}}" #sub>
+                    <option *ngFor="let sub of subjectInfo">
+                        {{sub.sname}}
+                    </option>
+                </select>&nbsp;
+            <select name="slevel" value="{{slevel}}" #slevel>
+            <option value="low_level" id="level">Low</option>
+            <option value="intermidiate_level" id="level">Intermediate</option>
+            <option value="high_level"  id="level">High</option>
+            </select>&nbsp;
+            <input type="button" value="Passed" (click)="passedList(sub.value,slevel.value)">&nbsp;
+            <input type="button" value="Failed" (click)="failedList(sub.value,slevel.value)">
+            
+
     </div>
 
-    <div id="div2"><h4>Details</h4></div>
+
+
+    <div *ngIf="flag1">
+        <div id="div1">
+            <div id="div2" ><h4>Details</h4></div>
+                <div id="tablediv" >
+                    <table border=1 align=center id="datatable">
+                        <tr>
+                            <th  style="font-size: 20px">TestName</th>
+                            <th style="font-size: 20px">Name</th>
+                            <th style="font-size: 20px">Subject</th>
+                            <th style="font-size: 20px">Level</th>
+                            <th style="font-size: 20px">Questions</th>
+                            <th style="font-size: 20px">Score</th>
+                            <th style="font-size: 20px">Status</th>
+                            <th style="font-size: 20px" colspan="2">Action</th>
+                        
+                        </tr>
+                        <tr *ngFor="let test of testInfo">
+                            <td style="font-size: 17px">{{test.testname}}</td>
+                            <td  style="font-size: 17px">{{test.firstname}}</td>
+                            <td  style="font-size: 17px">{{test.sname}}</td>
+                            <td  style="font-size: 17px">{{test.level}}</td>
+                            <td  style="font-size: 17px">{{test.noofquestions}}</td>
+                            <td  style="font-size: 17px">{{test.score}}</td>
+                            <td  style="font-size: 17px">{{test.status}}</td>
+                            <input type="hidden" name="testid" value="{{test.testid}}" #testid>
+                            <input type="hidden" name="testname" value="{{test.testname}}" #testname>
+                            <input type="hidden" name="noofquestions" value="{{test.noofquestions}}" #noofquestions>
+                            <input type="hidden" name="score" value="{{test.score}}" #score>
+                            <input type="hidden" name="status" value="{{test.status}}" #status>
+
+                            <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
+                            <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
+                            
+                        </tr>
+                    
+                    </table>
+                {{msg}}
+                </div>
+        </div>
+
+  <!--  <div id="div2"><h4>Details</h4></div>
     <div id="tablediv">
     <table border=1 align=center id="datatable">
         <tr>
@@ -50,8 +95,72 @@
         </tr>
     
        </table>
-       {{msg}}
-    </div>
-</div>
+       {{msg}}-->
 
+    </div>
+
+    <div *ngIf="flag2">
+        <div id="div1">
+            <div id="div2" ><h4>Details</h4></div>
+                <div id="tablediv" >
+                    <table border=1 align=center id="datatable">
+                        <tr>
+                            <th  style="font-size: 20px">TestName</th>
+                            <th style="font-size: 20px">Name</th>
+                            <th style="font-size: 20px">Subject</th>
+                            <th style="font-size: 20px">Level</th>
+                            <th style="font-size: 20px">Questions</th>
+                            <th style="font-size: 20px">Score</th>
+                            <th style="font-size: 20px">Status</th>
+                        
+                        </tr>
+                        <tr *ngFor="let test of passedDetails">
+                            <td style="font-size: 17px">{{test.testname}}</td>
+                            <td  style="font-size: 17px">{{test.firstname}}</td>
+                            <td  style="font-size: 17px">{{test.sname}}</td>
+                            <td  style="font-size: 17px">{{test.level}}</td>
+                            <td  style="font-size: 17px">{{test.noofquestions}}</td>
+                            <td  style="font-size: 17px">{{test.score}}</td>
+                            <td  style="font-size: 17px">{{test.status}}</td>
+                        </tr>
+                        </table>
+                </div>
+        </div>
+    </div>
+
+    <div *ngIf="flag3">
+        <div id="div1">
+            <div id="div2" ><h4>Details</h4></div>
+            <div id="tablediv" >
+                <table border=1 align=center id="datatable">
+                    <tr>
+                        <th  style="font-size: 20px">TestName</th>
+                        <th style="font-size: 20px">Name</th>
+                        <th style="font-size: 20px">Subject</th>
+                        <th style="font-size: 20px">Level</th>
+                        <th style="font-size: 20px">Questions</th>
+                        <th style="font-size: 20px">Score</th>
+                        <th style="font-size: 20px">Status</th>
+                    
+                    </tr>
+                    <tr *ngFor="let test of failedDetails">
+                        <td style="font-size: 17px">{{test.testname}}</td>
+                        <td  style="font-size: 17px">{{test.firstname}}</td>
+                        <td  style="font-size: 17px">{{test.sname}}</td>
+                        <td  style="font-size: 17px">{{test.level}}</td>
+                        <td  style="font-size: 17px">{{test.noofquestions}}</td>
+                        <td  style="font-size: 17px">{{test.score}}</td>
+                        <td  style="font-size: 17px">{{test.status}}</td>
+                    </tr>
+                 </table>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="flag4">
+        {{norecordmsg}}
+    </div>
+
+       
+</div>
 
