@@ -3,9 +3,10 @@
 }
 #div2{
     background-color:deepskyblue;
-    width: 501px;
-    margin-left: 33%;
-    height: 60px;
+    width: 25%;
+    margin-left: 39%;
+    height: 30px;
+    border-radius: 8px;
 }
 #btn1{
     width: 120px;
@@ -19,7 +20,7 @@
 #tablediv{
     margin-left: 33%;
     background-color:cornsilk;
-    width: 33%;
+    width: 36.6%;
     height: 100%;
 }
 #datatable{

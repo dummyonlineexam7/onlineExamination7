@@ -3,9 +3,9 @@
 <nav class="navbar">
     <ul>
         <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
-        <li><a routerLink="student">Student</a></li>
+         <!-- <li><a routerLink="student">Student</a></li>
         
-        <!-- <li><a routerLink="subject">Subject</a> </li> -->
+       <li><a routerLink="subject">Subject</a> </li> -->
         <li><a routerLink="subject" id="btn1">Subject</a></li>
       <!--<li><a routerLink="question">Question</a></li> 
        <li><a routerLink="question">Question</a></li>-->
@@ -49,7 +49,12 @@
        <input type="submit" value="update" id="btn1" class="btn btn-warning">
         
         </form>
+
+        <div id="backbtn"> 
+            Back to previous page?<a (click)="goback()" id="clickhere"> click here</a>
+        </div>
+        <p style="color: green;">{{msg}}</p>
        
-        {{msg}}
+       
 </div>
 

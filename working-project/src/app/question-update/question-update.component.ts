@@ -80,5 +80,9 @@ QuestionNo:any;
       this.router.navigate(["login"]);
     }
   
+    goback(){
+      window.history.back();
+    }
+  
 
   }

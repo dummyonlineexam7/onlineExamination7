@@ -3,18 +3,19 @@
 }
 #div2{
     background-color:deepskyblue;
-    width: 501px;
-    margin-left: 33%;
-    height: 60px;
+    width: 460px;
+    margin-left: 30%;
+    height: 30px;
+    border-radius: 8px;
 }
 #tablediv{
-    margin-left: 33%;
+    margin-left: 25%;
     background-color:cornsilk;
-    width: 33%;
+    width: 45%;
     height: 100%;
 }
 #datatable{
-    width: 500px;
+ width: 600px;
 }
 
 #deleteicon:hover{
