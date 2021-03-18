@@ -32,14 +32,14 @@ export class TestService {
   }
 
   loadPassedStudentDetails(sname:any,slevel:any):Observable<TestDetails[]>{
-    console.log(sname)
-    console.log(slevel)
+    console.log("in service"+sname)
+    console.log("in service"+slevel)
     return this.httpClient.get<TestDetails[]>("http://localhost:9090/test/passedStudentList/"+sname+"/"+slevel);
   }
 
   loadFailedStudentDetails(sname:any,slevel:any):Observable<TestDetails[]>{
-    console.log(sname)
-    console.log(slevel)
+    console.log("in service"+sname)
+    console.log("in service"+slevel)
     return this.httpClient.get<TestDetails[]>("http://localhost:9090/test/failedStudentList/"+sname+"/"+slevel);
   }
 }
