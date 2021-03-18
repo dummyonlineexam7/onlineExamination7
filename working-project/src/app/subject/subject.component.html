@@ -1,12 +1,12 @@
 
 <div id="div1">
-    <div id="div2"><h4>Data Of all subjects</h4></div>
+    <div id="div2"><h4>Details</h4></div>
     
     <div id="tablediv">
         <table border=1 id="datatable">
          <tr>
-             <th style="font-size: 20px;">Sid</th>
-             <th style="font-size: 20px;">Sname</th>
+             <th style="font-size: 20px;">No.</th>
+             <th style="font-size: 20px;">Subject_Name</th>
              <th style="font-size: 20px;">Level</th> 
              <th style="font-size: 20px;" colspan="2">Action</th>
                          
@@ -36,8 +36,8 @@
 
         
         </table>
-        <input type="button" value="Add Subject" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>&nbsp;
-        <input type="submit"  id="btn1" class="btn btn-warning" value="submit" (click)="storeSubjectDetails()"/>
+        <input type="button" value="Add" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>&nbsp;
+        <input type="submit"  id="btn1" class="btn btn-warning" value="Submit" (click)="storeSubjectDetails()"/>
         <div id="massege">{{msg}}</div>
      </div>
     
