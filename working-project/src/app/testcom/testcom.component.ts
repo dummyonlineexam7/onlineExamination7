@@ -73,7 +73,7 @@ export class TestcomComponent implements OnInit {
     this.passedDetails=[]
     this.testsur.loadPassedStudentDetails(sub,slevel).subscribe(data=>{
     console.log("aa"+this.passedDetails)
-    if(data!=null)
+    if(data!=null && data.find)
       {
         this.flag3=false
         this.flag1=false;
