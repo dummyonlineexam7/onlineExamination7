@@ -26,6 +26,7 @@ public class TableJoinDao {
 		EntityManager manager=emf.createEntityManager();
 		Query qry=manager.createNativeQuery("select stu.name,s.sname,td.score from student stu,subject s,testdetails td where stu.stuid=td.stuid and s.sid=td.sid");
 		List<Object[]> list=qry.getResultList();
+		manager.close();
 		return list;
 	}
 	
@@ -34,6 +35,7 @@ public class TableJoinDao {
 		Query qry=manager.createNativeQuery("select subject.sname ,count(question.sid) as num from subject left join question on subject.sid=question.sid where subject.sid=? group by question.sid");
 		qry.setParameter(1,sbid);
 		List<Object[]> list=qry.getResultList();
+		manager.close();
 		return list;
 	}
 	List<PassedStudent> list1=new ArrayList<>();
@@ -56,6 +58,7 @@ public class TableJoinDao {
 			ps.setStatus((String) obj[7]);
 			list1.add(ps);	
 		}
+		manager.close();
 		return list1;
 	}
 	public List<PassedStudent> getPassedStudentBasedOnSubjectDao(String sname,String level){
@@ -80,6 +83,7 @@ public class TableJoinDao {
 			list1.add(ps);	
 		}
 		//System.out.println(list1);
+		manager.close();
 		return list1;
 	}
 	
@@ -106,6 +110,7 @@ public class TableJoinDao {
 			list1.add(ps);	
 		}
 		//System.out.println(list1);
+		manager.close();
 		return list1;
 	}
 	
@@ -113,6 +118,7 @@ public class TableJoinDao {
 		EntityManager manager=emf.createEntityManager();
 		Query qry=manager.createNativeQuery("select * from login where email not in(select email from testdetails);");
 		List<TestDetails> list=qry.getResultList();
+		manager.close();
 		return list;
 	}
 	
@@ -142,6 +148,7 @@ public class TableJoinDao {
 			tt.setAnswer((String)obj[5]);
 			list11.add(tt);
 		}
+		manager.close();
 		return list11;
 	}
 	
@@ -150,6 +157,7 @@ public class TableJoinDao {
 		Query qry=manager.createNativeQuery("select count(question) as noOfQuestion from question where sid=(select sid from subject where sname=? and level=?)");
 		qry.setParameter(1, sname);
 		qry.setParameter(2, level);
+		manager.close();
 		return qry.getResultList();
 	}
 

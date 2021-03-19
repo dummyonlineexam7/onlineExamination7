@@ -1,14 +1,14 @@
 
 <div id="div1">
-    <div id="div2"><h4>Details</h4></div>
+    <div id="div2"><h2 style="font-weight: 600;">Subject Details</h2></div>
     
     <div id="tablediv">
-        <table border=1 id="datatable">
-         <tr>
-             <th style="font-size: 20px;">No.</th>
-             <th style="font-size: 20px;">Subject_Name</th>
-             <th style="font-size: 20px;">Level</th> 
-             <th style="font-size: 20px;" colspan="2">Action</th>
+        <table border=1 id="datatable" class="text-black text-center mx-auto br-5" style="width: 85%; height: 500px;">
+         <tr class="text-bold  bg-primary text-white" style="height: 50px;">
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Subject Id</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Subject Name</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Level</th> 
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" colspan="2">Action</th>
                          
          </tr>
          <tr *ngFor="let subject of subjectInfo">
@@ -18,9 +18,9 @@
              <input type="hidden" name="sid" value="{{subject.sid}}" #sid>
              <input type="hidden" name="sname" value="{{subject.sname}}" #sname>
              <input type="hidden" name="level" value="{{subject.level}}" #level>
-
-              <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteSubjectData(subject.sid) "></i></td>
-              <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateSubjectData(sid.value,sname.value,level.value)"></i></td>
+             
+              <td><i class="fas fa-trash-alt" id="deleteicon" aria-hidden="true" (click)="deleteSubjectData(subject.sid) "></i></td>
+              <td><i class="fas fa-edit" id="updateicon" aria-hidden="true" (click)="updateSubjectData(sid.value,sname.value,level.value)"></i></td>
          </tr>
 
 
@@ -30,9 +30,7 @@
             <td><input type="text" formControlName="level" id="input3"></td>
         </tr>
 
-          <!-- <input type="button" value="Add Subject" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>
-          <input type="submit"  id="btn1" class="btn btn-warning" value="submit" (click)="storeSubjectDetails()"/> -->
-
+         
 
         
         </table>

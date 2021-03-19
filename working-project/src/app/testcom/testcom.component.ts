@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from '../subject-module';
 import { SubjectService } from '../subject.service';
@@ -12,9 +12,13 @@ import { TestService } from '../test.service';
   templateUrl: './testcom.component.html',
   styleUrls: ['./testcom.component.css']
 })
+
 export class TestcomComponent implements OnInit {
+  @ViewChild("fl") fl:any;
+  @ViewChild("pl") pl:any;
   testInfo:Array<TestDetails>=[]
   subjectInfo:Array<Subject>=[]
+  unique:Array<string>=[]
   passedDetails:Array<TestDetails>=[]
   failedDetails:Array<TestDetails>=[]
   a:Array<any>=[]
@@ -38,6 +42,7 @@ export class TestcomComponent implements OnInit {
     this.flag3=false
     this.testInfo=data
     this.obj.loadSubjectDetails().subscribe(data=>this.subjectInfo=data)
+     
     }
     else{
       this.flag=false
@@ -69,7 +74,9 @@ export class TestcomComponent implements OnInit {
     this.router.navigate(["UpdateTestDetails"])
     //console.log(id,internetkit)
   }
-  passedList(sub:any,slevel:any){
+  passedList(sub:any,slevel:any,event:any){
+    event.target.classList.add("green")
+    this.fl.nativeElement.classList.remove("red")
     this.passedDetails=[]
     this.testsur.loadPassedStudentDetails(sub,slevel).subscribe(data=>{
     console.log("aa"+this.passedDetails)
@@ -110,7 +117,9 @@ export class TestcomComponent implements OnInit {
         
       }})
   }
-  failedList(sub:any,slevel:any){ 
+  failedList(sub:any,slevel:any,event:any){
+    event.target.classList.add("red") 
+    this.pl.nativeElement.classList.remove("green")
     this.testsur.loadFailedStudentDetails(sub,slevel).subscribe(data=>{
     if(data.length==0)  //data!=null
       {
@@ -129,8 +138,9 @@ export class TestcomComponent implements OnInit {
         //console.log(this.flag1,this.flag2,this.flag3,this.flag4)
         this.flag1=false
         this.flag2=false
-        this.flag3=false
-        this.flag4=true;
+        this.flag3=true
+        this.flag4=false;
+        this.failedDetails=data
        // console.log(this.flag1,this.flag2,this.flag3,this.flag4)
        
         

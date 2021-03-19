@@ -1,19 +1,19 @@
 
 <div id="div1"> 
-    <div id="div2"><h4>Details</h4></div>
+    <div id="div2"><h2 style="font-weight: 600;">Candidate Details</h2></div>
     <div id="">
-        <table border=1 align=center id="tablediv">
+        <table border=1 align=center id="tablediv" class="text-black text-center mx-auto br-5" style="width: 85%;">
 
-         <tr>
-             <th>First_Name</th>
-             <th>Last_Name</th>
-             <th>Gender</th>
-             <th>Age</th>
-             <th>Contact_Number</th>
-             <th>Email</th>
+         <tr class="text-bold  bg-primary text-white" style="height: 50px;">
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">First Name</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Last Name</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Gender</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Age</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Phone Number</th>
+             <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Email</th>
             
          </tr>
-         <tr *ngFor="let reg of registeredInfo">
+         <tr *ngFor="let reg of registeredInfo" style="height: 50px;">
              <td>{{reg.firstname}}</td>
              <td>{{reg.lastname}}</td>
              <td>{{reg.gender}}</td>

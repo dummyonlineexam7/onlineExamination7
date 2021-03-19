@@ -14,7 +14,11 @@ export class TakeTestComponent implements OnInit{
   QuestionInfo:Array<any>=[];
   flag:boolean=false
   i:number=0
-
+  k:number=0
+flag1:boolean=true
+flag2:boolean=true
+flag3:boolean=true
+flag4:boolean=false
   count:number=0
   testRef=new FormGroup({
     option:new FormControl()
@@ -22,6 +26,8 @@ export class TakeTestComponent implements OnInit{
    name:any;
   sname:string=""
   level:string=""
+  noofquestions:number=0
+  questioncount:Array<number>=[]
   ques:Array<Question>=[]
   msg:string="You are already in last question"
   constructor(public taketestSur:questionService, private router:Router) { }
@@ -41,7 +47,8 @@ export class TakeTestComponent implements OnInit{
   }
   
   Test(){
-    
+    this.k=1;
+    this.flag2=false
     this.QuestionInfo.length=0
     this.flag=true
     this.taketestSur.getQuestionsBylevelandSubject(this.sname,this.level).subscribe(data=>{
@@ -49,8 +56,14 @@ export class TakeTestComponent implements OnInit{
         this.flag=true;
         this.QuestionInfo=data;
         this.ques=this.QuestionInfo
-       // console.log(this.QuestionInfo.ans)
+        this.noofquestions=this.QuestionInfo.length
+        console.log(this.noofquestions)
         //console.log(this.QuestionInfo[this.i]?.answer)
+        for(let j=0;j<this.QuestionInfo.length;j++)
+        {
+          this.questioncount[j]=j;
+        }
+        console.log("loop for quescount"+this.questioncount)
       }
 
     });
@@ -58,18 +71,28 @@ export class TakeTestComponent implements OnInit{
   }
   
   nextquestion(){
+   
     this.name=this.testRef.value
     console.log("iterator value",this.i)
     //console.log(this.name.option)
-    
+    if(this.i>=this.QuestionInfo.length-1)
+    {
+      if(this.name.option==this.ques[this.i].answer)
+      {
+        this.count++;
+      }
+      this.i=this.QuestionInfo.length
+      this.flag1=false
+      this.flag2=false
+      this.flag=false
+      this.flag3=false
+      this.flag4=true
+      console.log("score is",this.count)
+    }
     if(this.name.option==this.ques[this.i].answer)
     {
      
       this.count++;
-      if(this.i==this.QuestionInfo.length-1)
-      {
-        console.log("score is",this.count)
-      }
       
     }
      this.i++;
@@ -79,19 +102,13 @@ export class TakeTestComponent implements OnInit{
     this.i--;
   }
   
-  GoToQuestion1(){
+  GoToQuestion1(val:number){
     //console.log(this.ques[0])
     //this.j++;
-    this.i=0;
+    console.log(val)
+    this.i=val;
   }
-  GoToQuestion2(){ 
-    //console.log(this.ques[1])
-    this.i=1
-  }
-  GoToQuestion3(){
-    //console.log(this.ques[2])
-    this.i=2
-  }
+ 
 
   // GoToLogin(){
   //   this.router.navigate(['login'])

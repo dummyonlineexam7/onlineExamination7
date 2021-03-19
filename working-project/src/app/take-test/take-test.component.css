@@ -1,6 +1,9 @@
 #ul{
     list-style-type: none;
 }
+#li{
+    left: 60%;
+}
 #btn1{
     width: 110px;
     margin-top: 12px;
