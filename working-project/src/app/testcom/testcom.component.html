@@ -3,9 +3,12 @@
 
     <div *ngIf="flag">
        
-                <select name="sub" value="{{sub}}" #sub>
+                <select name="sub" value="{{sub}}" #sub >
+                    <option >
+                        subject
+                     </option>
                     <option *ngFor="let sub of subjectInfo">
-                        {{sub.sname}}
+                       {{sub.sname}}
                     </option>
                 </select>&nbsp;
             <select name="slevel" value="{{slevel}}" #slevel>
@@ -24,8 +27,8 @@
     <div *ngIf="flag1">
         <div id="div1">
             <div id="div2" ><h4>Details</h4></div>
-                <div id="tablediv" >
-                    <table border=1 align=center id="datatable">
+                <div id="" >
+                    <table border=1 align=center id="tablediv">
                         <tr>
                             <th  style="font-size: 20px">TestName</th>
                             <th style="font-size: 20px">Name</th>
@@ -102,8 +105,8 @@
     <div *ngIf="flag2">
         <div id="div1">
             <div id="div2" ><h4>Details</h4></div>
-                <div id="tablediv" >
-                    <table border=1 align=center id="datatable">
+                <div id="" >
+                    <table border=1 align=center id="tablediv">
                         <tr>
                             <th  style="font-size: 20px">TestName</th>
                             <th style="font-size: 20px">Name</th>
@@ -131,8 +134,8 @@
     <div *ngIf="flag3">
         <div id="div1">
             <div id="div2" ><h4>Details</h4></div>
-            <div id="tablediv" >
-                <table border=1 align=center id="datatable">
+            <div id="" >
+                <table border=1 align=center id="tablediv">
                     <tr>
                         <th  style="font-size: 20px">TestName</th>
                         <th style="font-size: 20px">Name</th>

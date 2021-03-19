@@ -56,7 +56,9 @@ export class SubjectComponent implements OnInit {
 
   storeSubjectDetails(){
     let subjectRef= this.subjectAdd.value;
-    this.obj.storeSubjectDetails(subjectRef).subscribe(data=>this.msg=data);
+    this.obj.storeSubjectDetails(subjectRef).subscribe(data=>{
+      this.getdata();
+    });
     this.field= false;
    
   }
