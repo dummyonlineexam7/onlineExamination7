@@ -2,11 +2,11 @@
     background-image: linear-gradient(to bottom, #03a9f43b, rgb(207, 231, 243), white);
 }
 #div2{
-    background-color:deepskyblue;
-    width: 25%; 
-    margin-left: 37%;
-    height: 30px;
-    border-radius: 8px;
+    /* background-color:deepskyblue;*/
+    width: 25%;  
+    margin-left: 38%;
+    /* height: 30px;
+    border-radius: 8px; */
 }
 #btn1{
     width: 120px;
@@ -17,16 +17,12 @@
 #btn1:hover{
     background-color: rgb(143, 137, 137);
 }
-#tablediv{
-    margin-left: 33%;
+
+ #datatable{
+    margin-left: 7%;
     margin-top: 1%;
     background-color:cornsilk;
-    width: 33%;
-    height: 100%;
-}
-#datatable{
-    width: 500px;
-}
+} 
 
 #deleteicon:hover{
     cursor: pointer;

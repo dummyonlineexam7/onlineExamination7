@@ -1,16 +1,24 @@
+#maindiv{
+    margin-top: 1%;
+}
 #div1{
     height: 240px;
-    width: 98%;
-    margin-left: 15px;
+    width: 99%;
+    margin-left: 0.4%;
     background: rgba(87, 90, 241, 0.5);
 }
 #p1{
     font-weight: bold;
+    margin-top: 4%;
+    margin-left: 44%;
+    position: absolute;
     font-size: 30px;
     color: white;
 }
 #p2{
-
+    margin-top: 6.5%;
+    position: absolute;
+    margin-left: 38.5%;
 }
 #p3{
     font-weight: bold;
@@ -20,6 +28,7 @@
 #p4{
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 50px;
 }
 #p5{
     color: rgb(89, 89, 248); 
@@ -37,6 +46,7 @@
 #p7{
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 50px;
 }
 #leftdiv{
     background: rgba(236, 234, 234, 0.5);
@@ -59,10 +69,12 @@
     box-shadow: 0px 4px 16px ;
 }
 #btn{
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: rgba(214, 210, 210, 0.904);
+    box-shadow: 0px 3px 4px ;
 }
 #btn:hover{
     cursor: pointer;
     background-color: gray;
+    color: white;
 }
