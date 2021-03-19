@@ -2,19 +2,22 @@
 
 
     <div *ngIf="flag">
-       
+        <span class="focus">
                 <select name="sub" value="{{sub}}" #sub>
-                    <option *ngFor="let sub of subjectInfo">
+                    <option>select</option>
+                    <option *ngFor="let sub of subjectInfo ">
                         {{sub.sname}}
                     </option>
                 </select>&nbsp;
             <select name="slevel" value="{{slevel}}" #slevel>
-            <option value="low_level" id="level">Low</option>
-            <option value="intermidiate_level" id="level">Intermediate</option>
-            <option value="high_level"  id="level">High</option>
+                <option>select</option>
+                <option value="low_level" id="level">Low</option>
+                <option value="intermidiate_level" id="level">Intermediate</option>
+                <option value="high_level"  id="level">High</option>
             </select>&nbsp;
-            <input type="button" value="Passed" (click)="passedList(sub.value,slevel.value)">&nbsp;
-            <input type="button" value="Failed" (click)="failedList(sub.value,slevel.value)">
+        </span>
+            <input type="button" value="Passed" class="btn btn-info" (click)="passedList(sub.value,slevel.value)">&nbsp;
+            <input type="button" value="Failed" class="btn btn-dark" (click)="failedList(sub.value,slevel.value)">
             
 
     </div>
