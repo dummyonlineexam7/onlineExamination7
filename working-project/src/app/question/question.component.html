@@ -2,28 +2,28 @@
 <div id="div1">
  
  <div *ngIf="flag" id="div3">
-  <div id="div2"><h4>Details</h4></div>
+  <div id="div2"><h4  style="font-weight: 500;">Question Details</h4></div>
   <table border=1 id="tablediv">
       <tr>
-        <th>Question no.</th>
-        <th>Question</th>
-        <th>OptionA</th>
-        <th>OptionB</th>
-        <th>OptionC</th>
-        <th>OptionD</th>
-        <th>Answer</th>
-        <th>Subject</th>
-        <th colspan="2">Action</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Question no.</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Question</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionA</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionB</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionC</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionD</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Answer</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Subject Id</th>
+        <th style="font-size: 18px;background-color: rgb(184, 184, 245);" colspan="2">Action</th>
       </tr>
       <tr *ngFor="let question of questionInfo">
-          <td>{{question.qid}}</td>
-          <td>{{question.question}}</td>
-          <td>{{question.optionA}}</td>
-          <td>{{question.optionB}}</td>
-          <td>{{question.optionC}}</td>
-          <td>{{question.optionD}}</td>
-          <td>{{question.answer}}</td>
-          <td>{{question.sid}}</td>
+          <td style="font-size: 17px;">{{question.qid}}</td>
+          <td style="font-size: 17px;">{{question.question}}</td>
+          <td style="font-size: 17px;">{{question.optionA}}</td>
+          <td style="font-size: 17px;">{{question.optionB}}</td>
+          <td style="font-size: 17px;">{{question.optionC}}</td>
+          <td style="font-size: 17px;">{{question.optionD}}</td>
+          <td style="font-size: 17px;">{{question.answer}}</td>
+          <td style="font-size: 17px;">{{question.sid}}</td>
           <input type="hidden" name="qid" value="{{question.qid}}" #qid />
           <input type="hidden" name="question" value="{{question.question}}" #question />
           <input type="hidden" name="optionA" value="{{question.optionA}}" #optionA />

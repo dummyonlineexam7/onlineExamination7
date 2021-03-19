@@ -9,32 +9,33 @@ span{
     margin-left: 0.8%;
 }
 
-#tablediv{
+/* #tablediv{
    text-align: center;
     background-color:cornsilk;
    
-}
+} */
 
 #div1{
-    background-image: linear-gradient(to bottom, #03a9f43b, rgb(207, 231, 243), white);
+    background-image: linear-gradient(to bottom, #03a9f43b, #03a9f43b, white);
 }
 
 
 #div2{
     background-color:deepskyblue;
-    margin-left: 14%;
+    margin-left: 15%;
     width: 70%;
     height: 30px;
     border-radius: 8px;
 }
 
 #btn1:hover{
-    background-color: rgb(177, 169, 169);
+    background-color: rgb(122, 118, 118);
 }
 #tablediv{
-   
+    margin-top: 1%;
+    margin-left: 10%;
     background-color:cornsilk;
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 #datatable{

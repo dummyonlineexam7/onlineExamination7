@@ -1,16 +1,17 @@
 #div1{
-    background-image: linear-gradient(to bottom, #03a9f43b, rgb(231, 227, 227), white);
+    background-image: linear-gradient(to bottom, #03a9f43b, #03a9f43b, white);
 }
 #div2{
     background-color:deepskyblue;
-
+    margin-top: 1%;
     width: 460px;
-    margin-left: 30%;
+    margin-left: 35%;
     height: 30px;
     border-radius: 8px;
 }
 #tablediv{
     margin-left: 15%;
+    margin-top: 1%;
     background-color:cornsilk;
     width: 70%;
     height: 100%;
@@ -35,4 +36,32 @@ select:focus + .focus {
     border: 2px solid var(--select-focus);
     border-radius: inherit;
   }
-  
+  #subjectselect{
+      width: 10%;
+      height: 22px;
+  }
+  #levelselect{
+    width: 10%;
+    height: 22px;
+  }
+  .passedbtn{
+    background-color: rgb(194, 189, 189);
+    border-radius: 5px;
+    width: 5%;
+  }
+  .failedbtn{
+    background-color: rgb(194, 189, 189);
+    border-radius: 5px;
+    width: 5%;
+  }
+  .active, .passedbtn:hover{
+      cursor: pointer;
+    background-color: rgb(21, 134, 21);
+    color: white;
+  }
+   .active, .failedbtn:hover{
+    cursor: pointer;
+    background-color:rgb(247, 60, 60);
+    color: white;
+  } 
+

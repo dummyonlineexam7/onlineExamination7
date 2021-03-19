@@ -3,8 +3,8 @@
 }
 #div2{
     background-color:deepskyblue;
-    width: 25%;
-    margin-left: 39%;
+    width: 25%; 
+    margin-left: 37%;
     height: 30px;
     border-radius: 8px;
 }
@@ -15,12 +15,13 @@
     border: none;
 }
 #btn1:hover{
-    background-color: rgb(177, 169, 169);
+    background-color: rgb(143, 137, 137);
 }
 #tablediv{
     margin-left: 33%;
+    margin-top: 1%;
     background-color:cornsilk;
-    width: 36.6%;
+    width: 33%;
     height: 100%;
 }
 #datatable{

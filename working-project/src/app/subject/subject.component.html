@@ -1,14 +1,14 @@
 
 <div id="div1">
-    <div id="div2"><h4>Details</h4></div>
+    <div id="div2"><h4 style="font-weight: 500;">Subject Details</h4></div>
     
     <div id="tablediv">
         <table border=1 id="datatable">
          <tr>
-             <th style="font-size: 20px;">No.</th>
-             <th style="font-size: 20px;">Subject_Name</th>
-             <th style="font-size: 20px;">Level</th> 
-             <th style="font-size: 20px;" colspan="2">Action</th>
+             <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Subject Id</th>
+             <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Subject Name</th>
+             <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Level</th> 
+             <th style="font-size: 18px;background-color: rgb(184, 184, 245);" colspan="2">Action</th>
                          
          </tr>
          <tr *ngFor="let subject of subjectInfo">
@@ -30,9 +30,7 @@
             <td><input type="text" formControlName="level" id="input3"></td>
         </tr>
 
-          <!-- <input type="button" value="Add Subject" id="btn1" class="btn btn-warning" (click)="fieldAppear()"/>
-          <input type="submit"  id="btn1" class="btn btn-warning" value="submit" (click)="storeSubjectDetails()"/> -->
-
+         
 
         
         </table>
