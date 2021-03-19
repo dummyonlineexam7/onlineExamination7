@@ -41,9 +41,11 @@ body{
  }
  .navbar ul li {
   float: right;
+  font-size: 17px;
  }
  .navbar ul .rt{
    float: left;
+   font-size: 17px;
  }
  .navbar ul #li{
     float:right;

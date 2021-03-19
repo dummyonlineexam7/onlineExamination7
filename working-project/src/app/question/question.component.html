@@ -2,18 +2,18 @@
 <div id="div1">
  
  <div *ngIf="flag" id="div3">
-  <div id="div2"><h4  style="font-weight: 500;">Question Details</h4></div>
-  <table border=1 id="tablediv">
-      <tr>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Question no.</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Question</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionA</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionB</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionC</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">OptionD</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Answer</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Subject Id</th>
-        <th style="font-size: 18px;background-color: rgb(184, 184, 245);" colspan="2">Action</th>
+  <div id="div2"><h2  style="font-weight: 600;">Question Details</h2></div>
+  <table border=1 id="tablediv" class="text-black text-center mx-auto br-5" style="width: 85%; height: 500px;">
+      <tr class="text-bold  bg-primary text-white">
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Question no.</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Question</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">OptionA</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">OptionB</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">OptionC</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">OptionD</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Answer</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Subject Id</th>
+        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" colspan="2">Action</th>
       </tr>
       <tr *ngFor="let question of questionInfo">
           <td style="font-size: 17px;">{{question.qid}}</td>
