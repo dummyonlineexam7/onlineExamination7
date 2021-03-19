@@ -4,7 +4,7 @@
     width: 40%;
     margin-left: 30%;
     height: 30px;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 #div1{
     background-image: linear-gradient(to bottom, #03a9f43b, rgb(207, 231, 243), white);
@@ -16,9 +16,10 @@
     border: none;
 }
 #tablediv{
+    margin-left: 15%;
     text-align: center;
      background-color:cornsilk;
-    width: 50%;
+    width: 70%;
  }
  
 
@@ -39,7 +40,7 @@
     height: 100%;
 }*/
 #datatable{
-    width: 500px;
+    width: 300px;
 }
 
 #deleteicon:hover{
