@@ -17,8 +17,8 @@
                 <option value="high_level"  id="level">High</option>
             </select>&nbsp;
         </span>
-            <input type="button" value="Passed" class="passedbtn" (click)="passedList(sub.value,slevel.value)">&nbsp;
-            <input type="button" value="Failed" class="failedbtn" (click)="failedList(sub.value,slevel.value)">
+            <input type="button" value="Passed" class="passedbtn" (click)="passedList(sub.value,slevel.value,$event)" #pl>&nbsp;
+            <input type="button" value="Failed" class="failedbtn" (click)="failedList(sub.value,slevel.value,$event)" #fl>
             
 
     </div>
@@ -55,8 +55,8 @@
                             <input type="hidden" name="score" value="{{test.score}}" #score>
                             <input type="hidden" name="status" value="{{test.status}}" #status>
 
-                            <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
-                            <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
+                            <td><i class="fas fa-trash-alt" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
+                            <td><i class="fas fa-edit" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
                             
                         </tr>
                     
