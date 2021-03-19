@@ -39,8 +39,7 @@ export class TestcomComponent implements OnInit {
     this.flag3=false
     this.testInfo=data
     this.obj.loadSubjectDetails().subscribe(data=>this.subjectInfo=data)
-     console.log([new Set(this.subjectInfo.map(item => item.sname))])
-     console.log(this.unique[0])
+     
     }
     else{
       this.flag=false
