@@ -54,14 +54,22 @@ select:focus + .focus {
     border-radius: 5px;
     width: 5%;
   }
-  .active, .passedbtn:hover{
+  .passedbtn:hover{
       cursor: pointer;
     background-color: rgb(21, 134, 21);
     color: white;
   }
-   .active, .failedbtn:hover{
+   .failedbtn:hover{
     cursor: pointer;
     background-color:rgb(247, 60, 60);
     color: white;
   } 
+  .red{
+    background-color: rgb(247, 60, 60);
+    color: white;
+  }
+  .green{
+    background-color: rgb(21, 134, 21);
+    color: white;
+  }
 

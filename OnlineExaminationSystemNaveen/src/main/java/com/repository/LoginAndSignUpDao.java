@@ -37,7 +37,9 @@ public class LoginAndSignUpDao {
 	{
 		EntityManager manager=emf.createEntityManager();
 		Query qry=manager.createQuery("select * from Login");
-		return qry.getResultList();
+		List<Login> li=qry.getResultList();
+		manager.close();
+		return li;
 	}
 }
 

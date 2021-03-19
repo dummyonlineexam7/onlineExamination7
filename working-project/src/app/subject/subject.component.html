@@ -18,9 +18,9 @@
              <input type="hidden" name="sid" value="{{subject.sid}}" #sid>
              <input type="hidden" name="sname" value="{{subject.sname}}" #sname>
              <input type="hidden" name="level" value="{{subject.level}}" #level>
-
-              <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteSubjectData(subject.sid) "></i></td>
-              <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateSubjectData(sid.value,sname.value,level.value)"></i></td>
+             
+              <td><i class="fas fa-trash-alt" id="deleteicon" aria-hidden="true" (click)="deleteSubjectData(subject.sid) "></i></td>
+              <td><i class="fas fa-edit" id="updateicon" aria-hidden="true" (click)="updateSubjectData(sid.value,sname.value,level.value)"></i></td>
          </tr>
 
 
