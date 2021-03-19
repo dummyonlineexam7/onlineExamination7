@@ -51,6 +51,7 @@ flag:boolean=false
       }
       else
       {
+        this.flag=true
           this.msg=data;
       }
     });
