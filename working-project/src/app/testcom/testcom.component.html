@@ -1,26 +1,24 @@
 <div>
 
 
-    <div *ngIf="flag">
-       
+    <div *ngIf="flag" id="drop">
+        <label for="">Subject:</label>
                 <select name="sub" value="{{sub}}" #sub >
-                    <option >
-                        subject
-                     </option>
-                    <option *ngFor="let sub of subjectInfo">
+                 <option *ngFor="let sub of subjectInfo">
                        {{sub.sname}}
                     </option>
-                </select>&nbsp;
+                </select>&nbsp;<br>
+                <label for="">Level:</label>  
             <select name="slevel" value="{{slevel}}" #slevel>
             <option value="low_level" id="level">Low</option>
             <option value="intermidiate_level" id="level">Intermediate</option>
             <option value="high_level"  id="level">High</option>
-            </select>&nbsp;
+            </select>&nbsp;<br>
             <input type="button" value="Passed" (click)="passedList(sub.value,slevel.value)">&nbsp;
             <input type="button" value="Failed" (click)="failedList(sub.value,slevel.value)">
             
 
-    </div>
+    </div><br>
 
 
 

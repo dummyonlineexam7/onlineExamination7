@@ -8,14 +8,18 @@ import { Router } from '@angular/router';
 })
 export class StudentDashboardComponent implements OnInit {
   username:string=""
+  obj:any=sessionStorage.getItem("name");
   constructor(public router:Router) { }
 
+  mail:any=sessionStorage.setItem("mail",this.obj)
+   
   ngOnInit(): void {
-    let obj = sessionStorage.getItem("name");
-      if(obj!=null){
-        this.username=obj;
+    //this.obj = sessionStorage.getItem("name");
+      if(this.obj!=null){
+        this.username=this.obj;
   }
 }
+
   logout(){
     sessionStorage.removeItem("name");
     this.router.navigate(["login"]);
