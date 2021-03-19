@@ -1,24 +1,24 @@
 <div>
 
-
+     
     <div *ngIf="flag">
         <span class="focus">
-                <select name="sub" value="{{sub}}" #sub>
+                <select name="sub" id="subjectselect" value="{{sub}}" #sub>
                     <option>select</option>
                     <option *ngFor="let sub of subjectInfo ">
                         {{sub.sname}}
 
                     </option>
                 </select>&nbsp;
-            <select name="slevel" value="{{slevel}}" #slevel>
+            <select name="slevel" id="levelselect" value="{{slevel}}" #slevel>
                 <option>select</option>
                 <option value="low_level" id="level">Low</option>
                 <option value="intermidiate_level" id="level">Intermediate</option>
                 <option value="high_level"  id="level">High</option>
             </select>&nbsp;
         </span>
-            <input type="button" value="Passed" class="btn btn-info" (click)="passedList(sub.value,slevel.value)">&nbsp;
-            <input type="button" value="Failed" class="btn btn-dark" (click)="failedList(sub.value,slevel.value)">
+            <input type="button" value="Passed" class="passedbtn" (click)="passedList(sub.value,slevel.value)">&nbsp;
+            <input type="button" value="Failed" class="failedbtn" (click)="failedList(sub.value,slevel.value)">
             
 
     </div>
@@ -27,18 +27,18 @@
 
     <div *ngIf="flag1">
         <div id="div1">
-            <div id="div2" ><h4>Details</h4></div>
+            <div id="div2" ><h4 style="font-weight: 500;">Test Details</h4></div>
                 <div id="" >
                     <table border=1 align=center id="tablediv">
                         <tr>
-                            <th  style="font-size: 20px">TestName</th>
-                            <th style="font-size: 20px">Name</th>
-                            <th style="font-size: 20px">Subject</th>
-                            <th style="font-size: 20px">Level</th>
-                            <th style="font-size: 20px">Questions</th>
-                            <th style="font-size: 20px">Score</th>
-                            <th style="font-size: 20px">Status</th>
-                            <th style="font-size: 20px" colspan="2">Action</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Test Name</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Name</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Subject</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Level</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Questions</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Score</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);">Status</th>
+                            <th style="font-size: 18px;background-color: rgb(184, 184, 245);" colspan="2">Action</th>
                         
                         </tr>
                         <tr *ngFor="let test of testInfo">
