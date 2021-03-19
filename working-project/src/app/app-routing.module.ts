@@ -88,8 +88,8 @@ const routes: Routes = [
 
 {path:"\UpdateSubject",component:SubjectUpdateBysidComponent},
 {path:"\studentdasboard",component:StudentDashboardComponent,canActivate:[MyGaurds],children:[
- {path:"profile",component:StudentPersonalDetailsComponent},
- {path:"update",component:UpdateProfileComponent},
+ {path:"\profile",component:StudentPersonalDetailsComponent},
+ {path:"\Update",component:UpdateProfileComponent},
   {path:"TakeTest",component:TestStartComponent,children:[
     {path:"\Test",component:TakeTestComponent}
   ]},
@@ -97,7 +97,8 @@ const routes: Routes = [
   {path:"contact",component:ContactusComponent}
   ]},
 
-  
+  {path:"\profile",component:StudentPersonalDetailsComponent},
+  {path:"\Update",component:UpdateProfileComponent},
   {path:"\Test",component:TakeTestComponent}
   
 

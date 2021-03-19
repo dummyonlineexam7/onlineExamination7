@@ -45,7 +45,8 @@ flag:boolean=false
        // console.log(loginRef.email)
         sessionStorage.setItem("name",loginRef.email)
         this.router.navigate(["studentdasboard"])
-        
+       
+
        }
        //this.router1.navigate(["admindashboard"])
       }
