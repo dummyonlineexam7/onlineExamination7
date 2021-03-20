@@ -14,7 +14,10 @@ export class StudentDashboardComponent implements OnInit {
     let obj = sessionStorage.getItem("name");
       if(obj!=null){
         this.username=obj;
-  }
+        console.log("mail is"+obj)
+       }
+       sessionStorage.setItem("name1",this.username)
+       
 }
   logout(){
     sessionStorage.removeItem("name");

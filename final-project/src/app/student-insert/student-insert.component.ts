@@ -18,7 +18,9 @@ export class StudentInsertComponent implements OnInit {
   ngOnInit(): void {
   }
   storeStudentDetails(){
+    
     let studentRef=this.studentInfo.value;
+    console.log(studentRef)
     this.stuser.storeStudentInfo(studentRef).subscribe(data=>this.msg=data);
    // this.stuser.updateStudentInfo(studentInfo).subscribe(data=>console.log(data))
   }

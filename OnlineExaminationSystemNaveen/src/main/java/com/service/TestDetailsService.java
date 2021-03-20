@@ -69,6 +69,13 @@ public class TestDetailsService {
 			}
 			else
 			{
+				if(td.getScore()>60)
+				{
+					td.setStatus("Passed");
+				}
+				else {
+					td.setStatus("Failed");
+				}
 				TestDetails t=tdr.save(td);
 				if(t!=null)
 				{

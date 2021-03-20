@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Question } from '../question-module';
 import { questionService } from '../question-service';
+import { TestDetails } from '../test-module';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-take-test',
@@ -24,24 +26,28 @@ flag4:boolean=false
     option:new FormControl()
   })
    name:any;
-  sname:string=""
-  level:string=""
-  noofquestions:number=0
+  sname1:string=""
+  level1:string=""
+  sid1:number=0
+  email1:string=''
+  noofquestions1:number=0
+  testInfo:Array<TestDetails>=[]
   questioncount:Array<number>=[]
   ques:Array<Question>=[]
   msg:string="You are already in last question"
-  constructor(public taketestSur:questionService, private router:Router) { }
+  constructor(public taketestSur:questionService, private router:Router, public testsur:TestService) { }
 
   ngOnInit(): void {
     
      let a=sessionStorage.getItem("obj")
      let b=sessionStorage.getItem("obj1")
-    if(a!=null && b!=null){
-    this.sname=a;
-    this.level=b;
-    console.log(this.sname)
-    console.log(this.level)
-
+     let c=sessionStorage.getItem("obj2")
+     let d=sessionStorage.getItem("name")
+    if(a!=null && b!=null && c!=null && d!=null){
+    this.sname1=a;
+    this.level1=b;
+    this.sid1=parseInt(c);
+    this.email1=d;
     } 
    
   }
@@ -51,13 +57,13 @@ flag4:boolean=false
     this.flag2=false
     this.QuestionInfo.length=0
     this.flag=true
-    this.taketestSur.getQuestionsBylevelandSubject(this.sname,this.level).subscribe(data=>{
+    this.taketestSur.getQuestionsBylevelandSubject(this.sname1,this.level1).subscribe(data=>{
       if(data!=null){
         this.flag=true;
         this.QuestionInfo=data;
         this.ques=this.QuestionInfo
-        this.noofquestions=this.QuestionInfo.length
-        console.log(this.noofquestions)
+        this.noofquestions1=this.QuestionInfo.length
+        console.log(this.noofquestions1)
         //console.log(this.QuestionInfo[this.i]?.answer)
         for(let j=0;j<this.QuestionInfo.length;j++)
         {
@@ -87,6 +93,12 @@ flag4:boolean=false
       this.flag=false
       this.flag3=false
       this.flag4=true
+      this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
+      this.testInfo[0].email=this.email1
+      this.testInfo[0].level=this.level1
+      console.log(this.testInfo[0])
+      console.log(this.email1)
+     // this.testsur.storeTestDetails().subscribe(data=>this.msg=data)
       console.log("score is",this.count)
     }
     if(this.name.option==this.ques[this.i].answer)

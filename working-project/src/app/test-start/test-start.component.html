@@ -1,10 +1,29 @@
 <div id="div1">
 <div id="div2"><h4>Take Test</h4></div>
-<form #testRef1="ngForm" (ngSubmit)="TakeTestData(testRef1.value)">
+<!-- <form #testRef1="ngForm" (ngSubmit)="TakeTestData(testRef1.value)">
     <label id="label1">Subject:</label>
-    <input type="text" id="input1" name="sname" ngModel><br/>
+    <input type="" id="input1" name="sname" ngModel><br/>
     <label id="label2">Level:</label>
     <input type="text" id="input2" name="level" ngModel><br/>
     <input type="submit" value="TakeTest" id="btn1" class="btn btn-warning">
-</form>
+</form> -->
+
+<span class="focus">
+    <select name="sub" value="{{sub}}" #sub>
+        <option>select</option>
+        <option *ngFor="let sub of subjectInfo ">
+            {{sub.sname}}
+
+        </option>
+    </select>&nbsp;
+<select name="slevel" value="{{slevel}}" #slevel>
+    <option>select</option>
+    <option value="low_level" id="level">Low</option>
+    <option value="intermidiate_level" id="level">Intermediate</option>
+    <option value="high_level"  id="level">High</option>
+</select>&nbsp;
+</span>
+<br>
+<input type="button" value="Test" class="btn btn-submit" (click)="TakeTestData(sub.value,slevel.value)">
+
 </div>
