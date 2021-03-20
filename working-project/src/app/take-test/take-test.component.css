@@ -1,71 +1,86 @@
 #ul{
     list-style-type: none;
 }
-#li{
+#li1{
     left: 60%;
+    font-size: 20px;
+}
+#li{
+    margin-right: 45px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 #btn1{
-    width: 110px;
+    width: 50%;
     margin-top: 12px;
-    border-radius: 4px;
-    margin-left: 40px;
+    border-radius: 30px;
+    margin-left: 65px;
 }
 #previous{
+    margin-top: 30px;
     width: 110px;
+    margin-right: 20px;
     border-radius: 4px;
 }
 #next{
+    margin-right: 20px;
+    margin-top: 30px;
     width: 110px;
     border-radius: 4px;
 }
 #submit-test{
     width: 110px;
     border-radius: 4px;
-    margin-left: 40px;
+    margin-left: 20px;
     margin-top: 40px;
 }
 #hr1{
+    margin-top: 30px;
     margin-right: 40px;
     border-top: 0.5px solid;
 }
 #div1{
-    background-color:deepskyblue;
-     width: 85%; 
+    width: 85%; 
+    margin-top: 10%;
     height: 60px;
     /* margin-left: 30%; */
 }
 #div2{
     background-color:cornsilk;
-    width: 520px;
-    height: 400px;
+    width: 110%;
+    height: 500px;
     /* margin-left: 30%; */
 }
 #leftdiv{
     /* width: 28%; */
     width: 330px;
     height: 500px;
+    margin-top: 3.3%;
     background-color:rgb(156, 223, 245);
     float: left;
 }
 #middlediv{
     width: 45%;
+    margin-top: 2%;
     float: left;
-    margin-left: 50px;
+    margin-left: 35px;
 }
  #rightdiv{
     /* width: 10%; */
     width: 370px;
     height: 500px;
+    margin-top: 2%;
     float:right; 
     background-color:rgb(156, 223, 245);
 } 
 #timerdiv{
-    background-color: rgb(87, 173, 87);
+    background-color: white;
     width: 120px;
     height: 50px;
+    border-radius: 4px;
     text-align: center;
-    margin-top: 20px;
-    margin-left: 115px;
+    margin-top: 30px;
+    margin-left: 130px;
     font-family: Arial, sans-serif;
     
 }
@@ -101,5 +116,6 @@
 
 h5{
     text-align: left;
+    margin-top: 20px;
     color:black;
 }
