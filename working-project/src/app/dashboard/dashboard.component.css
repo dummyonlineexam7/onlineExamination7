@@ -55,6 +55,9 @@ body{
 background-color: #545668 !important;
 height: 60px;
 }
-/* #a1:active{
-   background-color: red
-} */
+#log:hover{
+   cursor: pointer;
+   background-color: rgb(128, 247, 128);
+}
+
+
