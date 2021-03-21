@@ -17,7 +17,8 @@ export class TakeTestComponent implements OnInit{
   settime:number=10;
   flag:boolean=false
   static flagt:boolean=true;
-
+  score:number=0;
+  static result:boolean=false;
   i:number=0
   k:number=0
 flag1:boolean=true
@@ -105,6 +106,7 @@ flag4:boolean=false
       this.flag=false
       this.flag3=false
       this.flag4=true
+      this.score=Math.floor((this.count/this.QuestionInfo.length)*100);
       this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
       this.testInfo[0].email=this.email1
       this.testInfo[0].level=this.level1
@@ -133,16 +135,26 @@ flag4:boolean=false
     this.i=val;
   }
  
-  
+  GoToStudent(){
+    this.router.navigate(["studentdasboard"])
+  }
   
 
   checktimeout(){
+
     setTimeout(function(){
       if(TakeTestComponent.flagt){
-      alert("Time Out !!!")
+        console.log(TakeTestComponent.flagt);
+        TakeTestComponent.result=confirm("Time Out !!!")
       }
-      // router.navigate(["studentdasboard"])
+      
     },(this.settime*1000));
+    console.log(TakeTestComponent.result);
+    if(TakeTestComponent.result==true)
+      {
+        console.log(TakeTestComponent.result);
+        this.router.navigate(["studentdasboard"])
+      }
   }
   
 
