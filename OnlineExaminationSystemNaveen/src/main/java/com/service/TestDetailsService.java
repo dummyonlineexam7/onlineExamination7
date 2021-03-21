@@ -42,8 +42,10 @@ public class TestDetailsService {
 	}
 	
 	public String storeDetails(TestDetails td) {
-		int id=100;
-		td.setTestid(id++);
+		
+		//id=id+1;
+		//td.setTestid(id);
+		//System.out.println("id:"+id+"testid "+td.getTestid());
 		Optional<TestDetails> op=tdr.findById(td.getTestid());
 		if(op.isPresent())
 		{

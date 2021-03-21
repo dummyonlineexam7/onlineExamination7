@@ -23,8 +23,34 @@
     </div> -->
 
     <div id="scorediv" *ngIf="flag4">
-        Your score for the test is {{score}}%<br/>
-        <button id="backbtn" (click)="GoToStudent()">Back</button>
+        Your score for the test is {{score1}}%<br/>
+        <!-- {{this.email1}}
+        <form [formGroup]="testRecord" (ngSubmit)="GoToStudent()">
+            
+            <input type="hidden" name="email" value="{{this.email1}}" formControlName="email" #email1><br/>
+      
+            
+            <input type="hidden" name="score" value="{{this.score1}}" formControlName="score"><br/>
+    
+            
+            <input type="hidden" name="sid" value="{{this.sid1}}" formControlName="sid"><br/>
+    
+            
+            <input type="hidden" name="qid" value="{{this.i}}" formControlName="qid"><br/>
+    
+            
+            <input type="hidden" name="noofquestions" value="{{this.noofquestions1}}" formControlName="noofquestions"><br/>
+    
+            <input type="hidden" name="testname" value="{{this.testname1}}" formControlName="testname"><br/>
+        
+            </form>
+        -->
+            
+            <button id="backbtn"  (click)="GoToStudent()" >Back</button>
+           
+            
+    
+        
         
     </div>
 
