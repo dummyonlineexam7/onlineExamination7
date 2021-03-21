@@ -54,10 +54,10 @@ export class TestcomComponent implements OnInit {
     }})
   }
 
-  // gettest()
-  // {
-  //   this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data);
-  // }
+   gettest()
+   {
+     this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data);
+   }
   deleteTestDetailsData(sid:any){
     this.res=confirm("Are you sure want to delete this record?")
     if(this.res==true){
