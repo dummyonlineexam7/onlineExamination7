@@ -115,6 +115,7 @@ flag4:boolean=false
       this.flag=false
       this.flag3=false
       this.flag4=true
+
       this.score1=Math.floor((this.count/this.QuestionInfo.length)*100);
       this.testname1=this.sname1+"test";
       //this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
@@ -122,6 +123,15 @@ flag4:boolean=false
      console.log(this.testRecord.value)
      
      // this.testsur.storeTestDetails(testRef).subscribe(data=>this.msg=data)
+
+      this.score=Math.floor((this.count/this.QuestionInfo.length)*100);
+      this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
+      this.testInfo[0].email=this.email1
+      this.testInfo[0].level=this.level1
+      console.log(this.testInfo[0])
+      console.log(this.email1)
+     // this.testsur.storeTestDetails().subscribe(data=>this.msg=data)
+
       console.log("score is",this.count)
     }
     if(this.name.option==this.ques[this.i].answer && this.i!=this.QuestionInfo.length)

@@ -54,7 +54,11 @@ export class TestcomComponent implements OnInit {
     }})
   }
 
+
   gettest()
+
+   gettest()
+
    {
      this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data);
    }

@@ -68,6 +68,19 @@ height: 60px;
    cursor: pointer;
    background-color: rgb(128, 247, 128);
 }
+#username{
+   margin-left: 70%;
+}
+#leftdiv{
+   background-color:white;
+   float: left;
+}
+#rightdiv{
+   margin-left: 30.3%;
+   width: 69.1%;
+   background-color: lavender;
+   float: left;
+}
  
 
 

@@ -12,23 +12,19 @@ h2{
     height: 120px;
 }
 
+#emaildiv{
+    margin-left: 70%;
+    margin-top: 4%;
+    width: 30%;
+}
+
 
 #divimg{
     float: left;
     height: 100px;
     width: 29%;
     margin-left: 10px;
-    /* background-image: url("../assets/onlineimg.png"); */
     background-image: url("../assets/onlineimg.png");
-   
-
-    /*background-image: url("C:\Users\admin\Desktop\onlineExamination\onlineExamination7\working-project\src\assets\onlineimg.png");
-
-   /* background-image: url(".././assets/onlineimg.png");
-
-    background-image: url(".././assets/onlineimg.png");*/
-
-
     background-size: 100% 100%;
 }
 #maindiv{
