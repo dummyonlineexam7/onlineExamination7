@@ -121,7 +121,8 @@ h5{
 }
 #backbtn{
     width: 13%;
-    margin-top: 3%;
+    margin-top: 6%;
+    border-radius: 3px;
 }
 #backbtn:hover{
     background-color: rgb(102, 99, 99);
@@ -129,5 +130,16 @@ h5{
     cursor: pointer;
 }
 #scorediv{
-    margin-left: 40%;
+    position: absolute;
+    width: 40%;
+    height: 70%;
+    margin-left: 28%;
+    background-color:rgb(182, 176, 176); 
+}
+#imagediv{
+    width: 30%;
+    height: 33%;
+    margin-right: 8%;
+    background-size: cover;
+    background-image: url("../../assets/thumd1.png");
 }
