@@ -1,21 +1,9 @@
 <div>
     <div id="leftdiv" *ngIf="flag1">
-        <h5>Questions:</h5>
-        
-                    <div *ngFor="let val of questioncount" class="btn-group">
-                    
-                    <input type="submit" name="q1" id="q1_btn" [disabled]="val==questioncount.length+1" value={{val+1}} (click)="GoToQuestion1(questioncount[val])">
-                    </div>
-            
-        <!-- <input type="submit" name="q1" id="q2_btn" value="2" (click)="GoToQuestion2()">
-        <input type="submit" name="q1" id="q3_btn" value="3" (click)="GoToQuestion3()">
-        <input type="submit" name="q1" id="q4_btn" value="4" >
-
-        <input type="submit" name="q1" id="q1_btn" value="5">
-        <input type="submit" name="q1" id="q2_btn" value="6">
-        <input type="submit" name="q1" id="q3_btn" value="7">
-        <input type="submit" name="q1" id="q4_btn" value="8"> -->
-
+        <h4>Questions:</h4>
+            <div *ngFor="let val of questioncount" class="btn-group">
+                 <input type="submit" name="q1" id="q1_btn" [disabled]="val==questioncount.length+1" value={{val+1}} (click)="GoToQuestion1(questioncount[val])">
+            </div>
     </div>
 
     <div id="middlediv"  align=center>
@@ -28,11 +16,11 @@
     <input type="text" formControlName="level">
 
     <input type="submit" value="Take Test"> -->
-    <div id="div1">
+    <!-- <div id="div1">
     <form [formGroup]="testRef" (ngSubmit)="Test()">
-        <input type="submit" value="Start Test" id="btn1" class="btn btn-warning" [disabled]="k==1">
+           <input type="submit" value="Start Test" id="btn1" class="btn btn-warning" [disabled]="k==1">  
     </form>
-    </div>
+    </div> -->
 
     <div align=center *ngIf="flag4">
         Your score for the test is {{count}}
@@ -59,21 +47,30 @@
                     
                 </form>
         
+                
     
     </div>     
 
-        <span *ngIf="i==QuestionInfo.length-1">{{msg}}</span><br/>
+        <!-- <span *ngIf="i==QuestionInfo.length-1" style="font-size: 20px;">{{msg}}</span><br/> -->
+        <span *ngIf="i==QuestionInfo.length-1" style="font-size: 20px;">{{msg}}</span><br/>
    
-        <!-- <form [formGroup]="testRef" (ngSubmit)="nextquestion()">
-   
-    <input type="Submit" value="submit Test" [disabled]="i!=QuestionInfo.length-1" class="btn btn-warning" id="submit-test">
-        </form> -->
+       
     </div>
     <div id="rightdiv"  *ngIf="flag3">
         <div id="timerdiv">
-            timer Part
+            <div style="position: absolute; margin-top: 13px; margin-left: 10px;">
+                <countdown style="font-size: 25px;" #countdowns [config]="{leftTime: this.settime, demand: true}"></countdown>
+            </div>
         </div>
+         <div id="div1">
+             <form [formGroup]="testRef" (ngSubmit)="Test()">
+                <input type="submit" value="Start Test" id="btn1" class="btn btn-warning" [disabled]="k==1" (click)="countdowns.resume(); checktimeout();"/>
+                  
+            </form> 
+        </div> 
+        
     </div>
+    
 
    
 

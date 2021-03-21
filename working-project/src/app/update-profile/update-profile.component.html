@@ -1,34 +1,76 @@
+<div>
+    <!--<h3>welcome {{username}}</h3>-->
+    <nav class="navbar">
+        <ul>
+            <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
+
+            <li><a routerLink="contact">ContactUs</a></li>
+            
+            <li><a routerLink="about">AboutUs</a> </li>
+
+            <li class="rt"><a  routerLink="profile">Student Profile</a></li>
+          
+          <!--  
+              routerLink="profile"
+              <li class="rt"><a routerLink="update">Update Profile</a> </li>-->
+
+            <li class="rt"><a routerLink="TakeTest">Take-Test</a> </li>
+
+           
+
+        </ul>  
+ </nav>
+ <router-outlet></router-outlet>
+
+
+</div>
+
+
 <div id="div1">
      <div id="div2">   <h2 >Update Profile Page</h2></div>
         <div id="tablediv">
         <form #loginInfo="ngForm" (ngSubmit)="updateProfile(loginInfo.value)">
         <span> <label id="label1">Firstname</label></span>
-        <input type="text"  id="input1" name="firstname" ngModel><br>
+        <input type="text"  id="input1" name="firstname" [(ngModel)]="first" ><br>
 
 
         <label id="label2">Lastname</label>
-        <input type="text" id="input2" name="lastname" ngModel><br>
+        <input type="text" id="input2" name="lastname" [(ngModel)]="last" ><br>
 
         <label id="label3">Gender</label>
-        <input type="radio" id="input3" name="gender" value="Male" ngModel>Male
-        <input type="radio" id="input4" name="gender" value="Female" ngModel>Female<br>
+        <input type="radio" id="input3" name="gender" value="Male" [(ngModel)]="gender" ngModel>Male
+        <input type="radio" id="input4" name="gender" value="Female" [(ngModel)]="gender" ngModel>Female<br>
 
         <label id="label4">age</label>
-        <input type="number" id="input5" name="age" ngModel><br>
+        <input type="number" id="input5" name="age" [(ngModel)]="age" ngModel><br>
 
         <label id="label5">Phn-Number</label>
-        <input type="number" id="input6" name="phnnumber" ngModel><br>
+        <input type="number" id="input6" name="phnnumber" [(ngModel)]="phn" ngModel><br>
 
-        <label id="label6">Email</label>
-        <input type="text" id="input7" name="email" ngModel><br>
+       <label id="label6">Email</label>
+        <input type="text" id="input7" name="email" [(ngModel)]="mail" ngModel><br>
 
         <label id="label7">Password</label>
-        <input type="password" id="input8" name="password" ngModel><br>
+        <input type="password" id="input8" name="password" [(ngModel)]="pass" ngModel><br>
         
         <input type="submit" value="Update" class="btn btn-warning"  id="btn1">
         <input type="reset" value="reset" class="btn btn-warning" id="btn1"><br>
         </form>
+        {{msg}}
 
         </div>
-        {{msg}}
-</div>    
+        <div id="backbtn"> 
+                Back to previous page?<a (click)="goback()" id="clickhere"> click here</a>
+            </div>
+            <p style="color: green;">{{msg}}</p>
+      
+</div>  
+
+
+<!--[(ngModel)]="first"
+[(ngModel)]="last"
+[(ngModel)]="gender"
+[(ngModel)]="age"
+[(ngModel)]="phn"
+[(ngModel)]="mail"
+[(ngModel)]="pass" -->

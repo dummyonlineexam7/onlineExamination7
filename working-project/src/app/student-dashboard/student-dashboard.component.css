@@ -41,9 +41,11 @@ body{
  }
  .navbar ul li {
   float: right;
+  font-size: 17px;
  }
  .navbar ul .rt{
    float: left;
+   font-size: 17px;
  }
  .navbar ul #li{
     float:right;
@@ -56,9 +58,16 @@ body{
     height: 60px;
 
     width: 0.1;
-
-
  }
+ .activeTab
+{
+background-color: #545668 !important;
+height: 60px;
+}
+#log:hover{
+   cursor: pointer;
+   background-color: rgb(128, 247, 128);
+}
  
 
 

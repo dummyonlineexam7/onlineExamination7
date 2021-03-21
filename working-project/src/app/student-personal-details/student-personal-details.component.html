@@ -1,15 +1,58 @@
 <div id="div1">
-    <h2 id="div2">Profile Details</h2>
+  <!--  <h2 id="div2">Profile Details</h2>
     <label id="label1">Email</label>
     <input type="text" id="input1" #email><br>
-    <input type="button" id="input2" value="Get-Profile" (click)="profileDetails(email.value)" class="btn btn-warning"><br>
+    <input type="button" id="input2" value="Get-Profile" (click)="profileDetails(email.value)" class="btn btn-warning"><br>-->
     <div *ngIf="flag">
-        FirstName       :       {{profileInfo.firstname}}<br>
-        LastName        :       {{profileInfo.lastname}}<br>
-        Gender          :       {{profileInfo.gender}}<br>
-        Age             :       {{profileInfo.age}}<br>
-        Phn-Number      :       {{profileInfo.phnnumber}}<br>
-        Email           :       {{profileInfo.email}}<br>
+      <table border=1 id="tablediv">
+          <tr>
+              <th> FirstName     :</th>  
+              <td>{{profileInfo.firstname}}</td>
+              
+          </tr>
+     
+          <tr>
+               <th>LastName    :  </th>
+               <td> {{profileInfo.lastname}}</td>
+              
+          </tr>
+     
+          <tr>
+               <th> Gender     : </th> 
+               <td>{{profileInfo.gender}}</td>
+               
+               
+          </tr>
+      
+          <tr>
+               <th>Age         : </th>   
+               <td>  {{profileInfo.age}}</td>
+              
+          </tr>
+       
+          <tr>
+              <th> Phn-Number    :</th>       
+              <td>{{profileInfo.phnnumber}}</td>
+             
+          </tr>
+      
+        <tr>
+             <th>Email        :</th> 
+              <td>{{profileInfo.email}}</td>
+              <input type="hidden" name="email" value="{{profileInfo.email}}" #email />
+        </tr>
+
+        <input type="hidden" name="firstname" value="{{profileInfo.firstname}}" #firstname />
+        <input type="hidden" name="lastname" value="{{profileInfo.lastname}}" #lastname />
+        <input type="hidden" name="gender" value="{{profileInfo.gender}}" #gender />
+        <input type="hidden" name="age" value="{{profileInfo.age}}" #age />
+        <input type="hidden" name="phnnumber" value="{{profileInfo.phnnumber}}" #phnnumber />
+        <input type="hidden" name="email" value="{{profileInfo.email}}" #email />
+        <input type="hidden" name="password" value="{{profileInfo.password}}" #password />
+        <!--(click)="updateRecord(firstname.value,lastname.value,gender.value,age.value,phnnumber.value,email.value)"--> 
+        <td colspan="2"> <i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateRecord(firstname.value,lastname.value,gender.value,age.value,phnnumber.value,email.value,password.value)" ></i></td>
+          
+      </table>
     </div>
      
 </div>

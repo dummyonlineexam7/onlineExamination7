@@ -1,47 +1,46 @@
-<div>
 
-
+     
     <div *ngIf="flag">
         <span class="focus">
-                <select name="sub" value="{{sub}}" #sub>
+                <select name="sub" id="subjectselect" value="{{sub}}" #sub>
                     <option>select</option>
                     <option *ngFor="let sub of subjectInfo ">
                         {{sub.sname}}
 
                     </option>
                 </select>&nbsp;
-            <select name="slevel" value="{{slevel}}" #slevel>
+            <select name="slevel" id="levelselect" value="{{slevel}}" #slevel>
                 <option>select</option>
                 <option value="low_level" id="level">Low</option>
                 <option value="intermidiate_level" id="level">Intermediate</option>
                 <option value="high_level"  id="level">High</option>
             </select>&nbsp;
         </span>
-            <input type="button" value="Passed" class="btn btn-info" (click)="passedList(sub.value,slevel.value)">&nbsp;
-            <input type="button" value="Failed" class="btn btn-dark" (click)="failedList(sub.value,slevel.value)">
+            <input type="button" value="Passed" class="passedbtn" (click)="passedList(sub.value,slevel.value,$event)" #pl>&nbsp;
+            <input type="button" value="Failed" class="failedbtn" (click)="failedList(sub.value,slevel.value,$event)" #fl>
             
 
-    </div>
+    </div><br>
 
 
 
     <div *ngIf="flag1">
         <div id="div1">
-            <div id="div2" ><h4>Details</h4></div>
+            <div id="div2" ><h2 style="font-weight: 600;">Test Details</h2></div>
                 <div id="" >
-                    <table border=1 align=center id="tablediv">
-                        <tr>
-                            <th  style="font-size: 20px">TestName</th>
-                            <th style="font-size: 20px">Name</th>
-                            <th style="font-size: 20px">Subject</th>
-                            <th style="font-size: 20px">Level</th>
-                            <th style="font-size: 20px">Questions</th>
-                            <th style="font-size: 20px">Score</th>
-                            <th style="font-size: 20px">Status</th>
-                            <th style="font-size: 20px" colspan="2">Action</th>
+                    <table border=1 align=center id="tablediv" class="text-black text-center mx-auto br-5" style="width: 85%;">
+                        <tr class="text-bold  bg-primary text-white" style="height: 50px;">
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Test Name</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Name</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Subject</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Level</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Questions</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Score</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Status</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" colspan="2">Action</th>
                         
                         </tr>
-                        <tr *ngFor="let test of testInfo">
+                        <tr *ngFor="let test of testInfo" style="height: 50px;">
                             <td style="font-size: 17px">{{test.testname}}</td>
                             <td  style="font-size: 17px">{{test.firstname}}</td>
                             <td  style="font-size: 17px">{{test.sname}}</td>
@@ -55,8 +54,8 @@
                             <input type="hidden" name="score" value="{{test.score}}" #score>
                             <input type="hidden" name="status" value="{{test.status}}" #status>
 
-                            <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
-                            <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
+                            <td><i class="fas fa-trash-alt" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
+                            <td><i class="fas fa-edit" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
                             
                         </tr>
                     
@@ -159,7 +158,7 @@
                  </table>
             </div>
         </div>
-    </div>
+    
 
     <div *ngIf="flag4" style="color: crimson;">
         {{norecordmsg}}

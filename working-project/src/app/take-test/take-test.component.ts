@@ -14,7 +14,10 @@ import { TestService } from '../test.service';
 export class TakeTestComponent implements OnInit{
 
   QuestionInfo:Array<any>=[];
+  settime:number=10;
   flag:boolean=false
+  static flagt:boolean=true;
+
   i:number=0
   k:number=0
 flag1:boolean=true
@@ -34,8 +37,14 @@ flag4:boolean=false
   testInfo:Array<TestDetails>=[]
   questioncount:Array<number>=[]
   ques:Array<Question>=[]
+
   msg:string="You are already in last question"
   constructor(public taketestSur:questionService, private router:Router, public testsur:TestService) { }
+
+  //msg:string="You are in last question"
+ // constructor(public taketestSur:questionService, public router:Router) { }
+
+
 
   ngOnInit(): void {
     
@@ -49,8 +58,11 @@ flag4:boolean=false
     this.sid1=parseInt(c);
     this.email1=d;
     } 
+
    
   }
+
+  
   
   Test(){
     this.k=1;
@@ -77,7 +89,7 @@ flag4:boolean=false
   }
   
   nextquestion(){
-   
+    TakeTestComponent.flagt=false;
     this.name=this.testRef.value
     console.log("iterator value",this.i)
     //console.log(this.name.option)
@@ -121,11 +133,17 @@ flag4:boolean=false
     this.i=val;
   }
  
+  
+  
 
-  // GoToLogin(){
-  //   this.router.navigate(['login'])
-  //   alert(this.count)
-  // }
+  checktimeout(){
+    setTimeout(function(){
+      if(TakeTestComponent.flagt){
+      alert("Time Out !!!")
+      }
+      // router.navigate(["studentdasboard"])
+    },(this.settime*1000));
+  }
   
 
 }
