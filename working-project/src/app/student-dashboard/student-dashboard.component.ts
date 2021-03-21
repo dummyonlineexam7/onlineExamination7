@@ -14,10 +14,19 @@ export class StudentDashboardComponent implements OnInit {
   mail:any=sessionStorage.setItem("mail",this.obj)
    
   ngOnInit(): void {
+
+    let obj = sessionStorage.getItem("name");
+      if(obj!=null){
+        this.username=obj;
+        console.log("mail is"+obj)
+       }
+       sessionStorage.setItem("name1",this.username)
+       
     //this.obj = sessionStorage.getItem("name");
-      if(this.obj!=null){
-        this.username=this.obj;
-  }
+    // if(this.obj!=null){
+     // this.username=this.obj;
+ // }
+
 }
 
   logout(){

@@ -25,7 +25,7 @@ export class TestInsertComponent implements OnInit {
 
   storeTestDetails(){
     let testRef=this.testInfo.value;
-    this.testsur.storeTestDetails(testRef).subscribe(data=>this.msg=data)
+   // this.testsur.storeTestDetails(testRef).subscribe(data=>this.msg=data)
   }
 
 }

@@ -42,7 +42,7 @@ flag:boolean=false
         //this.router1.navigate(["admindashboard"])
        }
        else{
-       // console.log(loginRef.email)
+        console.log(loginRef.email)
         sessionStorage.setItem("name",loginRef.email)
         this.router.navigate(["studentdasboard"])
        
