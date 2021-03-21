@@ -18,15 +18,14 @@ export class TakeTestComponent implements OnInit{
     sid: new FormControl(),
     score: new FormControl(),
     testname: new FormControl(),
-    status: new FormControl()
-
+   noofquestions:new FormControl()
 
   })
   QuestionInfo:Array<any>=[];
   settime:number=10;
   flag:boolean=false
   static flagt:boolean=true;
-  score:number=0;
+  score1:number=0;
   static result:boolean=false;
   i:number=0
   k:number=0
@@ -43,6 +42,7 @@ flag4:boolean=false
   level1:string=""
   sid1:number=0
   email1:string=''
+  testname1:string=''
   noofquestions1:number=0
   testInfo:Array<TestDetails>=[]
   questioncount:Array<number>=[]
@@ -115,6 +115,15 @@ flag4:boolean=false
       this.flag=false
       this.flag3=false
       this.flag4=true
+
+      this.score1=Math.floor((this.count/this.QuestionInfo.length)*100);
+      this.testname1=this.sname1+"test";
+      //this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
+      console.log("mail1:"+this.email1+" score:"+this.score1+" testname:"+this.testname1)
+     console.log(this.testRecord.value)
+     
+     // this.testsur.storeTestDetails(testRef).subscribe(data=>this.msg=data)
+
       this.score=Math.floor((this.count/this.QuestionInfo.length)*100);
       this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
       this.testInfo[0].email=this.email1
@@ -122,9 +131,10 @@ flag4:boolean=false
       console.log(this.testInfo[0])
       console.log(this.email1)
      // this.testsur.storeTestDetails().subscribe(data=>this.msg=data)
+
       console.log("score is",this.count)
     }
-    if(this.name.option==this.ques[this.i].answer)
+    if(this.name.option==this.ques[this.i].answer && this.i!=this.QuestionInfo.length)
     {
      
       this.count++;
@@ -145,6 +155,20 @@ flag4:boolean=false
   }
  
   GoToStudent(){
+    this.testRecord.setValue({
+      email:this.email1,
+      testname:this.testname1,
+      sid:this.sid1,
+      qid:this.i,
+      noofquestions:this.noofquestions1,
+      score:this.score1
+    })
+    console.log("testrecord value "+this.testRecord.value)
+    let testRef=this.testRecord.value
+    console.log("mail1:"+this.email1+" score:"+this.score1+" testname:"+this.testname1)
+    console.log(this.testRecord.value)
+    this.testsur.storeTestDetails(testRef).subscribe(data=>console.log(data))
+    console.log("testref value "+this.testRef.value)
     this.router.navigate(["studentdasboard"])
   }
   

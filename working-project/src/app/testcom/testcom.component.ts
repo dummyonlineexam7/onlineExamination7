@@ -54,7 +54,11 @@ export class TestcomComponent implements OnInit {
     }})
   }
 
+
+  gettest()
+
    gettest()
+
    {
      this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data);
    }
@@ -64,6 +68,7 @@ export class TestcomComponent implements OnInit {
     this.testsur.deleteTestDetails(sid).subscribe(data=>{this.gettest()})
     }
   }
+  
   updateTestDetailsData(testid:any,testname:any,noofquestions:any,score:any,status:any){
     console.log("id is"+testid)
     sessionStorage.setItem("id",testid)
