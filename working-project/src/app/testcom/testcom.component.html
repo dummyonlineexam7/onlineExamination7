@@ -64,41 +64,7 @@
                 </div>
         </div>
 
-  <!--  <div id="div2"><h4>Details</h4></div>
-    <div id="tablediv">
-    <table border=1 align=center id="datatable">
-        <tr>
-
-            <th  >TestName</th>
-            <th >Name</th>
-            <th >Subject</th>
-            <th >Questions</th>
-            <th >Score</th>
-            <th >Status</th>
-            <th  colspan="2">Action</th>
-           
-        </tr>
-        <tr *ngFor="let test of testInfo">
-            <td style="font-size: 17px">{{test.testname}}</td>
-            <td  style="font-size: 17px">{{test.firstname}}</td>
-            <td  style="font-size: 17px">{{test.sname}}</td>
-            <td  style="font-size: 17px">{{test.level}}</td>
-            <td  style="font-size: 17px">{{test.noofquestions}}</td>
-            <td  style="font-size: 17px">{{test.score}}</td>
-            <td  style="font-size: 17px">{{test.status}}</td>
-            <input type="hidden" name="testid" value="{{test.testid}}" #testid>
-            <input type="hidden" name="testname" value="{{test.testname}}" #testname>
-            <input type="hidden" name="noofquestions" value="{{test.noofquestions}}" #noofquestions>
-            <input type="hidden" name="score" value="{{test.score}}" #score>
-            <input type="hidden" name="status" value="{{test.status}}" #status>
-
-             <td><i class="fa fa-trash-o" id="deleteicon" aria-hidden="true" (click)="deleteTestDetailsData(test.testid) "></i></td>
-             <td><i class="fa fa-pencil-square-o" id="updateicon" aria-hidden="true" (click)="updateTestDetailsData(testid.value,testname.value,noofquestions.value,score.value,status.value)"></i></td>
-            
-        </tr>
-    
-       </table>
-       {{msg}}-->
+  
 
     </div>
 
@@ -106,18 +72,18 @@
         <div id="div1">
             <div id="div2" ><h4>Details</h4></div>
                 <div id="" >
-                    <table border=1 align=center id="tablediv">
-                        <tr>
-                            <th  style="font-size: 20px">TestName</th>
-                            <th style="font-size: 20px">Name</th>
-                            <th style="font-size: 20px">Subject</th>
-                            <th style="font-size: 20px">Level</th>
-                            <th style="font-size: 20px">Questions</th>
-                            <th style="font-size: 20px">Score</th>
-                            <th style="font-size: 20px">Status</th>
+                    <table border=1 align=center id="tablediv" class="text-black text-center mx-auto br-5" style="width: 85%;">
+                        <tr class="text-bold  bg-primary text-white" style="height: 50px;">
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">TestName</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Name</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Subject</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Level</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Questions</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Score</th>
+                            <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Status</th>
                         
                         </tr>
-                        <tr *ngFor="let test of passedDetails">
+                        <tr *ngFor="let test of passedDetails" style="height: 50px;">
                             <td style="font-size: 17px">{{test.testname}}</td>
                             <td  style="font-size: 17px">{{test.firstname}}</td>
                             <td  style="font-size: 17px">{{test.sname}}</td>
@@ -135,18 +101,18 @@
         <div id="div1">
             <div id="div2" ><h4>Details</h4></div>
             <div id="" >
-                <table border=1 align=center id="tablediv">
-                    <tr>
-                        <th  style="font-size: 20px">TestName</th>
-                        <th style="font-size: 20px">Name</th>
-                        <th style="font-size: 20px">Subject</th>
-                        <th style="font-size: 20px">Level</th>
-                        <th style="font-size: 20px">Questions</th>
-                        <th style="font-size: 20px">Score</th>
-                        <th style="font-size: 20px">Status</th>
+                <table border=1 align=center id="tablediv" class="text-black text-center mx-auto br-5" style="width: 85%;">
+                    <tr class="text-bold  bg-primary text-white" style="height: 50px;">
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">TestName</th>
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Name</th>
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Subject</th>
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Level</th>
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Questions</th>
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Score</th>
+                        <th style="font-size: 18px;background-color: rgb(104, 104, 241); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Status</th>
                     
                     </tr>
-                    <tr *ngFor="let test of failedDetails">
+                    <tr *ngFor="let test of failedDetails" style="height: 50px;">
                         <td style="font-size: 17px">{{test.testname}}</td>
                         <td  style="font-size: 17px">{{test.firstname}}</td>
                         <td  style="font-size: 17px">{{test.sname}}</td>

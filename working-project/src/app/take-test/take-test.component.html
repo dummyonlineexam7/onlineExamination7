@@ -22,8 +22,10 @@
     </form>
     </div> -->
 
-    <div align=center *ngIf="flag4">
-        Your score for the test is {{count}}
+    <div id="scorediv" *ngIf="flag4">
+        Your score for the test is {{score}}%<br/>
+        <button id="backbtn" (click)="GoToStudent()">Back</button>
+        
     </div>
 
 

@@ -119,3 +119,15 @@ h5{
     margin-top: 20px;
     color:black;
 }
+#backbtn{
+    width: 13%;
+    margin-top: 3%;
+}
+#backbtn:hover{
+    background-color: rgb(102, 99, 99);
+    color: white;
+    cursor: pointer;
+}
+#scorediv{
+    margin-left: 40%;
+}

@@ -91,8 +91,10 @@ const routes: Routes = [
  {path:"\profile",component:StudentPersonalDetailsComponent},
  {path:"\Update",component:UpdateProfileComponent},
   {path:"TakeTest",component:TestStartComponent,children:[
-    {path:"\Test",component:TakeTestComponent}
+    {path:"\Test",component:TakeTestComponent},
+    {path:"\studentdasboard",component:StudentDashboardComponent}
   ]},
+  {path:"\studentdasboard",component:StudentDashboardComponent},
   {path:"about",component:AboutusComponent},
   {path:"contact",component:ContactusComponent}
   ]},
