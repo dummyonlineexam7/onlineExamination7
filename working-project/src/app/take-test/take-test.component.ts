@@ -121,7 +121,7 @@ flag4:boolean=false
       this.testInfo[0].level=this.level1
       console.log(this.testInfo[0])
       console.log(this.email1)
-      this.testsur.storeTestDetails().subscribe(data=>this.msg=data)
+     // this.testsur.storeTestDetails().subscribe(data=>this.msg=data)
       console.log("score is",this.count)
     }
     if(this.name.option==this.ques[this.i].answer)

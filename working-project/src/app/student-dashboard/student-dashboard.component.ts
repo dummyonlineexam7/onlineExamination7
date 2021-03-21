@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 export class StudentDashboardComponent implements OnInit {
   username:string=""
   obj:any=sessionStorage.getItem("name");
+  flagcheck:boolean=true;
   constructor(public router:Router) { }
 
   mail:any=sessionStorage.setItem("mail",this.obj)
    
   ngOnInit(): void {
-
+    
     let obj = sessionStorage.getItem("name");
       if(obj!=null){
         this.username=obj;
@@ -30,6 +31,8 @@ export class StudentDashboardComponent implements OnInit {
 }
 
   logout(){
+    this.flagcheck=false;
+    sessionStorage.setItem("name1"," ");
     sessionStorage.removeItem("name");
     this.router.navigate(["login"]);
   }
