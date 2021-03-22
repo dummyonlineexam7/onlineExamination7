@@ -1,22 +1,18 @@
 <div>
-    <h2>Admin Dashboard</h2>
+     
+    <nav class="navbar">
+           <ul>
+               <li id="li"><input  type="button" value="Logout" id="log" (click)="logout()"><br></li>
+               <li><a   routerLink="subject" routerLinkActive="activeTab">Subject</a></li>
+               <li><a   routerLink="question" routerLinkActive="activeTab">Question</a></li> 
+              <li><a   routerLink="TestDetails" routerLinkActive="activeTab">Test Details</a></li>
+              <li><a  routerLink="Registered" routerLinkActive="activeTab">Registered Candidates</a></li>
 
-     <nav class="navbar">
-            <ul>
-                <li id="li"><input  type="button" value="logout" (click)="logout()"><br></li>
-                <li><a routerLink="student">Student</a></li>
-                
-                <!-- <li><a routerLink="subject">Subject</a> </li> -->
-                <li><a routerLink="subject" id="btn1">subject</a></li>
-              <!--<li><a routerLink="question">Question</a></li> 
-               <li><a routerLink="question">Question</a></li>-->
-                <li><a routerLink="question">Question</a></li> 
-               <li><a routerLink="TestDetails">TestDetails</a></li>
-               <li><a routerLink="Registered">RegisteredCandidates</a></li>
-
-            </ul>  
-     </nav>
-   </div>
+           </ul> 
+         
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
 <div id="div1">
     <div id="div2"><h4>Update TestDetails</h4></div>
     <form #testInfo="ngForm" (ngSubmit)="updateTestData(testInfo.value)">
