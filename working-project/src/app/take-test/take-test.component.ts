@@ -124,7 +124,7 @@ flag4:boolean=false
      
      // this.testsur.storeTestDetails(testRef).subscribe(data=>this.msg=data)
 
-      this.score=Math.floor((this.count/this.QuestionInfo.length)*100);
+      this.score1=Math.floor((this.count/this.QuestionInfo.length)*100);
       this.testsur.loadTestDetails().subscribe(data=>this.testInfo=data)
       this.testInfo[0].email=this.email1
       this.testInfo[0].level=this.level1

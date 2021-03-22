@@ -56,7 +56,7 @@ export class TestcomComponent implements OnInit {
   }
 
 
-  gettest()
+  //gettest()
 
    gettest()
 
