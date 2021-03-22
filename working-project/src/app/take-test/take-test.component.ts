@@ -182,12 +182,6 @@ flag4:boolean=false
       }
       
     },(this.settime*1000));
-    console.log(TakeTestComponent.result);
-    if(TakeTestComponent.result==true)
-      {
-        console.log(TakeTestComponent.result);
-        this.router.navigate(["studentdasboard"])
-      }
   }
   
 

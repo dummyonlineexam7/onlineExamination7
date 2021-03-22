@@ -38,7 +38,6 @@ export class QuestionComponent implements OnInit {
   
   fieldAppear():void{
     this.field= !this.field;
-    //this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
   }
    
    getData(){
@@ -54,8 +53,6 @@ export class QuestionComponent implements OnInit {
   }
   
   deleteRecord(question:any){
-  //  console.log(question);
-   // this.questionInfo.splice(question.qid,1)
     this.questionService.deleteQuestion(question).subscribe(data=>{
       this.getData()
     });
@@ -73,12 +70,5 @@ export class QuestionComponent implements OnInit {
 
      this.router.navigate(["QuestionUpdate"])
   }
-
- 
-  //displayAllQuestions():void{
-    //this.flag=true;
-    //this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
-   // console.log(this.questionInfo)
-  //}
 
 }

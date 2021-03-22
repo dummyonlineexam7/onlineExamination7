@@ -23,10 +23,6 @@ export class StudentDashboardComponent implements OnInit {
        }
        sessionStorage.setItem("name1",this.username)
        
-    //this.obj = sessionStorage.getItem("name");
-    // if(this.obj!=null){
-     // this.username=this.obj;
- // }
 
 }
 

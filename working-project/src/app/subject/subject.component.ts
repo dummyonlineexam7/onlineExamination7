@@ -11,7 +11,6 @@ import { SubjectService } from '../subject.service';
 export class SubjectComponent implements OnInit {
 
   subjectInfo:Array<Subject>=[];
-  // flag:boolean=false
   msg:string=""
   result:boolean=false;
   click : boolean=false;
@@ -26,7 +25,6 @@ export class SubjectComponent implements OnInit {
   constructor(public obj:SubjectService,public router:Router) { }
 
   ngOnInit(): void {
-   // this.flag=true
     this.obj.loadSubjectDetails().subscribe(data=>this.subjectInfo=data)
   }
   getdata(){
@@ -38,20 +36,16 @@ export class SubjectComponent implements OnInit {
     {
       this.obj.deleteSubjectDetails(sid).subscribe(data=>{this.getdata()})
     }
-    //this.obj.deleteSubjectDetails(sid).subscribe(data=>{this.getdata()})
   }
   updateSubjectData(sid:any,sname:any,level:any){
-    //console.log(sid+" "+sname+" "+level)
     sessionStorage.setItem("id",JSON.stringify (sid));
     sessionStorage.setItem("name",JSON.stringify (sname))
     sessionStorage.setItem("level",JSON.stringify (level))
     this.router.navigate(["UpdateSubject"])
-    //console.log(id,internetkit)
   }
   
   fieldAppear():void{
     this.field= !this.field;
-    //this.questionService.displayQuestions().subscribe(data=>this.questionInfo=data);
   }
 
   storeSubjectDetails(){
