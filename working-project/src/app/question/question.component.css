@@ -22,7 +22,7 @@ span{
 
 #div2{
     margin-left: 15%;
-    width: 70%;
+    width: 80%;
     height: 30px;
     border-radius: 8px;
 }
@@ -37,14 +37,18 @@ span{
     height: 100%;
 }
 #datatable{
-    width: 500px;
+    width: 80%;
 }
 
 #deleteicon:hover{
     cursor: pointer;
 }
 #updateicon{
-    width: 20px;
+    width: 60px;
+    height: 20px;
+}
+#deleteicon{
+    width: 60px;
     height: 20px;
 }
 #updateicon:hover{
