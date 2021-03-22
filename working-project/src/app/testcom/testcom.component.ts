@@ -22,9 +22,10 @@ export class TestcomComponent implements OnInit {
   passedDetails:Array<TestDetails>=[]
   failedDetails:Array<TestDetails>=[]
   a:Array<any>=[]
-  norecordmsg:string="No Records Found.."
+
   res:boolean=false
   msg:string=""
+  norecordmsg:string="No Records Found.."
   flag:boolean=false
   flag1:boolean=false
   flag2:boolean=false
@@ -93,7 +94,7 @@ export class TestcomComponent implements OnInit {
         this.flag1=false;
         this.flag2=false
         this.flag4=true;
-        console.log(this.flag1,this.flag2,this.flag3,this.flag4)
+        //console.log(this.flag1,this.flag2,this.flag3,this.flag4)
        /*this.flag3=false
         this.flag1=false;
         this.flag4=false
